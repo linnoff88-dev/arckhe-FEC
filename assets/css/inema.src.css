@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== INEMA design system — base ===== */
+/* ===== ARCKHÉ design system — base ===== */
 @layer base {
   /* Forçar dark sempre na v1.0 (light mode em v1.1 com cobertura completa) */
   html, body {
@@ -24,7 +24,7 @@
   a { color: inherit; }
 }
 
-/* ===== INEMA components ===== */
+/* ===== ARCKHÉ components ===== */
 @layer components {
   /* Cores de trilha (uso como classes utilitárias .trilha-T1, etc.) */
   .trilha-T1 { @apply text-emerald-400; }
@@ -39,12 +39,12 @@
     @apply block rounded-xl border;
   }
 
-  /* Indicador numérico de tópico (regra crítica INEMA: nunca usar setas) */
+  /* Indicador numérico de tópico (regra crítica ARCKHÉ: nunca usar setas) */
   .topico-numero {
     @apply rounded-full flex items-center justify-center font-semibold;
   }
 
-  /* Botão padrão — ALWAYS justify-start (regra crítica INEMA) */
+  /* Botão padrão — ALWAYS justify-start (regra crítica ARCKHÉ) */
   .btn { @apply inline-flex items-center justify-start px-4 py-2 rounded font-semibold transition-colors; }
   .btn-primary { @apply bg-yellow-400 text-zinc-900 hover:bg-yellow-300; }
   .btn-outline { @apply border border-zinc-700 text-zinc-200 hover:bg-zinc-800; }
@@ -54,8 +54,8 @@
   .topico-expansivel summary::-webkit-details-marker { display: none; }
   .topico-expansivel summary::marker { content: ""; }
 
-  /* Subseções INEMA (3 obrigatórias) */
-  .subsecao-inema h4 { @apply text-sm uppercase tracking-wider text-zinc-500 mb-1; }
+  /* Subseções ARCKHÉ (3 obrigatórias) */
+  .subsecao-ARCKHÉ h4 { @apply text-sm uppercase tracking-wider text-zinc-500 mb-1; }
 
   /* Quando NÃO usar (alerta vermelho) */
   .quando-nao-usar h4 { @apply text-red-400 text-sm font-semibold mb-2; }
@@ -84,6 +84,6 @@
 .hover\:bg-yellow-300:hover { background-color: #fde047 !important; }
 .hover\:text-yellow-300:hover { color: #fde047 !important; }
 
-/* INEMA.CLUB link com sky-400 garantido */
-a[href*="inema.club"] { color: #38bdf8; }
-a[href*="inema.club"]:hover { color: #7dd3fc; }
+/* ARCKHÉ AI link com sky-400 garantido */
+a[href*="ARCKHÉ AI"] { color: #38bdf8; }
+a[href*="ARCKHÉ AI"]:hover { color: #7dd3fc; }

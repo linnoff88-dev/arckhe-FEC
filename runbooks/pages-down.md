@@ -3,7 +3,7 @@
 ## Sintomas
 
 - Synthetic monitor (`PAGES-CHECKSUM-DRIFT`) detecta sha256 do HTML servido ≠ `pages-checksums.txt` da release.
-- Beta tester reportando 404 ou conteúdo desatualizado em `inematds.github.io/FEC/v1.0.0/...`.
+- Beta tester reportando 404 ou conteúdo desatualizado em `linnoff88-dev.github.io/
 - Sem CSP nas respostas (verificar via `synthetic-check.py`).
 
 ## Severidade

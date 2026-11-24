@@ -9,7 +9,7 @@
 - **Rubrica:** [`REVIEW-RUBRIC.md`](./REVIEW-RUBRIC.md).
 - **SLA:** 7 dias úteis após receber bundle PDF + repo tag.
 - **Freeze date:** 14 dias antes do release; após freeze, só hot-fixes.
-- **Compensação:** menção neste arquivo + voucher do INEMA.
+- **Compensação:** menção neste arquivo + voucher do ARCKHÉ.
 - **Fallback:** trilha sem assinatura suficiente sai como `beta` em vez de `GA`.
 
 ## Convites enviados (status)
@@ -42,5 +42,5 @@ Quando o revisor aprovar a trilha, adicionar:
 
 - Revisor declara COI ANTES de revisar.
 - Revisor não pode ser autor da trilha.
-- Revisor não pode ter relação financeira ativa com o INEMA.
+- Revisor não pode ter relação financeira ativa com o ARCKHÉ.
 - Em conflito não resolvido: maintainers + 1 revisor adicional decidem.

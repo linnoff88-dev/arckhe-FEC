@@ -1,4 +1,4 @@
-// inema.js — interações globais. Servido via 'self' (CSP-safe).
+// ARCKHÉ.js — interações globais. Servido via 'self' (CSP-safe).
 // (1) Toggle exclusivo de tópicos: abrir um fecha os irmãos do mesmo card.
 // (2) Modais com iframe (botão "Ver em Modal" + fechar com X / Esc / clique no backdrop).
 

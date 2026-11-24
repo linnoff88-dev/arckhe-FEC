@@ -5,8 +5,8 @@
   "description": "Build pipeline (Tailwind CSS + Mermaid pre-render + Playwright tests) para FEC. NÃO publicado em npm.",
   "type": "module",
   "scripts": {
-    "build:css": "tailwindcss -i ./assets/css/inema.src.css -o ./assets/css/inema.css --minify",
-    "watch:css": "tailwindcss -i ./assets/css/inema.src.css -o ./assets/css/inema.css --watch",
+    "build:css": "tailwindcss -i ./assets/css/ARCKHÉ.src.css -o ./assets/css/ARCKHÉ.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/ARCKHÉ.src.css -o ./assets/css/ARCKHÉ.css --watch",
     "build:diagrams": "bash scripts/render-diagrams.sh",
     "build:all": "npm run build:css && npm run build:diagrams",
     "test:visual": "playwright test tests/visual/",

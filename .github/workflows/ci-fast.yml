@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   validate:
-    name: Validate INEMA structure + schemas
+    name: Validate ARCKHÉ structure + schemas
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
@@ -31,7 +31,7 @@ jobs:
       - run: pip install jsonschema pyyaml
       - name: Validate JSON schemas (canonical manifests)
         run: python scripts/validate-schemas.py
-      - name: Validate INEMA structure (≥6 expandable subtopics, 3 INEMA subsections, etc.)
+      - name: Validate ARCKHÉ structure (≥6 expandable subtopics, 3 ARCKHÉ subsections, etc.)
         run: python scripts/validate.py
       - name: Internal link checker (only repo-relative)
         run: python scripts/check-internal-links.py

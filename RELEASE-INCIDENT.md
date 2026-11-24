@@ -44,7 +44,7 @@ PR atualizando o manifesto:
     "reason": "<security|data-integrity|lab-breaking|...>",
     "revoked_at": "2026-MM-DDTHH:MM:SSZ",
     "successor": "v1.0.1",
-    "advisory_url": "https://github.com/inematds/FEC/security/advisories/GHSA-..."
+    "advisory_url": "https://github.com/linnoff88-dev/FEC/security/advisories/GHSA-..."
   }]
 }
 ```

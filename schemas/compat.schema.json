@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://inematds.github.io/FEC/schemas/compat.schema.json",
+  "$id": "https://linnoff88-dev.github.io/
   "title": "FEC Compatibility Matrix",
   "description": "Source of truth for course \u00d7 fec_sdk \u00d7 python \u00d7 provider compatibility. Generates COMPAT.md.",
   "type": "object",

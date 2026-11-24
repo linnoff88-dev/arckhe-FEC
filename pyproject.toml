@@ -10,7 +10,7 @@ readme = "fec_sdk/README.md"
 requires-python = ">=3.11,<3.13"
 license = "MIT"
 authors = [
-  { name = "INEMA", email = "fec@inema.club" }
+  { name = "ARCKHÉ", email = "fec@ARCKHÉ AI" }
 ]
 keywords = ["llm", "context-engineering", "rag", "agents", "evals"]
 classifiers = [
@@ -42,9 +42,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage      = "https://github.com/inematds/FEC"
-Documentation = "https://inematds.github.io/FEC/latest/"
-Issues        = "https://github.com/inematds/FEC/issues"
+Homepage      = "https://github.com/linnoff88-dev/FEC"
+Documentation = "https://linnoff88-dev.github.io/
+Issues        = "https://github.com/linnoff88-dev/FEC/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["fec_sdk"]

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://inematds.github.io/FEC/schemas/revoked_versions.schema.json",
+  "$id": "https://linnoff88-dev.github.io/
   "title": "FEC Revoked Versions",
   "description": "Source of truth for fec_sdk versions that must hard-fail on import. Mirrored to /status/revoked.json (signed) for runtime fetch.",
   "type": "object",

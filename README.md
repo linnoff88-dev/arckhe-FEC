@@ -1,4 +1,4 @@
-﻿# FEC â€” FormaÃ§Ã£o de Engenharia de Contexto
+# FEC â€” FormaÃ§Ã£o de Engenharia de Contexto
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
@@ -13,7 +13,7 @@
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/conteÃºdo-CC%20BY--SA%204.0-lightgrey)](./LICENSE)
 [![License: MIT](https://img.shields.io/badge/cÃ³digo-MIT-green)](./LICENSE-CODE)
 
-Curso master avanÃ§ado em PT-BR sobre Engenharia de Contexto para LLMs. PadrÃµes agnÃ³sticos de provedor (Claude, GPT, Gemini, open-source). Formato INEMA.CLUB com mÃ¡ximo de ilustraÃ§Ãµes, exercÃ­cios testÃ¡veis e projetos cumulativos.
+Curso master avanÃ§ado em PT-BR sobre Engenharia de Contexto para LLMs. PadrÃµes agnÃ³sticos de provedor (Claude, GPT, Gemini, open-source). Formato ARCKHÉ AI com mÃ¡ximo de ilustraÃ§Ãµes, exercÃ­cios testÃ¡veis e projetos cumulativos.
 
 ---
 
@@ -67,7 +67,7 @@ flowchart LR
 4. **Abra a landing local:** `open index.html` (ou acesse a versÃ£o hospedada quando publicada).
 5. **Siga a trilha 1** em `curso/trilha1/index.html`.
 
-âš ï¸ **Canal canÃ´nico de download:** sempre o asset nomeado `fec-vX.Y.Z.zip` da [GitHub Release](https://github.com/inematds/FEC/releases). Os "Source code (zip/tar.gz)" auto-gerados pelo GitHub **nÃ£o sÃ£o auditados**.
+âš ï¸ **Canal canÃ´nico de download:** sempre o asset nomeado `fec-vX.Y.Z.zip` da [GitHub Release](https://github.com/linnoff88-dev/FEC/releases). Os "Source code (zip/tar.gz)" auto-gerados pelo GitHub **nÃ£o sÃ£o auditados**.
 
 ---
 
@@ -101,7 +101,7 @@ FEC/
 â”œâ”€â”€ ESCOPO.md, PRE-REQUISITOS.md, GLOSSARIO.md, CHANGELOG.md
 â”œâ”€â”€ SECURITY.md, RUNBOOK.md, ALERTS.md, RELEASE-INCIDENT.md
 â”œâ”€â”€ COMPAT.md, MODELOS.md, CAPACIDADES.md  # gerados de evals/v1/*.json
-â”œâ”€â”€ index.html                         # landing INEMA
+â”œâ”€â”€ index.html                         # landing ARCKHÉ
 â”œâ”€â”€ curso/trilha[1-6]/{index,modulo-X-Y}.html
 â”œâ”€â”€ fec_sdk/                           # cliente abstrato + adaptadores + sandbox
 â”œâ”€â”€ exemplos/, exercicios/, solucoes/
@@ -145,15 +145,15 @@ Encontrou vulnerabilidade? Veja [SECURITY.md](./SECURITY.md) â€” nÃ£o abr
 
 ---
 
-**Mantido pelo INEMA â€” [inema.club](https://inema.club).**
+**Mantido pelo ARCKHÉ â€” [ARCKHÉ AI](https://ARCKHÉ AI).**
 
-<!-- inema-backlink:v1 -->
-## Mais no INEMA.CLUB
+<!-- ARCKHÉ-backlink:v1 -->
+## Mais no ARCKHÉ AI
 
-- [Ficha completa deste curso](https://www.inema.club/cursos/87-fec-formacao-de-engenharia-de-contexto/)
-- [Guia: como aprender inteligÃªncia artificial](https://www.inema.club/aprender-inteligencia-artificial/)
-- [Todos os cursos](https://www.inema.club/cursos/)
-<!-- /inema-backlink:v1 -->
+- [Ficha completa deste curso](https://www.ARCKHÉ AI/cursos/87-fec-formacao-de-engenharia-de-contexto/)
+- [Guia: como aprender inteligÃªncia artificial](https://www.ARCKHÉ AI/aprender-inteligencia-artificial/)
+- [Todos os cursos](https://www.ARCKHÉ AI/cursos/)
+<!-- /ARCKHÉ-backlink:v1 -->
 
 ---
 

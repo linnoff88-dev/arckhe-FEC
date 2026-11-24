@@ -1,6 +1,6 @@
 # fec-sdk
 
-Cliente provider-neutral da [Formação de Engenharia de Contexto (FEC)](https://github.com/inematds/FEC).
+Cliente provider-neutral da [Formação de Engenharia de Contexto (FEC)](https://github.com/linnoff88-dev/FEC).
 
 ## Instalação
 

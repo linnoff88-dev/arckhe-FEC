@@ -28,7 +28,7 @@
 
 1. Leia o último `HANDOFF.md`.
 2. Verifique `docs/status.html` — algum incidente em aberto?
-3. Notifique-se em `#fec-oncall` (Discord do INEMA).
+3. Notifique-se em `#fec-oncall` (Discord do ARCKHÉ).
 4. Mantenha o telefone/notificação ativos durante a janela.
 
 ## Como passar o plantão

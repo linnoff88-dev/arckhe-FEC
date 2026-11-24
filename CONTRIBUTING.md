@@ -14,7 +14,7 @@ Obrigado pelo interesse. Este projeto segue um plano endurecido (`PLAN.md`) com 
 
 - Use o template `.github/ISSUE_TEMPLATE/errata.md`.
 - PR direto também é aceito; rotule `errata`.
-- CI valida (estrutura INEMA, sanitização, links internos).
+- CI valida (estrutura ARCKHÉ, sanitização, links internos).
 
 ### Dúvidas
 
@@ -31,7 +31,7 @@ Todo módulo deve ter (PLAN item 18):
 
 1. Front-matter com objetivo de aprendizagem mensurável (ligado a item do harness).
 2. Conteúdo principal em seções ricas (não tudo dentro de tópicos expansíveis).
-3. ≥6 sub-tópicos expansíveis com 3 subsessões INEMA cada ("O que é" / "Por que aprender" / "Conceitos-chave").
+3. ≥6 sub-tópicos expansíveis com 3 subsessões ARCKHÉ cada ("O que é" / "Por que aprender" / "Conceitos-chave").
 4. ≥3 ilustrações de tipos diferentes (Mermaid diagrama, comparação visual, tabela de decisão).
 5. Exemplo de código mínimo executável (provider-neutral, com adaptadores linkados).
 6. Exercício hands-on com teste automatizado em `pytest`.
@@ -77,12 +77,12 @@ Ao abrir PR, você concorda em licenciar:
 
 ## Code of Conduct
 
-Curso colaborativo, vibe técnica e respeitosa. Sem ataques pessoais, sem hype vazio, foco no conteúdo. Quem viola é avisado uma vez e depois removido. Reportar comportamento problemático: `conduct@inema.club`.
+Curso colaborativo, vibe técnica e respeitosa. Sem ataques pessoais, sem hype vazio, foco no conteúdo. Quem viola é avisado uma vez e depois removido. Reportar comportamento problemático: `conduct@ARCKHÉ AI`.
 
 ## Precisando de ajuda?
 
 - Issue com label `duvida`.
-- Discord do INEMA: <https://inema.club> (canal `#fec`).
+- Discord do ARCKHÉ: <https://ARCKHÉ AI> (canal `#fec`).
 
 ---
 

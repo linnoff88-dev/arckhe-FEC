@@ -37,6 +37,6 @@ Ver [`RUBRIC.md`](./RUBRIC.md). Resumo:
 
 Branch `projetos/p5-<seu-handle>`. PR com label `projeto:P5`.
 
-## Certificação INEMA
+## Certificação ARCKHÉ
 
 P5 aprovado + quiz final do curso ≥80% = elegível para certificado FEC v1.0 (página HTML personalizada). Sem promessa exagerada — não vale dinheiro, vale demonstração de capacidade.

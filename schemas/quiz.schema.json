@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://inematds.github.io/FEC/schemas/quiz.schema.json",
+  "$id": "https://linnoff88-dev.github.io/
   "title": "FEC Module Quiz",
   "description": "5 questions per module, rendered by build-quiz.py to HTML. Text fields are sanitized via DOMPurify (item 34a).",
   "type": "object",

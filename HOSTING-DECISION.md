@@ -34,7 +34,7 @@ Migrar para **Cloudflare Pages** ou **Netlify** se qualquer dos seguintes for ve
 
 1. RFC + PR atualizando este documento.
 2. Workflow paralelo `release-cloudflare.yml` que sobe os mesmos artefatos para Cloudflare Pages.
-3. DNS: `inematds.github.io/FEC/v1.1.0/` permanece; novo CNAME `fec.inema.club` aponta para Cloudflare.
+3. DNS: `linnoff88-dev.github.io/ permanece; novo CNAME `fec.ARCKHÉ AI` aponta para Cloudflare.
 4. Synthetic monitor passa a checar headers reais.
 5. Migração escalonada — Pages continua servindo versões antigas.
 
@@ -42,7 +42,7 @@ Migrar para **Cloudflare Pages** ou **Netlify** se qualquer dos seguintes for ve
 
 - **Cloudflare Pages:** gratuito até 500 builds/mês; build determinístico no `release.yml` faz isso fácil.
 - **Netlify:** gratuito até 100GB/mês; mais que suficiente.
-- **Custom domain:** `fec.inema.club` ou similar; SSL automático.
+- **Custom domain:** `fec.ARCKHÉ AI` ou similar; SSL automático.
 
 ## Quem decide
 

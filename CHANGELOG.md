@@ -14,7 +14,7 @@
   - 4 workflows GitHub Actions (`ci-fast`, `ci-scheduled`, `ci-extended-compat`, `release`, `auto-smoke-watchdog`).
   - Documentação foundational: README, ESCOPO, PRE-REQUISITOS, SECURITY, RUNBOOK.
   - Licenças dual: CC BY-SA 4.0 (conteúdo) + MIT (código).
-  - Landing page em formato INEMA (`index.html`) com mapa visual das 6 trilhas.
+  - Landing page em formato ARCKHÉ (`index.html`) com mapa visual das 6 trilhas.
   - CSP policy pinada (`assets/csp/policy.txt`).
   - CODEOWNERS com proteção em workflows, evals/, manifestos JSON.
 
@@ -29,7 +29,7 @@
 - **`tests/sandbox/test_traversal.py`** — bateria de **19 testes verdes** (gate de GA).
 - **Scripts críticos:**
   - `validate-schemas.py` — valida 8 manifestos + quizzes
-  - `validate.py` — INEMA structure check
+  - `validate.py` — ARCKHÉ structure check
   - `lint-content.py` — XSS hard checks (block) + word count/refs (strict)
   - `freeze-evals.py` — HASHES.lock content-addressed
   - `render-docs.py` — gera 6 MDs canônicos a partir de JSONs
@@ -37,7 +37,7 @@
   - `build-quiz.py` — quiz JSON → HTML escapado
   - `render-diagrams.sh` — Mermaid → SVG dual (dark + light)
 - **Piloto T1.1 completo:**
-  - `curso/trilha1/{index.html, modulo-1-1.html, modulo-1-2.html}` (passa em 8/8 regras INEMA)
+  - `curso/trilha1/{index.html, modulo-1-1.html, modulo-1-2.html}` (passa em 8/8 regras ARCKHÉ)
   - 2 diagramas Mermaid em `assets/diagrams/src/`
   - `exercicios/modulo-1-1/{enunciado.md, starter/, test.py}` com 5 casos
   - `solucoes/modulo-1-1/solucao.py` (passa 5/5)
@@ -45,7 +45,7 @@
   - `exemplos/modulo-1-1/neutro.py` (provider-neutral)
   - `bibliografia/T1.md` (10 papers + 3 posts datados)
 - **Esqueletos das trilhas T2-T6** (`index.html` com cards de módulos).
-- **Pipeline Python/Node:** `pyproject.toml`, `package.json`, `tailwind.config.js`, `assets/css/inema.src.css` (com light mode override).
+- **Pipeline Python/Node:** `pyproject.toml`, `package.json`, `tailwind.config.js`, `assets/css/ARCKHÉ.src.css` (com light mode override).
 - **10 runbooks** em `runbooks/` cobrindo todas as classes de falha.
 - **Documentação operacional:** `RELEASE-INCIDENT.md`, `ROTATION.md`, `HANDOFF.md`, `BREAK-GLASS.md`, `HOSTING-DECISION.md`, `OLLAMA-MATRIZ.md`, `MEDIDAS.md`, `REVISORES.md`, `REVIEW-RUBRIC.md`, `LICENSES-THIRD-PARTY.md`, `SBOM.md`, `SECURITY-SANDBOX.md`, `SAFETY-INJECTION.md`, `BUDGETS-EXCEPTIONS.md`, `COMPAT-RETIRED.md`.
 - **6 MDs gerados** a partir de JSON: `COMPAT.md`, `MODELOS.md`, `CAPACIDADES.md`, `ALERTS.md`, `RISK-ACCEPTANCE.md`, `CHECKSUMS-REVOCATION.md`.

@@ -6,9 +6,9 @@ Encontrou vulnerabilidade no `fec_sdk`, em conteúdo do curso, no pipeline de re
 
 **Não abra issue público.**
 
-Use **GitHub Security Advisories**: <https://github.com/inematds/FEC/security/advisories/new>.
+Use **GitHub Security Advisories**: <https://github.com/linnoff88-dev/FEC/security/advisories/new>.
 
-Como alternativa, e-mail para `security@inema.club` (chave pública em `SECURITY.asc` quando disponível).
+Como alternativa, e-mail para `security@ARCKHÉ AI` (chave pública em `SECURITY.asc` quando disponível).
 
 ### Resposta esperada
 
@@ -41,7 +41,7 @@ NÃO cobrimos (out-of-scope mas relevante reportar):
 
 ### Manifesto remoto de revogação
 
-`fec_sdk.check_compat()` busca `https://inematds.github.io/FEC/v1/revoked.json` (assinado) ao iniciar para detectar versões revogadas em runtime.
+`fec_sdk.check_compat()` busca `https://linnoff88-dev.github.io/ (assinado) ao iniciar para detectar versões revogadas em runtime.
 
 **Limitação:** wheels já instalados que rodam **sem rede** ou com cache local de revogação ainda válido (TTL 24h) **não receberão revogações novas** até a próxima conexão.
 
@@ -55,7 +55,7 @@ O hard-fail em runtime via `RevokedVersionError` é uma **rede de segurança bes
 
 ### Manifesto remoto sob ataque DoS
 
-Se atacante sequestrar `inematds.github.io/FEC/v1/revoked.json` e servir manifesto inválido (assinatura quebrada), `fec_sdk` ignora o cache remoto, loga warning, e usa **apenas** a baseline embutida no wheel — ou seja, atacante NÃO consegue bloquear todos os usuários ao quebrar Pages. Trade-off: revogações novas não chegam até atacante perder o controle.
+Se atacante sequestrar `linnoff88-dev.github.io/ e servir manifesto inválido (assinatura quebrada), `fec_sdk` ignora o cache remoto, loga warning, e usa **apenas** a baseline embutida no wheel — ou seja, atacante NÃO consegue bloquear todos os usuários ao quebrar Pages. Trade-off: revogações novas não chegam até atacante perder o controle.
 
 ### Sandbox de tools
 
@@ -75,4 +75,4 @@ Se atacante sequestrar `inematds.github.io/FEC/v1/revoked.json` e servir manifes
 
 Você pode auditar o histórico de runs de eval em `evals/v1/runs/` (content-addressed por sha256). `audit-evals.py` é público e roda contra qualquer release.
 
-GHSA + OSV advisories em <https://github.com/inematds/FEC/security/advisories>.
+GHSA + OSV advisories em <https://github.com/linnoff88-dev/FEC/security/advisories>.

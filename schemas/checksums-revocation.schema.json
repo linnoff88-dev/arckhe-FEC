@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://inematds.github.io/FEC/schemas/checksums-revocation.schema.json",
+  "$id": "https://linnoff88-dev.github.io/
   "title": "FEC Release Checksum Revocation List",
   "description": "Revoked release artifacts (zip, wheel, etc.). Consumed by audit-evals.py and synthetic-check.py.",
   "type": "object",

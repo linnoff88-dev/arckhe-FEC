@@ -1,8 +1,8 @@
 # PLAN.md — Formação de Engenharia de Contexto (FEC)
 
-**Repo alvo:** github.com/inematds/FEC
+**Repo alvo:** github.com/linnoff88-dev/FEC
 **Release alvo:** v1.0.0 — maio/2026 (MVP definido), com tracks pós-lançamento explicitamente rotuladas
-**Formato:** INEMA.CLUB (HTML estáticas, Tailwind, dark/light), seguindo `references/MASTER_COMPLETO.md`
+**Formato:** ARCKHÉ AI (HTML estáticas, Tailwind, dark/light), seguindo `references/MASTER_COMPLETO.md`
 **Idioma:** PT-BR
 **Estilo:** padrões **provider-neutral primeiro**, exemplos canônicos em Python; adaptadores Anthropic/OpenAI/OSS apenas onde a capacidade é específica
 **Volume v1.0:** 6 trilhas, **10 módulos GA** + **4 módulos rotulados "beta/pós-lançamento"** + **3 projetos GA** (P1, P2, P5) + 2 projetos opcionais
@@ -44,7 +44,7 @@
 18. **Toda página de módulo tem 7 seções obrigatórias** (alinhadas a `references/MASTER_COMPLETO.md`):
     1. abertura com objetivo de aprendizagem mensurável (ligado a item do harness, item 30);
     2. **conteúdo principal em seções ricas** (não todo conteúdo dentro de "tópicos expansíveis" — tópicos expansíveis são para sub-blocos, conforme MASTER);
-    3. ≥6 sub-tópicos expansíveis com as 3 subsessões INEMA ("O que é" / "Por que aprender" / "Conceitos-chave");
+    3. ≥6 sub-tópicos expansíveis com as 3 subsessões ARCKHÉ ("O que é" / "Por que aprender" / "Conceitos-chave");
     4. ≥3 ilustrações de tipos diferentes (item 25);
     5. exemplo de código mínimo executável (provider-neutral; adaptadores linkados);
     6. exercício hands-on com teste automatizado (item 38);
@@ -82,7 +82,7 @@
 
 29. **Cada módulo tem ≥3 ilustrações de tipos diferentes:** (a) diagrama de arquitetura/fluxo; (b) comparação visual antes/depois ou "ruim vs. bom"; (c) tabela de decisão ou matriz. Bloqueia entrega.
 30. **Mermaid pré-renderizado em build, não em runtime.** Pipeline (`scripts/render-diagrams.sh`) usa `@mermaid-js/mermaid-cli` para gerar **dois SVGs** por diagrama (`<id>.dark.svg`, `<id>.light.svg`); HTML troca via CSS `prefers-color-scheme` ou data-attribute do toggle. Resolve adaptação ao tema, falha de rede no aluno e CSP.
-31. **Tailwind: build local, não CDN.** `tailwindcss` no devDependencies → CSS purificado (`assets/css/inema.css`) versionado e servido localmente. CDN só em modo dev. Garante release zip funcional offline.
+31. **Tailwind: build local, não CDN.** `tailwindcss` no devDependencies → CSS purificado (`assets/css/ARCKHÉ.css`) versionado e servido localmente. CDN só em modo dev. Garante release zip funcional offline.
 32. **Biblioteca de diagramas reutilizáveis** em `assets/diagrams/`: "anatomia da mensagem", "fluxo RAG", "loop ReAct", "hierarquia de memória", "ciclo de eval". Versionados.
 33. **Acessibilidade:** todo SVG/diagrama tem `<title>` e `aria-label`; tabelas têm `<caption>`; informação nunca só na cor (cor + ícone/texto). axe-core no CI scheduled.
 34. **Release zip auditado:** workflow desconecta rede e abre `index.html` em headless Chromium; falha quebra release.
@@ -91,7 +91,7 @@
     - **JSON do quiz** (`quizzes/*.json`) tem `quiz.schema.json` validado; texto renderizado com `textContent`/template escapado, nunca `innerHTML` direto. Build falha em campo não-string ou tag suspeita.
     - **SVGs** (Mermaid pré-renderizado e ilustrações) passam por **svg-hush** ou DOMPurify modo SVG: removem `<script>`, `foreignObject`, `on*`, referências externas (`href` para http(s) externo bloqueado). `scripts/sanitize-svg.py` no build.
     - **CSP estrita** servida via `<meta http-equiv="Content-Security-Policy">` em todas as páginas: `default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; frame-src 'self'; base-uri 'none'; form-action 'none'`. Sem `unsafe-inline` nem `unsafe-eval`. Nada de scripts externos (Tailwind/Mermaid são build-time, item 30-31).
-    - **Iframes de modal** (item 7 do MASTER INEMA): `sandbox="allow-same-origin"` (sem `allow-scripts`); `src` validado contra allowlist relativa do repo.
+    - **Iframes de modal** (item 7 do MASTER ARCKHÉ): `sandbox="allow-same-origin"` (sem `allow-scripts`); `src` validado contra allowlist relativa do repo.
     - **CI:** `lint-content.py` quebra em `<script>`, `on\w+=`, `javascript:`, `<iframe` sem `sandbox`; teste de aceitação injeta payloads conhecidos (XSS cheat-sheet) em fixtures e confirma que sanitização neutraliza; release zip verifica CSP via Playwright.
 
 ## 8. Profundidade técnica (anti-superficialidade)
@@ -109,7 +109,7 @@
 
 ## 10. Estrutura do repositório FEC
 
-42. **Layout** (alinhado ao formato INEMA):
+42. **Layout** (alinhado ao formato ARCKHÉ):
     ```
     FEC/
     ├── README.md                  # vitrine: objetivo, mapa Mermaid das trilhas, badges, "comece aqui"
@@ -127,7 +127,7 @@
     ├── releases/v<X.Y.Z>/lockfile.toml
     ├── CODEOWNERS, .gitleaks.toml
     ├── LICENSE (CC-BY-SA 4.0 conteúdo) + LICENSE-CODE (MIT) + LICENSES-THIRD-PARTY.md
-    ├── index.html                 # landing INEMA
+    ├── index.html                 # landing ARCKHÉ
     ├── curso/trilha[1-6]/{index.html, modulo-X-Y.html}
     ├── fec_sdk/                   # cliente abstrato + adaptadores
     ├── exemplos/<modulo>/{neutro.py, anthropic.py, openai.py, oss.py}
@@ -137,7 +137,7 @@
     ├── quizzes/*.json
     ├── evals/v1/{datasets/, judges/, runs/, BUDGETS.md, CHANGELOG.md}
     ├── fixtures/                  # datasets pequenos redistribuíveis
-    ├── assets/{css/inema.css, diagrams/{src/, *.dark.svg, *.light.svg}, img/}
+    ├── assets/{css/ARCKHÉ.css, diagrams/{src/, *.dark.svg, *.light.svg}, img/}
     ├── bibliografia/T<n>.md
     ├── scripts/{validate.py, lint-content.py, build-quiz.py, render-diagrams.sh, build-glossary.py, smoke-providers.py, freeze-evals.py, audit-evals.py, sanitize-svg.py, redact.py, check-budgets.py, build-compat.py, dashboard.py, check-killswitch-age.py, check-rc-gates.py, audit-pages.py, synthetic-check.py, validate-schemas.py, render-docs.py, rollback-pages.py, sign-manifest.py}
     └── .github/workflows/{ci-fast.yml, ci-scheduled.yml, release.yml}
@@ -149,7 +149,7 @@
 ## 11. Pipeline de CI (split fast/scheduled, realista)
 
 46. **`ci-fast.yml` (PR e push, alvo <90s):**
-    - `validate.py` (estrutura INEMA: 6 sub-tópicos, 3 subsessões, link INEMA, light-mode CSS, badge GA/beta) — bloqueia.
+    - `validate.py` (estrutura ARCKHÉ: 6 sub-tópicos, 3 subsessões, link ARCKHÉ, light-mode CSS, badge GA/beta) — bloqueia.
     - link checker INTERNO (links relativos do repo) — bloqueia.
     - lint Python dos exemplos/exercícios (ruff) + `pytest` em `exercicios/*/test.py` mockados — bloqueia.
     - **contract tests dos providers** (mocks gravados via `respx`/VCR, sem rede) — bloqueia.
@@ -202,11 +202,11 @@
 
 50. **Protocolo de peer review:**
     - **2 revisores por trilha** (≥1 sênior na área específica). Lista nomeada em `REVISORES.md`.
-    - **Perfil mínimo:** experiência em produção com LLM ≥1 ano, ou autoria de paper/post relevante na área. Curadoria do INEMA.
+    - **Perfil mínimo:** experiência em produção com LLM ≥1 ano, ou autoria de paper/post relevante na área. Curadoria do ARCKHÉ.
     - **Rubrica padrão** (`REVIEW-RUBRIC.md`): correção técnica, clareza, exercícios reproduzíveis, refs adequadas. Resposta sim/não por critério com comentário.
     - **SLA:** 7 dias úteis após receber bundle PDF + repo tag.
     - **Freeze date:** 14 dias antes do release; após freeze, só hot-fixes.
-    - **Compensação:** menção em `REVISORES.md` + voucher do INEMA (definir antes do convite).
+    - **Compensação:** menção em `REVISORES.md` + voucher do ARCKHÉ (definir antes do convite).
 51. **Fallback se revisor falha:** trilha sem assinatura suficiente é publicada como `beta` em vez de `GA`, sinalizada no índice. Não bloqueia o release inteiro.
 
 ## 13. Ollama / caminho gratuito (com matriz testada)
@@ -253,7 +253,7 @@
 
 ## 16. Lançamento, manutenção e governança
 
-68. **Anúncio em maio/2026:** post no blog INEMA + LinkedIn + Twitter/X com mapa visual. Sem hype ("definitivo", "tudo o que você precisa"). Linkar bibliografia e harness para credibilidade.
+68. **Anúncio em maio/2026:** post no blog ARCKHÉ + LinkedIn + Twitter/X com mapa visual. Sem hype ("definitivo", "tudo o que você precisa"). Linkar bibliografia e harness para credibilidade.
 69. **Métricas pós-lançamento (`MEDIDAS.md`):** stars, issues abertas/fechadas/triadas, PRs, completion rate via formulário opcional, erratas. Revisão semestral; thread de retrospectiva pública.
 70. **Plano de updates:** trimestral curto (atualiza `MODELOS.md`, links externos quebrados, errata); anual maior (módulo afetado por mudança técnica significativa) — documentado no CHANGELOG.
 71. **Governança de issues:** templates fixos, triagem semanal, label `errata`/`duvida`/`sugestao`/`beta-feedback`, owner rotativo.
@@ -301,7 +301,7 @@
       - **Rollback de uma versão ruim** (`scripts/rollback-pages.py`):
         - opção A — **swap do alias:** `/latest/` passa a apontar para a última versão GA boa (PR no branch `gh-pages` editando o redirect); URLs diretas `/v1.0.0/...` continuam servindo, mas cada página GA inclui **shell de deprecação carregado dinamicamente do `/status/banners.json`** (assinado) que injeta banner "esta versão foi deprecada, ir para /latest/".
         - opção B — **shell global de deprecação:** se SEV-1 grave, `rollback-pages.py` reescreve **apenas `index.html` de cada `vX.Y.Z` ruim** para shell mínimo "esta versão foi retirada, ir para /latest/". Mantém URLs vivos sem servir conteúdo comprometido.
-      - **Auditoria:** `release.yml` gera `pages/v1.0.0/checksums.txt`; `audit-pages.py` baixa `https://inematds.github.io/FEC/v1.0.0/...` e diffa contra checksums; mismatch (drift, rebuild não autorizado) bloqueia promoção e dispara SEV-1.
+      - **Auditoria:** `release.yml` gera `pages/v1.0.0/checksums.txt`; `audit-pages.py` baixa `https://linnoff88-dev.github.io/ e diffa contra checksums; mismatch (drift, rebuild não autorizado) bloqueia promoção e dispara SEV-1.
       - **Promoção rc→stable:** alias `/latest/` só é flipado APÓS todos os gates de item 74 verdes; rebuild de `/status/` continua diário e não toca em `/v1.0.0/`.
       - **CSP — alinhada ao modelo de hosting** (corrige expectativa de header em GitHub Pages):
         - GitHub Pages **não permite** custom response headers para sites Pages padrão; CSP é declarada via `<meta http-equiv="Content-Security-Policy">` **na primeira tag dentro de `<head>`** (antes de qualquer `<link>`/`<style>`).
@@ -328,7 +328,7 @@
       - **Break-glass pré-autorizado:** owner secundário tem permissão prévia para (a) editar GitHub Release notes, (b) trocar `index.html` para incluir banner via `assets/banners/deprecation.html`, (c) yank no PyPI, (d) rotação de secrets — sem precisar acordar terceiros. Permissões documentadas em `BREAK-GLASS.md`; uso gera entrada de auditoria automática.
     - **SEV-2** (módulo GA com erro técnico que invalida exercício; benchmark errado; quebra de licença; provider deprecation que invalida lab; `auto-smoke` 2 dias seguidos red): **≤24h em horário comercial BR**, melhor-esforço fora.
     - **SEV-3** (errata de conteúdo, link quebrado, falha de a11y individual): **≤7 dias úteis.**
-77. **Owner on-call rotativo** entre maintainers (rotação semanal em `ROTATION.md`); janela pós-release tem **primário + secundário** explícitos; SEV-1/2 acionam owner via canal acordado (Discord/Slack do INEMA, definido em `RUNBOOK.md`); alarme via webhook do GitHub Actions; **PagerDuty/equivalente opcional** para SEV-1 na janela estendida — se a equipe não comportar, SLA SEV-1 fora da janela é narrado honestamente como ≤8h.
+77. **Owner on-call rotativo** entre maintainers (rotação semanal em `ROTATION.md`); janela pós-release tem **primário + secundário** explícitos; SEV-1/2 acionam owner via canal acordado (Discord/Slack do ARCKHÉ, definido em `RUNBOOK.md`); alarme via webhook do GitHub Actions; **PagerDuty/equivalente opcional** para SEV-1 na janela estendida — se a equipe não comportar, SLA SEV-1 fora da janela é narrado honestamente como ≤8h.
 78. **Procedimento de rollback / yank de release ruim:**
     1. **Banner de deprecação** em `index.html` e `README.md` (PR rápido, label `release-incident`) — banner é template em `assets/banners/deprecation.html` com data, severidade, link para errata.
     2. **GitHub Release editado** para "⚠️ DEPRECATED — see vX.Y.Z" no título; assets antigos **renomeados** com sufixo `-DEPRECATED-DO-NOT-USE` (GitHub não permite delete de assets de Release tagged sem perda de auditoria, mas permite rename/edit).
@@ -344,7 +344,7 @@
     3. **Denylist em `COMPAT.md`:** seção `revoked_versions` (lista de `fec-sdk==X.Y.Z` revogadas com motivo, data, sucessor); `build-compat.py` remove combinações revogadas da matriz; `audit-evals.py` falha em qualquer release que liste versão revogada como suportada.
     4. **Patched release:** publica `X.Y.(Z+1)` com fix; release notes citam GHSA; lockfile do curso (`releases/v<X.Y.Z>/lockfile.toml`) atualizado para apontar para a versão patched.
     5. **Hard-fail em runtime — manifesto remoto assinado** (corrige limitação de wheel imutável):
-       - `fec_sdk` ao iniciar busca **`https://inematds.github.io/FEC/v1/revoked.json`** (manifesto público em `/status/` no Pages, ver item 74b) com `If-Modified-Since` + cache local em `~/.fec/revoked.cache.json` (TTL 24h, `max-age` honrado, fallback ao cache se rede falha).
+       - `fec_sdk` ao iniciar busca **`https://linnoff88-dev.github.io/ (manifesto público em `/status/` no Pages, ver item 74b) com `If-Modified-Since` + cache local em `~/.fec/revoked.cache.json` (TTL 24h, `max-age` honrado, fallback ao cache se rede falha).
        - Manifesto é **assinado** com chave do projeto (Sigstore/cosign keyless OU `minisign`); chave pública embutida no wheel; assinatura inválida → ignora cache, log warning, NÃO faz hard-fail (defesa contra DoS adversarial: atacante que sequestre Pages não pode bloquear todos os usuários).
        - Wheel também embute **lista mínima conhecida em build-time** (`revoked_versions.json` interna) — defesa de baseline; manifesto remoto **adiciona** a essa lista, não substitui.
        - Se versão atual está na lista (embutida OU remota assinada) → `import fec_sdk` levanta `RevokedVersionError` com link para upgrade.
@@ -448,7 +448,7 @@
 
 ---
 
-**Observação operacional:** este plano descreve **conteúdo curricular + pipeline de execução**. A estrutura HTML específica (cores, componentes, light mode) segue o formato INEMA.CLUB já estabelecido (skill `formato-curso`); na implementação, consultar `references/MASTER_COMPLETO.md` para não duplicar especificação visual.
+**Observação operacional:** este plano descreve **conteúdo curricular + pipeline de execução**. A estrutura HTML específica (cores, componentes, light mode) segue o formato ARCKHÉ AI já estabelecido (skill `formato-curso`); na implementação, consultar `references/MASTER_COMPLETO.md` para não duplicar especificação visual.
 
 ---
 
@@ -464,7 +464,7 @@
 - **HIGH 5 (workload por módulo inconsistente):** alvo reduzido a **2.5-4.5k palavras**, total 60-105 min, calibrado pelo **piloto T1.1** antes de produzir o resto; desafios marcados `opcional/avançado` (itens 17, 39).
 - **HIGH 6 (review externo não staffado):** seção 12 nova (itens 50-51) com perfil, lista nomeada, rubrica, SLA 7 dias, freeze 14 dias antes, compensação, **fallback de degradar para beta** se faltar assinatura.
 
-- **MED (formato INEMA ambíguo):** item 18 alinha conteúdo principal a "seções ricas" + sub-tópicos expansíveis para sub-blocos, conforme `MASTER_COMPLETO.md`. Plano não duplica spec visual (segue a skill `formato-curso`).
+- **MED (formato ARCKHÉ ambíguo):** item 18 alinha conteúdo principal a "seções ricas" + sub-tópicos expansíveis para sub-blocos, conforme `MASTER_COMPLETO.md`. Plano não duplica spec visual (segue a skill `formato-curso`).
 - **MED (Ollama hand-waved):** seção 13 nova (itens 52-54) com matriz testada de hardware/modelo; capacidades fora do OSS local marcadas e ensinadas com adaptador/mock.
 - **MED (durabilidade Tailwind/Mermaid CDN):** itens 30-31 mudam para **Tailwind buildado local** e **Mermaid pré-renderizado em build** (dois SVGs por diagrama, dark/light); item 34 audita release zip offline em headless Chromium.
 - **MED (Mermaid dark/light hand-waved):** resolvido pelo pré-render dual SVG (item 30) — sem dependência de re-render em runtime.
@@ -544,7 +544,7 @@
   2. distribuído como **asset do GitHub Pre-release `v1.0.0-rc.N`** + `1.0.0rcN` no TestPyPI só para tracking — RC real exercita o wheel `1.0.0` via lockfile com hash;
   3. promoção sobe os **mesmos arquivos** ao PyPI público sob `1.0.0` (first-write, sem overwrite);
   4. verificação pós-upload: `pip download` em ambiente limpo + recálculo de sha256/blake3 contra hashes auditados; mismatch → SEV-1 + yank imediato.
-- **HIGH 2 (`RevokedVersionError` embutido não protege wheels já instalados):** **item 79a.5 reescrito** — manifesto remoto **assinado** em `https://inematds.github.io/FEC/v1/revoked.json` (Sigstore/cosign keyless ou minisign), cache local `~/.fec/revoked.cache.json` com TTL 24h e `If-Modified-Since`, fallback ao cache em rede off; chave pública embutida no wheel; assinatura inválida não-bloqueia (defesa contra DoS por sequestro de Pages). **Limitação declarada honestamente em `SECURITY.md`:** wheel offline já instalado não recebe revogações novas — runtime é rede de segurança best-effort, não garantia. **Defesa primária firme:** lockfile + `compat.json` + `audit-evals.py` bloqueiam release que aponta para versão revogada.
+- **HIGH 2 (`RevokedVersionError` embutido não protege wheels já instalados):** **item 79a.5 reescrito** — manifesto remoto **assinado** em `https://linnoff88-dev.github.io/ (Sigstore/cosign keyless ou minisign), cache local `~/.fec/revoked.cache.json` com TTL 24h e `If-Modified-Since`, fallback ao cache em rede off; chave pública embutida no wheel; assinatura inválida não-bloqueia (defesa contra DoS por sequestro de Pages). **Limitação declarada honestamente em `SECURITY.md`:** wheel offline já instalado não recebe revogações novas — runtime é rede de segurança best-effort, não garantia. **Defesa primária firme:** lockfile + `compat.json` + `audit-evals.py` bloqueiam release que aponta para versão revogada.
 - **HIGH 3 (Pages não imutável/versionada → drift e rollback parcial):** **item 74a (Pages) reescrito** — paths versionados imutáveis: `/v1.0.0/`, `/v1.0.0-rc.N/`, `/latest/` (alias), `/status/` (separado, dashboard/revoked.json/synthetic). Deploy nunca sobrescreve `/vX.Y.Z/` existente. **`scripts/rollback-pages.py`** com duas opções: (A) swap do alias `/latest/` + shell de deprecação dinâmico via `/status/banners.json` assinado; (B) reescrita de `index.html` da versão ruim para shell mínimo de deprecação. Promoção rc→stable só flipa `/latest/` após gates verdes; `/status/` rebuilda diariamente sem tocar em `/v<X.Y.Z>/`.
 
 - **MED 1 (CSP via header inexistente em GitHub Pages):** **item 74a (Pages, sub-bullet CSP)** alinhado ao modelo — CSP via `<meta http-equiv>` na primeira tag dentro de `<head>`; `audit-pages.py` valida via parsing do HTML servido (string match contra `assets/csp/policy.txt` pinado); synthetic monitor verifica meta CSP, não header (declarado em `RUNBOOK.md`). **`HOSTING-DECISION.md`** documenta roadmap: se headers reais forem necessários (HSTS, X-Frame-Options), migrar para Cloudflare Pages / Netlify antes de v1.1.

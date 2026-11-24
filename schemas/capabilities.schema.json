@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://inematds.github.io/FEC/schemas/capabilities.schema.json",
+  "$id": "https://linnoff88-dev.github.io/
   "title": "FEC Provider Capabilities Matrix",
   "description": "capability \u00d7 provider \u00d7 status. Generates CAPACIDADES.md.",
   "type": "object",

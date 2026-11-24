@@ -61,4 +61,4 @@ ArXiv abstracts e DOIs em `bibliografia/T<n>.md` são links — não copiamos te
 
 ## Reportar uso indevido
 
-Se você é detentor de direitos e identificou uso sem licença adequada: ver `runbooks/dataset-license-violation.md` e contate `security@inema.club`.
+Se você é detentor de direitos e identificou uso sem licença adequada: ver `runbooks/dataset-license-violation.md` e contate `security@ARCKHÉ AI`.

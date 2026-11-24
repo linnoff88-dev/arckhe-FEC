@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://inematds.github.io/FEC/schemas/models.schema.json",
+  "$id": "https://linnoff88-dev.github.io/
   "title": "FEC Pinned Models",
   "description": "Source of truth for pinned model identifiers per role per release. Generates MODELOS.md.",
   "type": "object",

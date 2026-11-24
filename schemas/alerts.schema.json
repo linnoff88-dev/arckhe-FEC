@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://inematds.github.io/FEC/schemas/alerts.schema.json",
+  "$id": "https://linnoff88-dev.github.io/
   "title": "FEC Alert Mapping",
   "description": "metric \u2192 severity \u2192 owner \u2192 action. Generates ALERTS.md and is consumed by dashboard.py.",
   "type": "object",

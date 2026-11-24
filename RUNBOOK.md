@@ -17,7 +17,7 @@
 - Janela pós-release tem **primário + secundário** explícitos.
 - Maintainer pode declinar com ≥48h de antecedência.
 - Handoff escrito entre rotações em [`HANDOFF.md`](./HANDOFF.md).
-- Canal acordado: **Discord do INEMA** (configurar webhook do GitHub Actions para o canal `#fec-oncall`).
+- Canal acordado: **Discord do ARCKHÉ** (configurar webhook do GitHub Actions para o canal `#fec-oncall`).
 
 ## Permissões pré-autorizadas (break-glass)
 

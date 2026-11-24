@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""build-trilhas.py — gera os 6 index.html das trilhas no padrão INEMA.
+"""build-trilhas.py — gera os 6 index.html das trilhas no padrão ARCKHÉ.
 
 Cards de módulo com 3 sub-tópicos preview + botão "Ver Completo".
 """
@@ -18,7 +18,7 @@ CSP = "default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 's
 
 
 def _css_version() -> str:
-    css = REPO / "assets/css/inema.css"
+    css = REPO / "assets/css/ARCKHÉ.css"
     if not css.exists():
         return "dev"
     import hashlib
@@ -126,7 +126,7 @@ def render_trilha(num: int) -> str:
     cards = []
     modais = []
     for idx, m in enumerate(modulos_da_trilha):
-        # MOSTRA TODOS os 6 sub-tópicos (regra crítica INEMA: card no index = todos visíveis)
+        # MOSTRA TODOS os 6 sub-tópicos (regra crítica ARCKHÉ: card no index = todos visíveis)
         topicos_html = []
         for i, tp in enumerate(m["topicos"], 1):
             topicos_html.append(f"""
@@ -223,7 +223,7 @@ def render_trilha(num: int) -> str:
   <meta http-equiv="Content-Security-Policy" content="{CSP}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>T{num} — {t['nome']} · FEC</title>
-  <link rel="stylesheet" href="../../assets/css/inema.css?v={CSS_V}">
+  <link rel="stylesheet" href="../../assets/css/ARCKHÉ.css?v={CSS_V}">
   <meta name="trilha" content="T{num}">
   <meta name="status" content="GA">
 </head>
@@ -237,7 +237,7 @@ def render_trilha(num: int) -> str:
           <span class="text-zinc-400 text-sm hidden xl:inline">Engenharia de Contexto</span>
         </a>
         <span class="text-zinc-700">|</span>
-        <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium transition">INEMA.CLUB</a>
+        <a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium transition">ARCKHÉ AI</a>
       </div>
       <div class="hidden md:flex items-center gap-1.5 text-xs flex-1 justify-center overflow-x-auto px-4">
         <a href="../trilha1/index.html" class="px-2.5 py-1 rounded border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 transition whitespace-nowrap{' bg-emerald-500/20' if num==1 else ''}" title="T1 Fundamentos">T1 · Fundamentos</a>
@@ -249,7 +249,7 @@ def render_trilha(num: int) -> str:
       </div>
       <div class="flex items-center gap-3 text-sm flex-shrink-0">
         <a href="../../index.html" class="md:hidden text-zinc-400">← Trilhas</a>
-        <a href="https://github.com/inematds/FEC" class="hidden lg:inline text-zinc-400 hover:text-primary transition">GitHub</a>
+        <a href="https://github.com/linnoff88-dev/FEC" class="hidden lg:inline text-zinc-400 hover:text-primary transition">GitHub</a>
       </div>
     </div>
   </nav>
@@ -331,7 +331,7 @@ def render_trilha(num: int) -> str:
   <footer class="border-t border-zinc-800 mt-16">
     <div class="max-w-6xl mx-auto px-6 py-8 text-sm text-zinc-500 flex flex-wrap items-center justify-between gap-4">
       <div>
-        <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> ·
+        <a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300">ARCKHÉ AI</a> ·
         Conteúdo CC BY-SA 4.0 · Código MIT
       </div>
       <div class="flex gap-6">
@@ -341,7 +341,7 @@ def render_trilha(num: int) -> str:
     </div>
   </footer>
 
-  <script src="../../assets/js/inema.js?v={CSS_V}" defer></script>
+  <script src="../../assets/js/ARCKHÉ.js?v={CSS_V}" defer></script>
 
 </body>
 </html>

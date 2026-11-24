@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://inematds.github.io/FEC/schemas/budgets.schema.json",
+  "$id": "https://linnoff88-dev.github.io/
   "title": "FEC Budgets",
   "description": "Coherent per-tier and per-provider budget definitions for smoke and release workflows. Generates BUDGETS.md.",
   "type": "object",

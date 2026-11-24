@@ -40,7 +40,7 @@ twine yank fec-sdk==X.Y.Z --reason "Brief reason; see GHSA-..."
       "reason": "security",
       "revoked_at": "2026-MM-DDTHH:MM:SSZ",
       "successor": "X.Y.(Z+1)",
-      "advisory_url": "https://github.com/inematds/FEC/security/advisories/GHSA-..."
+      "advisory_url": "https://github.com/linnoff88-dev/FEC/security/advisories/GHSA-..."
     }
   ]
 }
@@ -53,7 +53,7 @@ twine yank fec-sdk==X.Y.Z --reason "Brief reason; see GHSA-..."
 - PR com fix.
 - Build determinístico via `release.yml`.
 - Lockfile atualizado.
-- Manifesto remoto `https://inematds.github.io/FEC/v1/revoked.json` regenerado e re-assinado.
+- Manifesto remoto `https://linnoff88-dev.github.io/ regenerado e re-assinado.
 
 ### 5. Manifesto remoto assinado
 

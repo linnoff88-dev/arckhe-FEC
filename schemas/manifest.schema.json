@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://inematds.github.io/FEC/schemas/manifest.schema.json",
+  "$id": "https://linnoff88-dev.github.io/
   "title": "FEC Eval Run Manifest",
   "description": "Content-addressed run manifest under evals/v1/runs/<run-id>/manifest.json. Records what was tested with what.",
   "type": "object",

@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""validate.py — valida estrutura INEMA dos HTML de módulos. PLAN itens 13-18, 42.
+"""validate.py — valida estrutura ARCKHÉ dos HTML de módulos. PLAN itens 13-18, 42.
 
 Regras (bloqueantes em ci-fast):
 - ≥6 sub-tópicos expansíveis (`<details class="topico-expansivel">`).
-- Cada sub-tópico tem 3 subsessões INEMA: "O que é", "Por que aprender", "Conceitos-chave".
+- Cada sub-tópico tem 3 subsessões ARCKHÉ: "O que é", "Por que aprender", "Conceitos-chave".
 - Indicador de tópico é número em círculo (NUNCA seta `▶`).
-- Link INEMA.CLUB presente com `text-sky-400`.
+- Link ARCKHÉ AI presente com `text-sky-400`.
 - Light mode CSS presente (`@media (prefers-color-scheme: light)`).
 - Badge GA/beta presente no front-matter.
-- Botão sempre `justify-start` (regra crítica INEMA).
+- Botão sempre `justify-start` (regra crítica ARCKHÉ).
 - "Quando NÃO usar" presente em módulo de padrão técnico.
 
 Skip: index.html da raiz e índices de trilha (têm estrutura diferente).
@@ -29,25 +29,25 @@ def _has_six_topics(html: str) -> bool:
     return len(re.findall(r'<details[^>]*topico-expansivel', html)) >= 6
 
 
-def _has_three_inema_subsections(html: str) -> bool:
+def _has_three_ARCKHÉ_subsections(html: str) -> bool:
     needs = ["O que é", "Por que aprender", "Conceitos-chave"]
     return all(s.lower() in html.lower() for s in needs)
 
 
-def _has_inema_link(html: str) -> bool:
-    return bool(re.search(r'text-sky-400[^"]*"[^>]*>[^<]*INEMA\.CLUB', html, re.I)) or \
-           bool(re.search(r'INEMA\.CLUB[^<]*</a>', html, re.I)) and 'text-sky-400' in html
+def _has_ARCKHÉ_link(html: str) -> bool:
+    return bool(re.search(r'text-sky-400[^"]*"[^>]*>[^<]*ARCKHÉ\.CLUB', html, re.I)) or \
+           bool(re.search(r'ARCKHÉ\.CLUB[^<]*</a>', html, re.I)) and 'text-sky-400' in html
 
 
 def _has_light_mode(html: str) -> bool:
     # Em v1.0 light mode foi desabilitado (ver HOSTING-DECISION.md). Esta verificação
-    # agora aceita: (a) link para inema.css (CSS fonte tem `color-scheme: dark`),
+    # agora aceita: (a) link para ARCKHÉ.css (CSS fonte tem `color-scheme: dark`),
     # (b) presença de meta color-scheme, ou (c) regra inline.
     if "color-scheme" in html:
         return True
     if "prefers-color-scheme" in html:
         return True
-    if "inema.css" in html:
+    if "ARCKHÉ.css" in html:
         return True  # CSS fonte declara color-scheme: dark — é cobertura suficiente
     return False
 
@@ -68,12 +68,12 @@ def validate_module(path: Path) -> list[str]:
 
     if not _has_six_topics(html):
         errors.append("≥6 sub-tópicos expansíveis (PLAN item 18.3) — encontrados <6")
-    if not _has_three_inema_subsections(html):
-        errors.append('Subsessões INEMA "O que é / Por que aprender / Conceitos-chave" ausentes')
+    if not _has_three_ARCKHÉ_subsections(html):
+        errors.append('Subsessões ARCKHÉ "O que é / Por que aprender / Conceitos-chave" ausentes')
     if ARROW_RE.search(html):
         errors.append('Indicador de tópico usa seta (▶ ou similar) — REGRA CRÍTICA: usar número em círculo')
-    if not _has_inema_link(html):
-        errors.append("Link INEMA.CLUB com text-sky-400 ausente")
+    if not _has_ARCKHÉ_link(html):
+        errors.append("Link ARCKHÉ AI com text-sky-400 ausente")
     if not _has_light_mode(html):
         errors.append("Light mode CSS (@media prefers-color-scheme: light) ausente")
     if not _has_status_badge(html):

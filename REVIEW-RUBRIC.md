@@ -39,7 +39,7 @@ Comentários:
 
 ### 3. Clareza pedagógica
 
-Explicações são claras? Subseções INEMA ("O que é / Por que aprender / Conceitos-chave") cumprem o papel? Aluno consegue seguir sem ficar travado?
+Explicações são claras? Subseções ARCKHÉ ("O que é / Por que aprender / Conceitos-chave") cumprem o papel? Aluno consegue seguir sem ficar travado?
 
 ```
 [ ] ✅  [ ] ⚠️  [ ] ❌
@@ -129,5 +129,5 @@ Tempo investido: <h>
 
 ## Compensação
 
-[ ] Voucher INEMA recebido em YYYY-MM-DD.
+[ ] Voucher ARCKHÉ recebido em YYYY-MM-DD.
 [ ] Crédito em `REVISORES.md` confirmado.

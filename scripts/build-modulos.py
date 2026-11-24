@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""build-modulos.py — gera os 14 HTMLs de módulo no padrão INEMA a partir de modulos_spec.py.
+"""build-modulos.py — gera os 14 HTMLs de módulo no padrão ARCKHÉ a partir de modulos_spec.py.
 
 Padrão seguido: MASTER_COMPLETO.md (skill formato-curso) — header gradiente,
 breadcrumb, 6 seções ricas com número grande, boxes coloridos (Conceito Principal,
@@ -26,7 +26,7 @@ CSP = "default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 's
 
 def _css_version() -> str:
     """Hash curto do CSS atual — usado em ?v= para cache busting."""
-    css = REPO / "assets/css/inema.css"
+    css = REPO / "assets/css/ARCKHÉ.css"
     if not css.exists():
         return "dev"
     import hashlib
@@ -253,7 +253,7 @@ def render_modulo(m: dict) -> str:
   <meta http-equiv="Content-Security-Policy" content="{CSP}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{m["numero"]} {m["titulo"]} · FEC T{m["trilha"]}</title>
-  <link rel="stylesheet" href="../../assets/css/inema.css?v={CSS_V}">
+  <link rel="stylesheet" href="../../assets/css/ARCKHÉ.css?v={CSS_V}">
   <meta name="trilha" content="T{m['trilha']}">
   <meta name="status" content="{m['status']}">
   <meta name="modulo" content="{m['id']}">
@@ -263,7 +263,7 @@ def render_modulo(m: dict) -> str:
 </head>
 <body class="bg-zinc-950 text-zinc-100 font-sans antialiased min-h-screen" data-status="{m['status']}">
 
-  <!-- NAV GLOBAL — INEMA.CLUB ao lado do logo separado por | (regra MASTER 1.4) -->
+  <!-- NAV GLOBAL — ARCKHÉ AI ao lado do logo separado por | (regra MASTER 1.4) -->
   <nav class="sticky top-0 z-50 bg-zinc-950/95 backdrop-blur border-b border-zinc-800">
     <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
       <div class="flex items-center gap-3 flex-shrink-0">
@@ -272,7 +272,7 @@ def render_modulo(m: dict) -> str:
           <span class="text-zinc-400 text-sm hidden xl:inline">Engenharia de Contexto</span>
         </a>
         <span class="text-zinc-700">|</span>
-        <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium transition">INEMA.CLUB</a>
+        <a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium transition">ARCKHÉ AI</a>
       </div>
       <div class="hidden md:flex items-center gap-1.5 text-xs flex-1 justify-center overflow-x-auto px-4">
         <a href="../trilha1/index.html" class="px-2.5 py-1 rounded border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 transition whitespace-nowrap{' bg-emerald-500/20' if m['trilha']==1 else ''}" title="T1 Fundamentos">T1 · Fundamentos</a>
@@ -284,7 +284,7 @@ def render_modulo(m: dict) -> str:
       </div>
       <div class="flex items-center gap-3 text-sm flex-shrink-0">
         <a href="index.html" class="md:hidden text-{cor}-400">← T{m['trilha']}</a>
-        <a href="https://github.com/inematds/FEC" class="hidden lg:inline text-zinc-400 hover:text-primary transition">GitHub</a>
+        <a href="https://github.com/linnoff88-dev/FEC" class="hidden lg:inline text-zinc-400 hover:text-primary transition">GitHub</a>
       </div>
     </div>
   </nav>
@@ -379,7 +379,7 @@ def render_modulo(m: dict) -> str:
   <footer class="border-t border-zinc-800 mt-16">
     <div class="max-w-6xl mx-auto px-6 py-8 text-sm text-zinc-500 flex flex-wrap items-center justify-between gap-4">
       <div>
-        <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> ·
+        <a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300">ARCKHÉ AI</a> ·
         Conteúdo CC BY-SA 4.0 · Código MIT · Atualizado em 2026-05-02
       </div>
       <div class="flex gap-6">
@@ -389,7 +389,7 @@ def render_modulo(m: dict) -> str:
     </div>
   </footer>
 
-  <script src="../../assets/js/inema.js?v={CSS_V}" defer></script>
+  <script src="../../assets/js/ARCKHÉ.js?v={CSS_V}" defer></script>
 
 </body>
 </html>

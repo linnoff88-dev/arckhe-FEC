@@ -7,7 +7,7 @@
 - `gitleaks` bloqueou em PR (especialmente em PR de maintainer — alerta `GITLEAKS-MAINTAINER-PR`).
 - Aviso de `secret scanning` do GitHub.
 - API key aparece em log do CI (apesar de `redact.py`).
-- Reporter via `security@inema.club` ou GitHub Security Advisory.
+- Reporter via `security@ARCKHÉ AI` ou GitHub Security Advisory.
 
 ## Diagnóstico em 5 min
 

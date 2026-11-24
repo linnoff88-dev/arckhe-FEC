@@ -28,7 +28,7 @@ from fec_sdk.errors import IncompatibleVersionError, RevokedVersionError
 
 _log = logging.getLogger("fec_sdk.check_compat")
 
-REMOTE_MANIFEST_URL = "https://inematds.github.io/FEC/v1/revoked.json"
+REMOTE_MANIFEST_URL = "https://linnoff88-dev.github.io/
 CACHE_PATH = Path.home() / ".fec" / "revoked.cache.json"
 CACHE_TTL_SECONDS = 24 * 60 * 60
 
