@@ -1,6 +1,6 @@
 # Modelos pinados em smoke (`auto-smoke`, `production-smoke`)
 
-> _⚠️ Source-of-truth canônica: [`models.json`](./models.json). Este Markdown é referência humana — para automação, use o JSON._
+> _⚠️ Source-of-truth canônica: [`models.json`](./models.json). Este Markdown é referência humana — para automaçêo, use o JSON._
 
 Smoke tests usam exatamente os modelos pinados em `models.json` para o release atual. Mudança aqui exige bump em `HASHES.lock` (item 28a).
 

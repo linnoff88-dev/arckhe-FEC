@@ -2,21 +2,21 @@
 
 > _Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) + [SemVer](https://semver.org/lang/pt-BR/)._
 
-## [Não publicado]
+## [Nêo publicado]
 
 ### Added
 - Plano completo (`PLAN.md`) com 95 itens, 17 seções, endurecido por 5 rodadas adversariais (senior-eng, security/data-integrity, ops/SRE × 2 deepenings).
 - Relatório do loop de planejamento (`RELATORIO-CLAUDEX.md`).
 - Scaffolding inicial do repo:
   - Estrutura de diretórios completa (curso/, fec_sdk/, evals/v1/, schemas/, scripts/, runbooks/, etc.).
-  - 8 schemas JSON canônicos (`schemas/*.schema.json`) — source of truth para automação.
+  - 8 schemas JSON canônicos (`schemas/*.schema.json`) — source of truth para automaçêo.
   - 8 manifestos canônicos (`evals/v1/*.json`).
   - 4 workflows GitHub Actions (`ci-fast`, `ci-scheduled`, `ci-extended-compat`, `release`, `auto-smoke-watchdog`).
-  - Documentação foundational: README, ESCOPO, PRE-REQUISITOS, SECURITY, RUNBOOK.
+  - Documentaçêo foundational: README, ESCOPO, PRE-REQUISITOS, SECURITY, RUNBOOK.
   - Licenças dual: CC BY-SA 4.0 (conteúdo) + MIT (código).
   - Landing page em formato ARCKHÉ (`index.html`) com mapa visual das 6 trilhas.
   - CSP policy pinada (`assets/csp/policy.txt`).
-  - CODEOWNERS com proteção em workflows, evals/, manifestos JSON.
+  - CODEOWNERS com proteçêo em workflows, evals/, manifestos JSON.
 
 ### Added (Chunk 2 + 3)
 - **`fec_sdk/`** completo:
@@ -47,13 +47,13 @@
 - **Esqueletos das trilhas T2-T6** (`index.html` com cards de módulos).
 - **Pipeline Python/Node:** `pyproject.toml`, `package.json`, `tailwind.config.js`, `assets/css/ARCKHÉ.src.css` (com light mode override).
 - **10 runbooks** em `runbooks/` cobrindo todas as classes de falha.
-- **Documentação operacional:** `RELEASE-INCIDENT.md`, `ROTATION.md`, `HANDOFF.md`, `BREAK-GLASS.md`, `HOSTING-DECISION.md`, `OLLAMA-MATRIZ.md`, `MEDIDAS.md`, `REVISORES.md`, `REVIEW-RUBRIC.md`, `LICENSES-THIRD-PARTY.md`, `SBOM.md`, `SECURITY-SANDBOX.md`, `SAFETY-INJECTION.md`, `BUDGETS-EXCEPTIONS.md`, `COMPAT-RETIRED.md`.
+- **Documentaçêo operacional:** `RELEASE-INCIDENT.md`, `ROTATION.md`, `HANDOFF.md`, `BREAK-GLASS.md`, `HOSTING-DECISION.md`, `OLLAMA-MATRIZ.md`, `MEDIDAS.md`, `REVISORES.md`, `REVIEW-RUBRIC.md`, `LICENSES-THIRD-PARTY.md`, `SBOM.md`, `SECURITY-SANDBOX.md`, `SAFETY-INJECTION.md`, `BUDGETS-EXCEPTIONS.md`, `COMPAT-RETIRED.md`.
 - **6 MDs gerados** a partir de JSON: `COMPAT.md`, `MODELOS.md`, `CAPACIDADES.md`, `ALERTS.md`, `RISK-ACCEPTANCE.md`, `CHECKSUMS-REVOCATION.md`.
 - **3 projetos GA com rubrics:** `projetos/{P1,P2,P5}/{README,RUBRIC}.md`.
 - **Glossário inicial** com 30+ termos derivados dos módulos.
 - **Postmortems template** em `postmortems/README.md`.
 - **Lockfile inicial** em `releases/v1.0.0/lockfile.toml` (hashes pendentes — preenchidos pelo `release.yml`).
-- **Banner de deprecação** em `assets/banners/deprecation.html` para uso em incidentes.
+- **Banner de deprecaçêo** em `assets/banners/deprecation.html` para uso em incidentes.
 - **Dataset golden inicial** `evals/v1/datasets/FEC-GS-RAG-v1.json` (3/30 — restantes na fase de conteúdo).
 - **Judge spec** `evals/v1/judges/groundedness.md`.
 
@@ -81,4 +81,4 @@
 
 ## v1.0.0 — maio/2026 (alvo)
 
-Primeiro release público. Conteúdo a ser preenchido conforme execução do plano.
+Primeiro release público. Conteúdo a ser preenchido conforme execuçêo do plano.

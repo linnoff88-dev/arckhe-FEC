@@ -4,7 +4,7 @@
 # - Usa `uv pip compile` ou `pip-compile --generate-hashes`.
 # - Pinned exato + sha256 de cada wheel.
 #
-# Este arquivo NÃO deve ser editado à mão.
+# Este arquivo NêO deve ser editado à mêo.
 # Para upgrade: roda o script, commita resultado.
 
 [lockfile]
@@ -22,7 +22,7 @@ blake3 = "PENDING"
 sdist_sha256 = "PENDING"
 
 # Dependências runtime — versões e hashes pinados.
-# (Estes hashes serão preenchidos quando o release.yml rodar contra os índices PyPI reais.)
+# (Estes hashes serêo preenchidos quando o release.yml rodar contra os índices PyPI reais.)
 [[deps]]
 name = "httpx"
 version = "0.27.2"

@@ -1,6 +1,6 @@
 # COMPAT — Matriz de Compatibilidade
 
-> _⚠️ **Gerado de `evals/v1/compat.json`.** NÃO edite manualmente — mudanças no MD são sobrescritas. Edite o JSON via PR (CODEOWNERS protege)._
+> _⚠️ **Gerado de `evals/v1/compat.json`.** NêO edite manualmente — mudanças no MD sêo sobrescritas. Edite o JSON via PR (CODEOWNERS protege)._
 
 ## Janela de suporte
 
@@ -14,9 +14,9 @@
 
 ## Core combinations (testadas em ci-scheduled)
 
-_Nenhuma combinação registrada ainda._
+_Nenhuma combinaçêo registrada ainda._
 
 ## Extended combinations (semanais)
 
-_Nenhuma combinação registrada ainda._
+_Nenhuma combinaçêo registrada ainda._
 

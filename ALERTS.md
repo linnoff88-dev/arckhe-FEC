@@ -1,10 +1,10 @@
-# ALERTS — Mapeamento métrica → severidade → ação
+# ALERTS — Mapeamento métrica → severidade → açêo
 
-> _⚠️ **Gerado de `evals/v1/alerts.json`.** NÃO edite manualmente — mudanças no MD são sobrescritas. Edite o JSON via PR (CODEOWNERS protege)._
+> _⚠️ **Gerado de `evals/v1/alerts.json`.** NêO edite manualmente — mudanças no MD sêo sobrescritas. Edite o JSON via PR (CODEOWNERS protege)._
 
 Consumido pelo `dashboard.py` e pelos runbooks.
 
-| ID | Métrica | Condição | Sev | Owner | Ação | Runbook |
+| ID | Métrica | Condiçêo | Sev | Owner | Açêo | Runbook |
 |-----|---------|----------|-----|-------|------|---------|
 | `AUTO-SMOKE-FAIL-2D` | `auto_smoke.consecutive_failures` | >=2 consecutive scheduled runs failing | **SEV-2** | on-call-primary | Diagnose with runbooks/smoke-failure.md within 24h business hours. | [runbooks/smoke-failure.md](./runbooks/smoke-failure.md) |
 | `AUTO-SMOKE-MISSED` | `auto_smoke.last_run_age_hours` | >26h without a scheduled run (workflow silently disabled) | **SEV-2** | on-call-primary | Re-enable workflow and investigate. | [runbooks/smoke-failure.md](./runbooks/smoke-failure.md) |

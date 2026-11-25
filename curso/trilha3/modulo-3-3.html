@@ -32,7 +32,7 @@
         <a href="../trilha3/index.html" class="px-2.5 py-1 rounded border border-purple-500/30 text-purple-400 hover:bg-purple-500/20 transition whitespace-nowrap bg-purple-500/20" title="T3 RAG">T3 · RAG</a>
         <a href="../trilha4/index.html" class="px-2.5 py-1 rounded border border-amber-500/30 text-amber-400 hover:bg-amber-500/20 transition whitespace-nowrap" title="T4 Tools/Agentes">T4 · Agentes</a>
         <a href="../trilha5/index.html" class="px-2.5 py-1 rounded border border-teal-500/30 text-teal-400 hover:bg-teal-500/20 transition whitespace-nowrap" title="T5 Memória">T5 · Memória</a>
-        <a href="../trilha6/index.html" class="px-2.5 py-1 rounded border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition whitespace-nowrap" title="T6 Avaliação">T6 · Avaliação</a>
+        <a href="../trilha6/index.html" class="px-2.5 py-1 rounded border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition whitespace-nowrap" title="T6 Avaliaçêo">T6 · Avaliaçêo</a>
       </div>
       <div class="flex items-center gap-3 text-sm flex-shrink-0">
         <a href="index.html" class="md:hidden text-purple-400">← T3</a>
@@ -60,7 +60,7 @@
         <span class="px-2 py-1 bg-purple-500/20 border border-purple-500/30 text-purple-400 rounded text-xs">beta</span>
       </div>
       <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-zinc-100">🤖 RAG agêntico e self-RAG (beta)</h1>
-      <p class="text-lg text-zinc-300 max-w-3xl mb-8">Quando o RAG estático não basta: agente que decide se busca, o que busca, e quando parar. Self-RAG, multi-hop, e quando o custo NÃO compensa.</p>
+      <p class="text-lg text-zinc-300 max-w-3xl mb-8">Quando o RAG estático nêo basta: agente que decide se busca, o que busca, e quando parar. Self-RAG, multi-hop, e quando o custo NêO compensa.</p>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl">
         <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
@@ -86,7 +86,7 @@
   <!-- CONTEÚDO -->
   <main class="max-w-6xl mx-auto px-6 py-12">
 
-    <!-- Introdução -->
+    <!-- Introduçêo -->
     <section class="mb-12 prose prose-invert max-w-none">
       <p class="text-lg text-zinc-200 leading-relaxed">RAG estático recupera de uma vez. <strong class='text-purple-400'>RAG agêntico decide</strong>: busca? o quê? quantas vezes? Você ganha em qualidade (multi-hop, query refinement) e perde em custo/latência. Este módulo é <em>beta</em> — padrões ainda evoluem rapidamente.</p>
     </section>
@@ -95,8 +95,8 @@
     
       <div class="bg-gradient-to-br from-purple-900/30 to-zinc-900 rounded-xl border border-purple-500/30 p-6 mb-8">
         <h3 class="text-lg font-bold text-purple-400 mb-3 flex items-center"><span class="mr-2">⚖️</span> Trade-off explícito: custo vs qualidade</h3>
-        <p class="text-zinc-300 mb-4">RAG agêntico é uma promoção condicional do RAG estático — só compensa quando a pergunta REALMENTE exige.</p>
-        <ul class="space-y-2 text-zinc-300 text-sm"><li class='flex items-start space-x-2'><span class='text-purple-400 mt-1'>•</span><span>Pergunta single-hop, fonte clara → <strong>RAG estático.</strong></span></li><li class='flex items-start space-x-2'><span class='text-purple-400 mt-1'>•</span><span>Pergunta multi-hop, fontes múltiplas → <strong>RAG agêntico (com cap).</strong></span></li><li class='flex items-start space-x-2'><span class='text-purple-400 mt-1'>•</span><span>Verificação crítica → <strong>+ critic loop.</strong></span></li><li class='flex items-start space-x-2'><span class='text-purple-400 mt-1'>•</span><span>Sempre: max_iterations + budget cap.</span></li></ul>
+        <p class="text-zinc-300 mb-4">RAG agêntico é uma promoçêo condicional do RAG estático — só compensa quando a pergunta REALMENTE exige.</p>
+        <ul class="space-y-2 text-zinc-300 text-sm"><li class='flex items-start space-x-2'><span class='text-purple-400 mt-1'>•</span><span>Pergunta single-hop, fonte clara → <strong>RAG estático.</strong></span></li><li class='flex items-start space-x-2'><span class='text-purple-400 mt-1'>•</span><span>Pergunta multi-hop, fontes múltiplas → <strong>RAG agêntico (com cap).</strong></span></li><li class='flex items-start space-x-2'><span class='text-purple-400 mt-1'>•</span><span>Verificaçêo crítica → <strong>+ critic loop.</strong></span></li><li class='flex items-start space-x-2'><span class='text-purple-400 mt-1'>•</span><span>Sempre: max_iterations + budget cap.</span></li></ul>
       </div>
 
     
@@ -114,16 +114,16 @@
           <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">1</span>
           <div>
             <h2 class="text-2xl font-bold">🔄 Multi-hop: encadear buscas</h2>
-            <p class="text-zinc-400 text-sm mt-1">Quando uma busca não basta</p>
+            <p class="text-zinc-400 text-sm mt-1">Quando uma busca nêo basta</p>
           </div>
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Multi-hop é quando a resposta exige <em>encadeamento</em> de buscas. Ex.: 'compare a janela de contexto do Claude 3 com a do GPT-4 em 2024' — 2 buscas (uma por modelo) + 1 comparação. RAG estático despeja tudo em 1 query; agêntico faz busca dirigida por etapa.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Multi-hop é quando a resposta exige <em>encadeamento</em> de buscas. Ex.: 'compare a janela de contexto do Claude 3 com a do GPT-4 em 2024' — 2 buscas (uma por modelo) + 1 comparaçêo. RAG estático despeja tudo em 1 query; agêntico faz busca dirigida por etapa.</p>
           
         <div class="mt-4 bg-zinc-900/50 border border-zinc-800 rounded-lg p-5">
           <p class="text-xs uppercase tracking-wider text-purple-400 font-semibold mb-3">perguntas que multi-hop resolve melhor</p>
-          <ul class="space-y-2"><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Comparação ('A vs B em métrica X')</span></li><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Ranking ('quais os 3 maiores X em 2024')</span></li><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Encadeamento causal ('por que isso aconteceu, dado este contexto')</span></li><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Verificação cruzada ('isso bate com o que disse Y?')</span></li></ul>
+          <ul class="space-y-2"><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Comparaçêo ('A vs B em métrica X')</span></li><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Ranking ('quais os 3 maiores X em 2024')</span></li><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Encadeamento causal ('por que isso aconteceu, dado este contexto')</span></li><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Verificaçêo cruzada ('isso bate com o que disse Y?')</span></li></ul>
         </div>
 
           <details class="mt-6 bg-zinc-900/40 border border-zinc-800 rounded-lg p-4 text-sm">
@@ -147,13 +147,13 @@
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Self-RAG (Asai et al. 2023): o modelo emite token especial decidindo se precisa buscar. Reduz custo em queries triviais ('o que é 2+2') e mantém qualidade em queries factuais. Versão simplificada para produção: classificar a query antes do retrieval.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Self-RAG (Asai et al. 2023): o modelo emite token especial decidindo se precisa buscar. Reduz custo em queries triviais ('o que é 2+2') e mantém qualidade em queries factuais. Versêo simplificada para produçêo: classificar a query antes do retrieval.</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
-          <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">decisor: buscar ou não</div>
+          <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">decisor: buscar ou nêo</div>
           <pre class="p-4 text-sm overflow-x-auto"><code class="text-zinc-200">def decidir_busca(query: str) -&gt; bool:
     decisor = llm.generate(
-        f'Para responder esta query, preciso de busca em base externa? Responda só sim ou não.\n'
+        f'Para responder esta query, preciso de busca em base externa? Responda só sim ou nêo.\n'
         f'Query: {query}'
     )
     return decisor.strip().lower().startswith('sim')
@@ -168,9 +168,9 @@ else:
           <details class="mt-6 bg-zinc-900/40 border border-zinc-800 rounded-lg p-4 text-sm">
             <summary class="cursor-pointer text-purple-400 font-semibold list-none">📑 Resumo navegável</summary>
             <div class="mt-3 space-y-2">
-              <div><span class="text-purple-400 font-semibold">O que é:</span> <span class="text-zinc-300">Modelo emite token especial decidindo se precisa buscar. Se não, responde do parâmetro; se sim, busca e cita.</span></div>
+              <div><span class="text-purple-400 font-semibold">O que é:</span> <span class="text-zinc-300">Modelo emite token especial decidindo se precisa buscar. Se nêo, responde do parâmetro; se sim, busca e cita.</span></div>
               <div><span class="text-purple-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Nem toda pergunta precisa de RAG. Self-RAG evita custo e latência quando o conhecimento paramétrico basta.</span></div>
-              <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Self-RAG, retrieve-or-not, calibração de confiança, paramétrico vs. retrieval.</span></div>
+              <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Self-RAG, retrieve-or-not, calibraçêo de confiança, paramétrico vs. retrieval.</span></div>
             </div>
           </details>
         </div>
@@ -186,18 +186,18 @@ else:
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Para perguntas compostas, decompor em sub-perguntas melhora recall. LLM faz a decomposição; cada sub-pergunta vira busca; respostas são combinadas. Cuidado: cada sub-busca custa; cap em 3-5 sub-perguntas é sensato.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Para perguntas compostas, decompor em sub-perguntas melhora recall. LLM faz a decomposiçêo; cada sub-pergunta vira busca; respostas sêo combinadas. Cuidado: cada sub-busca custa; cap em 3-5 sub-perguntas é sensato.</p>
           
         <div class="mt-4 bg-zinc-900/50 border border-zinc-800 rounded-lg p-5">
-          <p class="text-xs uppercase tracking-wider text-purple-400 font-semibold mb-3">exemplo de decomposição</p>
-          <ul class="space-y-2"><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Query: 'compare janela do Claude 3 e GPT-4 em 2024'</span></li><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Sub-1: 'qual a janela do Claude 3 em 2024?'</span></li><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Sub-2: 'qual a janela do GPT-4 em 2024?'</span></li><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Combinação: LLM recebe ambas respostas e gera comparação final.</span></li></ul>
+          <p class="text-xs uppercase tracking-wider text-purple-400 font-semibold mb-3">exemplo de decomposiçêo</p>
+          <ul class="space-y-2"><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Query: 'compare janela do Claude 3 e GPT-4 em 2024'</span></li><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Sub-1: 'qual a janela do Claude 3 em 2024?'</span></li><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Sub-2: 'qual a janela do GPT-4 em 2024?'</span></li><li class='flex items-start gap-2'><span class='text-purple-400 mt-1'>▸</span><span class='text-sm text-zinc-300'>Combinaçêo: LLM recebe ambas respostas e gera comparaçêo final.</span></li></ul>
         </div>
 
           <details class="mt-6 bg-zinc-900/40 border border-zinc-800 rounded-lg p-4 text-sm">
             <summary class="cursor-pointer text-purple-400 font-semibold list-none">📑 Resumo navegável</summary>
             <div class="mt-3 space-y-2">
               <div><span class="text-purple-400 font-semibold">O que é:</span> <span class="text-zinc-300">LLM decompõe pergunta em sub-perguntas, busca cada uma, junta as evidências.</span></div>
-              <div><span class="text-purple-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Para perguntas compostas ('o que mudou de A para B?'), decomposição melhora recall.</span></div>
+              <div><span class="text-purple-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Para perguntas compostas ('o que mudou de A para B?'), decomposiçêo melhora recall.</span></div>
               <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Query decomposition, sub-question answering, fan-out, planner.</span></div>
             </div>
           </details>
@@ -208,13 +208,13 @@ else:
         <div class="flex items-center space-x-4 mb-6">
           <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">4</span>
           <div>
-            <h2 class="text-2xl font-bold">🛡️ Guards: critic step e verificação</h2>
+            <h2 class="text-2xl font-bold">🛡️ Guards: critic step e verificaçêo</h2>
             <p class="text-zinc-400 text-sm mt-1">Checar antes de entregar</p>
           </div>
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Critic step é um segundo passo: outro LLM (ou o mesmo com prompt diferente) verifica se a resposta está grounded. Se não, refaz a busca. Custo: 2× tokens; ganho: redução de alucinação em casos críticos. Usar com critério — não em todas as queries.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Critic step é um segundo passo: outro LLM (ou o mesmo com prompt diferente) verifica se a resposta está grounded. Se nêo, refaz a busca. Custo: 2× tokens; ganho: reduçêo de alucinaçêo em casos críticos. Usar com critério — nêo em todas as queries.</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
           <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">critic loop</div>
@@ -225,17 +225,17 @@ else:
         crit = llm.generate(
             f'A resposta abaixo está grounded no contexto?\n'
             f'&lt;ctx&gt;{docs}&lt;/ctx&gt;\n&lt;resp&gt;{resp}&lt;/resp&gt;\n'
-            'Sim/Não + 1 frase.'
+            'Sim/Nêo + 1 frase.'
         )
         if crit.startswith('Sim'):
             return resp
-    return 'Não foi possível responder com confiança.'</code></pre>
+    return 'Nêo foi possível responder com confiança.'</code></pre>
         </div>
 
           <details class="mt-6 bg-zinc-900/40 border border-zinc-800 rounded-lg p-4 text-sm">
             <summary class="cursor-pointer text-purple-400 font-semibold list-none">📑 Resumo navegável</summary>
             <div class="mt-3 space-y-2">
-              <div><span class="text-purple-400 font-semibold">O que é:</span> <span class="text-zinc-300">Após resposta, segundo passo verifica: a resposta está grounded? Cita fonte? Se não, refaz.</span></div>
+              <div><span class="text-purple-400 font-semibold">O que é:</span> <span class="text-zinc-300">Após resposta, segundo passo verifica: a resposta está grounded? Cita fonte? Se nêo, refaz.</span></div>
               <div><span class="text-purple-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Qualidade > velocidade em casos sensíveis. Critic step pega regressões.</span></div>
               <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Critic loop, verification step, self-correction, faithfulness.</span></div>
             </div>
@@ -253,7 +253,7 @@ else:
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Sem critério de parada explícito, agente loopa em produção e queima orçamento. Defina: max_iterations (3-5 típico), confiança mínima da resposta, OU custo máximo em tokens. O primeiro que disparar para o loop. Isto é pré-requisito de qualquer rollout.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Sem critério de parada explícito, agente loopa em produçêo e queima orçamento. Defina: max_iterations (3-5 típico), confiança mínima da resposta, OU custo máximo em tokens. O primeiro que disparar para o loop. Isto é pré-requisito de qualquer rollout.</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
           <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">controle de loop</div>
@@ -273,7 +273,7 @@ else:
             <summary class="cursor-pointer text-purple-400 font-semibold list-none">📑 Resumo navegável</summary>
             <div class="mt-3 space-y-2">
               <div><span class="text-purple-400 font-semibold">O que é:</span> <span class="text-zinc-300">Critério explícito: max iterações, confiança suficiente, ou custo orçado atingido.</span></div>
-              <div><span class="text-purple-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Sem critério, o agente loopa. Loops em produção são desastre de custo.</span></div>
+              <div><span class="text-purple-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Sem critério, o agente loopa. Loops em produçêo sêo desastre de custo.</span></div>
               <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Max iterations, confidence threshold, cost budget, early stop.</span></div>
             </div>
           </details>
@@ -284,7 +284,7 @@ else:
         <div class="flex items-center space-x-4 mb-6">
           <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">6</span>
           <div>
-            <h2 class="text-2xl font-bold">💸 Quando NÃO usar RAG agêntico</h2>
+            <h2 class="text-2xl font-bold">💸 Quando NêO usar RAG agêntico</h2>
             <p class="text-zinc-400 text-sm mt-1">O custo é real</p>
           </div>
         </div>
@@ -294,7 +294,7 @@ else:
           
         <div class="mt-4 bg-zinc-900/50 border border-zinc-800 rounded-lg overflow-x-auto">
           <table class="w-full">
-            <caption class="px-4 py-2 text-xs text-zinc-500 text-left">decisão: estático vs agêntico</caption>
+            <caption class="px-4 py-2 text-xs text-zinc-500 text-left">decisêo: estático vs agêntico</caption>
             <thead class="bg-zinc-900"><tr><th class='py-2 px-3 text-left text-xs uppercase tracking-wider text-purple-400'>Sinal</th><th class='py-2 px-3 text-left text-xs uppercase tracking-wider text-purple-400'>Estático</th><th class='py-2 px-3 text-left text-xs uppercase tracking-wider text-purple-400'>Agêntico</th></tr></thead>
             <tbody><tr class='border-b border-zinc-800'><td class='py-2 px-3 text-sm text-zinc-300'>Pergunta single-hop</td><td class='py-2 px-3 text-sm text-zinc-300'>✓ default</td><td class='py-2 px-3 text-sm text-zinc-300'>✗ overhead</td></tr><tr class='border-b border-zinc-800'><td class='py-2 px-3 text-sm text-zinc-300'>Multi-hop confirmado em eval</td><td class='py-2 px-3 text-sm text-zinc-300'>✗ recall baixo</td><td class='py-2 px-3 text-sm text-zinc-300'>✓ vale custo</td></tr><tr class='border-b border-zinc-800'><td class='py-2 px-3 text-sm text-zinc-300'>Latência crítica (UX live)</td><td class='py-2 px-3 text-sm text-zinc-300'>✓</td><td class='py-2 px-3 text-sm text-zinc-300'>✗ múltiplos roundtrips</td></tr><tr class='border-b border-zinc-800'><td class='py-2 px-3 text-sm text-zinc-300'>Volume 1k+/dia</td><td class='py-2 px-3 text-sm text-zinc-300'>✓ econômico</td><td class='py-2 px-3 text-sm text-zinc-300'>depende — meça</td></tr></tbody>
           </table>
@@ -321,7 +321,7 @@ else:
           <summary class="cursor-pointer flex items-center gap-3 text-base font-semibold list-none">
             <span class="topico-numero w-6 h-6 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-bold flex items-center justify-center">1</span>
             <span>🔄 Multi-hop: encadear buscas</span>
-            <span class="text-zinc-500 text-xs ml-2">— Quando uma busca não basta</span>
+            <span class="text-zinc-500 text-xs ml-2">— Quando uma busca nêo basta</span>
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
             <div><span class="text-purple-400 font-semibold">O que é:</span> <span class="text-zinc-300">Pergunta exige info de múltiplas fontes em sequência. Agente busca, lê, refina query, busca de novo.</span></div>
@@ -336,9 +336,9 @@ else:
             <span class="text-zinc-500 text-xs ml-2">— Asai et al. 2023</span>
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
-            <div><span class="text-purple-400 font-semibold">O que é:</span> <span class="text-zinc-300">Modelo emite token especial decidindo se precisa buscar. Se não, responde do parâmetro; se sim, busca e cita.</span></div>
+            <div><span class="text-purple-400 font-semibold">O que é:</span> <span class="text-zinc-300">Modelo emite token especial decidindo se precisa buscar. Se nêo, responde do parâmetro; se sim, busca e cita.</span></div>
             <div><span class="text-purple-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Nem toda pergunta precisa de RAG. Self-RAG evita custo e latência quando o conhecimento paramétrico basta.</span></div>
-            <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Self-RAG, retrieve-or-not, calibração de confiança, paramétrico vs. retrieval.</span></div>
+            <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Self-RAG, retrieve-or-not, calibraçêo de confiança, paramétrico vs. retrieval.</span></div>
           </div>
         </details>
         <details class="topico-expansivel border-b border-zinc-800 py-3">
@@ -349,18 +349,18 @@ else:
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
             <div><span class="text-purple-400 font-semibold">O que é:</span> <span class="text-zinc-300">LLM decompõe pergunta em sub-perguntas, busca cada uma, junta as evidências.</span></div>
-            <div><span class="text-purple-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Para perguntas compostas ('o que mudou de A para B?'), decomposição melhora recall.</span></div>
+            <div><span class="text-purple-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Para perguntas compostas ('o que mudou de A para B?'), decomposiçêo melhora recall.</span></div>
             <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Query decomposition, sub-question answering, fan-out, planner.</span></div>
           </div>
         </details>
         <details class="topico-expansivel border-b border-zinc-800 py-3">
           <summary class="cursor-pointer flex items-center gap-3 text-base font-semibold list-none">
             <span class="topico-numero w-6 h-6 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-bold flex items-center justify-center">4</span>
-            <span>🛡️ Guards: critic step e verificação</span>
+            <span>🛡️ Guards: critic step e verificaçêo</span>
             <span class="text-zinc-500 text-xs ml-2">— Checar antes de entregar</span>
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
-            <div><span class="text-purple-400 font-semibold">O que é:</span> <span class="text-zinc-300">Após resposta, segundo passo verifica: a resposta está grounded? Cita fonte? Se não, refaz.</span></div>
+            <div><span class="text-purple-400 font-semibold">O que é:</span> <span class="text-zinc-300">Após resposta, segundo passo verifica: a resposta está grounded? Cita fonte? Se nêo, refaz.</span></div>
             <div><span class="text-purple-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Qualidade > velocidade em casos sensíveis. Critic step pega regressões.</span></div>
             <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Critic loop, verification step, self-correction, faithfulness.</span></div>
           </div>
@@ -373,14 +373,14 @@ else:
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
             <div><span class="text-purple-400 font-semibold">O que é:</span> <span class="text-zinc-300">Critério explícito: max iterações, confiança suficiente, ou custo orçado atingido.</span></div>
-            <div><span class="text-purple-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Sem critério, o agente loopa. Loops em produção são desastre de custo.</span></div>
+            <div><span class="text-purple-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Sem critério, o agente loopa. Loops em produçêo sêo desastre de custo.</span></div>
             <div><span class="text-purple-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Max iterations, confidence threshold, cost budget, early stop.</span></div>
           </div>
         </details>
         <details class="topico-expansivel border-b border-zinc-800 py-3">
           <summary class="cursor-pointer flex items-center gap-3 text-base font-semibold list-none">
             <span class="topico-numero w-6 h-6 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-bold flex items-center justify-center">6</span>
-            <span>💸 Quando NÃO usar RAG agêntico</span>
+            <span>💸 Quando NêO usar RAG agêntico</span>
             <span class="text-zinc-500 text-xs ml-2">— O custo é real</span>
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
@@ -400,16 +400,16 @@ else:
           <ul class="space-y-3 text-zinc-300"><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>max_iterations explícito (ex.: 3)</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Budget de tokens por chamada agêntica</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Logs de cada hop com query e resultado</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>RAG agêntico só onde estático falha</span></li></ul>
         </div>
         <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NÃO fazer</h4>
-          <ul class="space-y-3 text-zinc-300"><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Loop indefinido</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Custos fora de controle</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Debug impossível em produção</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Adotar por padrão</span></li></ul>
+          <h4 class="font-bold text-red-400 mb-4">✗ O que NêO fazer</h4>
+          <ul class="space-y-3 text-zinc-300"><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Loop indefinido</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Custos fora de controle</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Debug impossível em produçêo</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Adotar por padrêo</span></li></ul>
         </div>
       </div>
 
 
-    <!-- Quando NÃO usar -->
+    <!-- Quando NêO usar -->
     
       <div class="quando-nao-usar bg-red-900/10 rounded-xl border border-red-500/30 p-6 mb-8">
-        <h3 class="text-lg font-bold text-red-400 mb-3 flex items-center"><span class="mr-2">🚫</span> Quando NÃO usar</h3>
+        <h3 class="text-lg font-bold text-red-400 mb-3 flex items-center"><span class="mr-2">🚫</span> Quando NêO usar</h3>
         <ul class="space-y-2"><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Latência baixa exigida</strong>: cada hop é uma roundtrip.</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Volume alto</strong>: custo escala linearmente.</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Quando RAG estático já passa em eval</strong>: complexidade extra é dívida técnica.</span></li></ul>
       </div>
 
@@ -449,7 +449,7 @@ def agentic_rag(query: str, max_hops: int = 3) -&gt; dict:
       </div>
 
 
-    <!-- Resumo Final + Navegação -->
+    <!-- Resumo Final + Navegaçêo -->
     
       <section class="mb-12">
         <div class="bg-gradient-to-br from-purple-900/55 via-zinc-900 to-zinc-900 rounded-xl border border-purple-500/30 p-8">

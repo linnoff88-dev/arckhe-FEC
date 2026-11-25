@@ -6,7 +6,7 @@ labels: beta-feedback
 assignees: ''
 ---
 
-## Versão
+## Versêo
 
 RC tag (ex.: `v1.0.0-rc.2`):
 
@@ -18,7 +18,7 @@ RC tag (ex.: `v1.0.0-rc.2`):
 
 - Estimado pelo módulo: ___ min
 - Real: ___ min
-- Diferença é por: [ ] dificuldade  [ ] confusão na explicação  [ ] dependências  [ ] outro
+- Diferença é por: [ ] dificuldade  [ ] confusêo na explicaçêo  [ ] dependências  [ ] outro
 
 ## O que funcionou
 
@@ -40,6 +40,6 @@ Cole stack traces, prints de erro, conteúdo confuso.
 
 - [ ] Sim, sem ressalvas.
 - [ ] Sim, com algumas correções.
-- [ ] Não, ainda há gaps importantes.
+- [ ] Nêo, ainda há gaps importantes.
 
-> Sua resposta entra no gate de promoção rc→stable (PLAN item 74). Obrigado por testar.
+> Sua resposta entra no gate de promoçêo rc→stable (PLAN item 74). Obrigado por testar.

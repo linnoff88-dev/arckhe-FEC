@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""build-trilhas.py — gera os 6 index.html das trilhas no padrão ARCKHÉ.
+"""build-trilhas.py — gera os 6 index.html das trilhas no padrêo ARCKHÉ.
 
-Cards de módulo com 3 sub-tópicos preview + botão "Ver Completo".
+Cards de módulo com 3 sub-tópicos preview + botêo "Ver Completo".
 """
 
 from __future__ import annotations
@@ -29,40 +29,40 @@ CSS_V = _css_version()
 
 
 DESCRICOES = {
-    1: "Os fundamentos operacionais: janela de contexto, atenção, tokens, custo. Pré-requisito de todas as outras trilhas.",
+    1: "Os fundamentos operacionais: janela de contexto, atençêo, tokens, custo. Pré-requisito de todas as outras trilhas.",
     2: "System prompt, few-shot, formato XML/JSON, ancoragem, versionamento de prompt e o eval primer.",
     3: "RAG bem-feito: chunking, embeddings, BM25 híbrido, reranking, contextual retrieval (Anthropic 2024) e citações obrigatórias.",
     4: "Tool/function calling provider-neutral, agentes single (ReAct), padrões multi-agente e MCP.",
-    5: "Memória curto/longo prazo, summarização hierárquica, prompt caching e context distillation.",
-    6: "Golden sets, LLM-as-judge, tracing, prompt injection sandboxed, A/B em produção e rollback.",
+    5: "Memória curto/longo prazo, summarizaçêo hierárquica, prompt caching e context distillation.",
+    6: "Golden sets, LLM-as-judge, tracing, prompt injection sandboxed, A/B em produçêo e rollback.",
 }
 
 
-# Explicação rica do que cada trilha explora — exibida abaixo do header da trilha
+# Explicaçêo rica do que cada trilha explora — exibida abaixo do header da trilha
 EXPLORA = {
     1: {
         "objetivo": "Construir o modelo mental de como o modelo lê de fato uma mensagem.",
         "topicos": [
-            "Janela de contexto como sequência fixa serializada — não 'conversa'.",
-            "Atenção causal e KV cache; por que prefixos estáveis são cacheáveis.",
+            "Janela de contexto como sequência fixa serializada — nêo 'conversa'.",
+            "Atençêo causal e KV cache; por que prefixos estáveis sêo cacheáveis.",
             "Lost in the middle (Liu et al. 2023) e mitigações validadas.",
-            "Posição via RoPE; ordem de seções estável→variável→instrução.",
-            "Tokens e tokenização (BPE/SentencePiece); custo input vs. output.",
+            "Posiçêo via RoPE; ordem de seções estável→variável→instruçêo.",
+            "Tokens e tokenizaçêo (BPE/SentencePiece); custo input vs. output.",
             "Os três níveis de modelo: frontier, low-cost, OSS local.",
         ],
-        "para_quem": "Todo aluno. Pré-requisito das outras 5 trilhas — não pule.",
+        "para_quem": "Todo aluno. Pré-requisito das outras 5 trilhas — nêo pule.",
     },
     2: {
         "objetivo": "Tratar prompt como código: estrutura, versionamento, eval automatizado.",
         "topicos": [
             "Anatomia da mensagem em 5 seções estáveis.",
             "System prompt, few-shot canônico, formato declarativo XML/JSON.",
-            "Padrão FEC de ordem: estável → variável → âncora → user turn.",
+            "Padrêo FEC de ordem: estável → variável → âncora → user turn.",
             "Ancoragem dupla; chain-of-thought quando vale.",
             "Prompts versionados em arquivo (Jinja2/templates), SemVer aplicado.",
             "Eval primer: golden set + mini-eval em toda mudança de prompt.",
         ],
-        "para_quem": "Quem pretende manter prompts em produção, não 'tunar pra demo'.",
+        "para_quem": "Quem pretende manter prompts em produçêo, nêo 'tunar pra demo'.",
     },
     3: {
         "objetivo": "Construir RAG que responde com citações e atinge groundedness ≥0.85.",
@@ -71,13 +71,13 @@ EXPLORA = {
             "Embeddings densos vs BM25; híbrido com Reciprocal Rank Fusion.",
             "Vector stores (FAISS, pgvector, Qdrant) e ANN.",
             "Reranking cross-encoder; contextual retrieval (Anthropic 2024).",
-            "Citação obrigatória + saber dizer 'não sei'.",
-            "RAG agêntico (multi-hop, self-RAG) e quando NÃO usar.",
+            "Citaçêo obrigatória + saber dizer 'nêo sei'.",
+            "RAG agêntico (multi-hop, self-RAG) e quando NêO usar.",
         ],
         "para_quem": "Quem precisa que o modelo responda sobre dados próprios.",
     },
     4: {
-        "objetivo": "Agentes que chamam ferramentas com sandbox e tracing — não brinquedos de demo.",
+        "objetivo": "Agentes que chamam ferramentas com sandbox e tracing — nêo brinquedos de demo.",
         "topicos": [
             "Tool/function calling provider-neutral via JSON Schema.",
             "Description é o prompt do tool; escolha do modelo depende dela.",
@@ -86,29 +86,29 @@ EXPLORA = {
             "Tracing por step (OpenTelemetry GenAI semconv).",
             "Multi-agente: orquestrador-trabalhador, debate, MCP.",
         ],
-        "para_quem": "Quem vai colocar agente em produção. T6 vai exigir P5 baseado em T4.",
+        "para_quem": "Quem vai colocar agente em produçêo. T6 vai exigir P5 baseado em T4.",
     },
     5: {
         "objetivo": "Dar 'memória' ao agente sem inflar custo nem janela.",
         "topicos": [
-            "Buffer de turns (curto prazo) — solução simples para chats curtos.",
-            "Sumarização incremental e hierárquica (MemGPT).",
+            "Buffer de turns (curto prazo) — soluçêo simples para chats curtos.",
+            "Sumarizaçêo incremental e hierárquica (MemGPT).",
             "Memória vetorial para longo prazo + recall por similaridade.",
             "Perfil estruturado do usuário no system prompt.",
             "Prompt caching: 10% do preço para tokens cacheados.",
-            "Context distillation e compressão (LLMLingua).",
+            "Context distillation e compressêo (LLMLingua).",
         ],
         "para_quem": "Quem opera chats com histórico longo ou quer cortar custo de input.",
     },
     6: {
-        "objetivo": "Levar o sistema LLM para produção com gates objetivos e rollback rápido.",
+        "objetivo": "Levar o sistema LLM para produçêo com gates objetivos e rollback rápido.",
         "topicos": [
             "Golden sets, métricas por tarefa, LLM-as-judge calibrado (κ ≥0.6).",
             "Tracing estruturado em OTel + custo como métrica de produto.",
             "Prompt injection sandboxed (defesa em camadas).",
             "A/B com significância estatística; canário 5%→25%→100%.",
             "Kill switch e rollback hot &lt;1 min.",
-            "Eval contínuo em produção (sampling 1-5%).",
+            "Eval contínuo em produçêo (sampling 1-5%).",
         ],
         "para_quem": "Pré-requisito para o projeto final P5. Disciplina que costura T1-T5.",
     },
@@ -245,7 +245,7 @@ def render_trilha(num: int) -> str:
         <a href="../trilha3/index.html" class="px-2.5 py-1 rounded border border-purple-500/30 text-purple-400 hover:bg-purple-500/20 transition whitespace-nowrap{' bg-purple-500/20' if num==3 else ''}" title="T3 RAG">T3 · RAG</a>
         <a href="../trilha4/index.html" class="px-2.5 py-1 rounded border border-amber-500/30 text-amber-400 hover:bg-amber-500/20 transition whitespace-nowrap{' bg-amber-500/20' if num==4 else ''}" title="T4 Tools/Agentes">T4 · Agentes</a>
         <a href="../trilha5/index.html" class="px-2.5 py-1 rounded border border-teal-500/30 text-teal-400 hover:bg-teal-500/20 transition whitespace-nowrap{' bg-teal-500/20' if num==5 else ''}" title="T5 Memória">T5 · Memória</a>
-        <a href="../trilha6/index.html" class="px-2.5 py-1 rounded border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition whitespace-nowrap{' bg-rose-500/20' if num==6 else ''}" title="T6 Avaliação">T6 · Avaliação</a>
+        <a href="../trilha6/index.html" class="px-2.5 py-1 rounded border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition whitespace-nowrap{' bg-rose-500/20' if num==6 else ''}" title="T6 Avaliaçêo">T6 · Avaliaçêo</a>
       </div>
       <div class="flex items-center gap-3 text-sm flex-shrink-0">
         <a href="../../index.html" class="md:hidden text-zinc-400">← Trilhas</a>
@@ -271,7 +271,7 @@ def render_trilha(num: int) -> str:
         </div>
         <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
           <div class="text-xl font-bold text-{cor}-400">~{total_min // 60}h</div>
-          <div class="text-xs text-zinc-400">Duração</div>
+          <div class="text-xs text-zinc-400">Duraçêo</div>
         </div>
         <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
           <div class="text-xl font-bold text-{cor}-400">{6 * len(modulos_da_trilha)}</div>

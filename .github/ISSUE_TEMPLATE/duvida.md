@@ -17,7 +17,7 @@ Estava fazendo: [ ] leitura  [ ] exercício  [ ] projeto  [ ] quiz
 
 ## O que você já tentou
 
-- [ ] Reli a seção "O que é" / "Por que aprender" / "Conceitos-chave"
+- [ ] Reli a seçêo "O que é" / "Por que aprender" / "Conceitos-chave"
 - [ ] Conferi o glossário ([`GLOSSARIO.md`](../../GLOSSARIO.md))
 - [ ] Conferi a bibliografia da trilha (`bibliografia/T<n>.md`)
 - [ ] Procurei issue similar

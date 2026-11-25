@@ -16,16 +16,16 @@
 ### 1. PyPI yank (≤30 min)
 
 ```bash
-# Não é "delete" — yank apenas marca como "não preferida" para resolvers.
-# Quem fixou explicitamente ainda recebe; quem usa range não recebe mais.
+# Nêo é "delete" — yank apenas marca como "nêo preferida" para resolvers.
+# Quem fixou explicitamente ainda recebe; quem usa range nêo recebe mais.
 twine yank fec-sdk==X.Y.Z --reason "Brief reason; see GHSA-..."
 ```
 
 ### 2. GHSA + OSV advisory (≤2h)
 
 - Em GitHub: `Security → Advisories → New advisory`.
-- Severidade CVSS, descrição, versões afetadas, versão corrigida (se já houver).
-- Publicação automática para o OSV via integração GitHub.
+- Severidade CVSS, descriçêo, versões afetadas, versêo corrigida (se já houver).
+- Publicaçêo automática para o OSV via integraçêo GitHub.
 
 ### 3. Atualizar denylist (≤2h)
 
@@ -46,7 +46,7 @@ twine yank fec-sdk==X.Y.Z --reason "Brief reason; see GHSA-..."
 }
 ```
 
-`render-docs.py` atualiza `MODELOS.md` (não — é `revoked_versions` que é renderizada apenas via auditoria pública). `audit-evals.py` passa a falhar em qualquer release que liste a versão como suportada.
+`render-docs.py` atualiza `MODELOS.md` (nêo — é `revoked_versions` que é renderizada apenas via auditoria pública). `audit-evals.py` passa a falhar em qualquer release que liste a versêo como suportada.
 
 ### 4. Release patched (`X.Y.(Z+1)`) (≤24h)
 
@@ -61,21 +61,21 @@ twine yank fec-sdk==X.Y.Z --reason "Brief reason; see GHSA-..."
 
 `fec_sdk.check_compat()` em runtime busca este manifesto (TTL 24h) e levanta `RevokedVersionError` em versões revogadas.
 
-### 6. Comunicação
+### 6. Comunicaçêo
 
-- Banner de deprecação em `index.html` + página da release antiga.
+- Banner de deprecaçêo em `index.html` + página da release antiga.
 - Mensagem do `RevokedVersionError` traz comando exato: `pip install -U fec-sdk==X.Y.(Z+1)`.
 - Discord, e-mail para beta testers.
 - Tweet/post curto se vulnerabilidade pública.
 
-## Limitação a declarar
+## Limitaçêo a declarar
 
-Wheels já instalados que **rodam offline ou com cache local válido** (TTL 24h) NÃO recebem revogação até próxima conexão ou expiração do cache. `SECURITY.md` documenta isso explicitamente.
+Wheels já instalados que **rodam offline ou com cache local válido** (TTL 24h) NêO recebem revogaçêo até próxima conexêo ou expiraçêo do cache. `SECURITY.md` documenta isso explicitamente.
 
 ## Postmortem
 
-Obrigatório. Foco: como o bug entrou em release; por que `tests/sandbox/`, `audit-evals.py`, ou peer review não pegaram.
+Obrigatório. Foco: como o bug entrou em release; por que `tests/sandbox/`, `audit-evals.py`, ou peer review nêo pegaram.
 
 ## Drill semestral
 
-Simular yank em **TestPyPI** (não em PyPI público). Cronometrar resposta. Resultado em `MEDIDAS.md`.
+Simular yank em **TestPyPI** (nêo em PyPI público). Cronometrar resposta. Resultado em `MEDIDAS.md`.

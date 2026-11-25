@@ -28,7 +28,7 @@ def main() -> int:
     try:
         from jsonschema import Draft202012Validator
     except ImportError:
-        print("jsonschema não instalado. Rode: pip install jsonschema>=4.21", file=sys.stderr)
+        print("jsonschema nêo instalado. Rode: pip install jsonschema>=4.21", file=sys.stderr)
         return 2
 
     errors: list[str] = []

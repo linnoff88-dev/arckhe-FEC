@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""build-modulos.py — gera os 14 HTMLs de módulo no padrão ARCKHÉ a partir de modulos_spec.py.
+"""build-modulos.py — gera os 14 HTMLs de módulo no padrêo ARCKHÉ a partir de modulos_spec.py.
 
-Padrão seguido: MASTER_COMPLETO.md (skill formato-curso) — header gradiente,
+Padrêo seguido: MASTER_COMPLETO.md (skill formato-curso) — header gradiente,
 breadcrumb, 6 seções ricas com número grande, boxes coloridos (Conceito Principal,
 Dados de Pesquisa, Dica Prática, Fazer/Evitar), Resumo Final.
 """
@@ -179,17 +179,17 @@ def render_modulo(m: dict) -> str:
           <ul class="space-y-3 text-zinc-300">{fazer_items}</ul>
         </div>
         <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NÃO fazer</h4>
+          <h4 class="font-bold text-red-400 mb-4">✗ O que NêO fazer</h4>
           <ul class="space-y-3 text-zinc-300">{evitar_items}</ul>
         </div>
       </div>
 """ if fe else ""
 
-    # === Quando NÃO usar ===
+    # === Quando NêO usar ===
     qnu = "".join(f"<li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'>{x}</span></li>" for x in m.get("quando_nao_usar", []))
     qnu_html = f"""
       <div class="quando-nao-usar bg-red-900/10 rounded-xl border border-red-500/30 p-6 mb-8">
-        <h3 class="text-lg font-bold text-red-400 mb-3 flex items-center"><span class="mr-2">🚫</span> Quando NÃO usar</h3>
+        <h3 class="text-lg font-bold text-red-400 mb-3 flex items-center"><span class="mr-2">🚫</span> Quando NêO usar</h3>
         <ul class="space-y-2">{qnu}</ul>
       </div>
 """ if m.get("quando_nao_usar") else ""
@@ -280,7 +280,7 @@ def render_modulo(m: dict) -> str:
         <a href="../trilha3/index.html" class="px-2.5 py-1 rounded border border-purple-500/30 text-purple-400 hover:bg-purple-500/20 transition whitespace-nowrap{' bg-purple-500/20' if m['trilha']==3 else ''}" title="T3 RAG">T3 · RAG</a>
         <a href="../trilha4/index.html" class="px-2.5 py-1 rounded border border-amber-500/30 text-amber-400 hover:bg-amber-500/20 transition whitespace-nowrap{' bg-amber-500/20' if m['trilha']==4 else ''}" title="T4 Tools/Agentes">T4 · Agentes</a>
         <a href="../trilha5/index.html" class="px-2.5 py-1 rounded border border-teal-500/30 text-teal-400 hover:bg-teal-500/20 transition whitespace-nowrap{' bg-teal-500/20' if m['trilha']==5 else ''}" title="T5 Memória">T5 · Memória</a>
-        <a href="../trilha6/index.html" class="px-2.5 py-1 rounded border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition whitespace-nowrap{' bg-rose-500/20' if m['trilha']==6 else ''}" title="T6 Avaliação">T6 · Avaliação</a>
+        <a href="../trilha6/index.html" class="px-2.5 py-1 rounded border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition whitespace-nowrap{' bg-rose-500/20' if m['trilha']==6 else ''}" title="T6 Avaliaçêo">T6 · Avaliaçêo</a>
       </div>
       <div class="flex items-center gap-3 text-sm flex-shrink-0">
         <a href="index.html" class="md:hidden text-{cor}-400">← T{m['trilha']}</a>
@@ -334,7 +334,7 @@ def render_modulo(m: dict) -> str:
   <!-- CONTEÚDO -->
   <main class="max-w-6xl mx-auto px-6 py-12">
 
-    <!-- Introdução -->
+    <!-- Introduçêo -->
     <section class="mb-12 prose prose-invert max-w-none">
       <p class="text-lg text-zinc-200 leading-relaxed">{m['introducao']}</p>
     </section>
@@ -358,7 +358,7 @@ def render_modulo(m: dict) -> str:
     <!-- Fazer vs Evitar -->
     {fe_html}
 
-    <!-- Quando NÃO usar -->
+    <!-- Quando NêO usar -->
     {qnu_html}
 
     <!-- Exemplo de código -->
@@ -370,7 +370,7 @@ def render_modulo(m: dict) -> str:
     <!-- Bibliografia -->
     {bib_html}
 
-    <!-- Resumo Final + Navegação -->
+    <!-- Resumo Final + Navegaçêo -->
     {resumo_html}
 
   </main>

@@ -58,7 +58,7 @@
     <rect x="340" y="210" width="220" height="70" rx="8"
           fill="#a855f722" stroke="#a855f7" stroke-width="2"/>
     <text x="450" y="240" text-anchor="middle" font-size="14" font-weight="700" fill="#c084fc">Modelo (LLM)</text>
-    <text x="450" y="260" text-anchor="middle" font-size="11" fill="#e9d5ff">atenção causal • KV cache</text>
+    <text x="450" y="260" text-anchor="middle" font-size="11" fill="#e9d5ff">atençêo causal • KV cache</text>
   </g>
 
   <!-- Seta para resposta -->

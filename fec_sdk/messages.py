@@ -32,7 +32,7 @@ class Message(BaseModel):
 
 
 class Tool(BaseModel):
-    """Definição de tool disponível ao modelo."""
+    """Definiçêo de tool disponível ao modelo."""
 
     model_config = ConfigDict(frozen=True)
 
@@ -53,7 +53,7 @@ class ToolCall(BaseModel):
 
 
 class ToolResult(BaseModel):
-    """Resultado da execução do tool, devolvido ao modelo."""
+    """Resultado da execuçêo do tool, devolvido ao modelo."""
 
     model_config = ConfigDict(frozen=True)
 

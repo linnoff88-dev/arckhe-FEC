@@ -1,5 +1,5 @@
 """Teste do exercício 1.1 — pytest. Simula um modelo "lost in the middle" e
-verifica que a reordenação do aluno coloca o doc relevante em zona atendida.
+verifica que a reordenaçêo do aluno coloca o doc relevante em zona atendida.
 
 Determinístico, sem chamada de provedor.
 """
@@ -28,7 +28,7 @@ def _modelo_loss_middle(documentos: list[str], pergunta: str) -> str:
     for doc in atendidos:
         if "FATO_RESPOSTA" in doc:
             return "encontrei"
-    return "não sei"
+    return "nêo sei"
 
 
 # 5 cenários, todos com FATO_RESPOSTA no MEIO original (índice ~ n/2).
@@ -66,7 +66,7 @@ CASOS = [
         "pergunta": "Qual o custo de input vs output?",
         "documentos": [
             "x" * 5,  # placeholders
-            "FATO_RESPOSTA: input tokens são cobrados independente do uso (relevância: custo input output)",
+            "FATO_RESPOSTA: input tokens sêo cobrados independente do uso (relevância: custo input output)",
             "y" * 5,
         ],
     },
@@ -74,7 +74,7 @@ CASOS = [
         "pergunta": "O que faz attention causal?",
         "documentos": [
             "preâmbulo aleatório 1", "preâmbulo 2",
-            "FATO_RESPOSTA: atenção causal mascara tokens futuros (relevância: attention causal)",
+            "FATO_RESPOSTA: atençêo causal mascara tokens futuros (relevância: attention causal)",
             "trailer 1", "trailer 2",
         ],
     },
@@ -90,13 +90,13 @@ def test_reordenacao_recupera_resposta(caso: dict) -> None:
     assert isinstance(docs_reordenados, list)
     assert all(isinstance(d, str) for d in docs_reordenados)
     assert any("FATO_RESPOSTA" in d for d in docs_reordenados), (
-        "Sua reordenação descartou o documento relevante. "
+        "Sua reordenaçêo descartou o documento relevante. "
         "Truncar é OK, mas mantenha pelo menos o doc com FATO_RESPOSTA."
     )
 
     resposta = _modelo_loss_middle(docs_reordenados, caso["pergunta"])
     assert resposta == "encontrei", (
-        f"Modelo simulado ainda perde o fato após sua reordenação. "
+        f"Modelo simulado ainda perde o fato após sua reordenaçêo. "
         f"Tente colocar docs com palavras da pergunta no início/fim, ou recuperar menos. "
         f"Pergunta: {caso['pergunta']!r} | Reordenados: {docs_reordenados[:2]}..."
     )

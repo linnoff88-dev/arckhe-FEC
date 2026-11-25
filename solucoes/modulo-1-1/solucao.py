@@ -1,4 +1,4 @@
-"""Solução do exercício 1.1 — `reordenar`.
+"""Soluçêo do exercício 1.1 — `reordenar`.
 
 > ⚠️ SPOILER. Tente o exercício antes de ver.
 

@@ -13,39 +13,39 @@ Ver fonte canônica em [`evals/v1/models.json`](./evals/v1/models.json) (papel `
 
 | Trilha / módulo | Modelo OSS | RAM mínima | GPU? | Lab roda 100% offline? | Notas |
 |-----------------|-----------|-----------|-----|------------------------|-------|
-| T1.1 Janela e atenção | qwen2.5-7b q4 | 16 GB | não | ✅ | Demonstração visual; precisão não crítica. |
-| T1.2 Tokens, custo | qwen2.5-7b q4 | 16 GB | não | ✅ | Tokenizer offline funciona em qualquer modelo. |
-| T2.1 Estrutura mensagem | qwen2.5-7b q4 | 16 GB | não | ✅ | |
-| T2.2 Versionamento prompt | qwen2.5-7b q4 | 16 GB | não | ✅ | Eval primer roda local. |
-| T3.1 Indexação (chunking, embeddings) | bge-large-en-v1.5 | 8 GB | não | ✅ | Embeddings local; indexação 100% offline. |
-| T3.2 Reranking | qwen2.5-7b + bge-reranker | 16 GB | não | ✅ | Reranker leve. |
-| T3.3 RAG agêntico (beta) | qwen2.5-7b q4 | 16 GB | não | ⚠️ | Rodável, mas qualidade limitada — recomendado API paga. |
-| T4.1 Tool calling | qwen2.5-7b instruct | 16 GB | não | ✅ | Suporte a tools nativo no qwen2.5. |
-| T4.2 Agentes single | qwen2.5-7b q4 | 16 GB | não | ⚠️ | OK para protótipos; produção exige modelo maior. |
-| T4.3 Multi-agente / MCP (beta) | llama-3.1-70b q4 | 48 GB OU GPU 24 GB | recomendado | ❌ | OSS local na prática só com GPU 24GB+; **lab oferece simulação por gravação em `fixtures/recorded/`**. |
-| T5.1 Memória | qwen2.5-7b q4 | 16 GB | não | ✅ | Summarização hierárquica funciona. |
-| T5.2 Caching (beta) | — | — | — | ❌ | **Sem caching nativo em OSS local.** Lab usa simulação por gravação ou exige API paga. |
+| T1.1 Janela e atençêo | qwen2.5-7b q4 | 16 GB | nêo | ✅ | Demonstraçêo visual; precisêo nêo crítica. |
+| T1.2 Tokens, custo | qwen2.5-7b q4 | 16 GB | nêo | ✅ | Tokenizer offline funciona em qualquer modelo. |
+| T2.1 Estrutura mensagem | qwen2.5-7b q4 | 16 GB | nêo | ✅ | |
+| T2.2 Versionamento prompt | qwen2.5-7b q4 | 16 GB | nêo | ✅ | Eval primer roda local. |
+| T3.1 Indexaçêo (chunking, embeddings) | bge-large-en-v1.5 | 8 GB | nêo | ✅ | Embeddings local; indexaçêo 100% offline. |
+| T3.2 Reranking | qwen2.5-7b + bge-reranker | 16 GB | nêo | ✅ | Reranker leve. |
+| T3.3 RAG agêntico (beta) | qwen2.5-7b q4 | 16 GB | nêo | ⚠️ | Rodável, mas qualidade limitada — recomendado API paga. |
+| T4.1 Tool calling | qwen2.5-7b instruct | 16 GB | nêo | ✅ | Suporte a tools nativo no qwen2.5. |
+| T4.2 Agentes single | qwen2.5-7b q4 | 16 GB | nêo | ⚠️ | OK para protótipos; produçêo exige modelo maior. |
+| T4.3 Multi-agente / MCP (beta) | llama-3.1-70b q4 | 48 GB OU GPU 24 GB | recomendado | ❌ | OSS local na prática só com GPU 24GB+; **lab oferece simulaçêo por gravaçêo em `fixtures/recorded/`**. |
+| T5.1 Memória | qwen2.5-7b q4 | 16 GB | nêo | ✅ | Summarizaçêo hierárquica funciona. |
+| T5.2 Caching (beta) | — | — | — | ❌ | **Sem caching nativo em OSS local.** Lab usa simulaçêo por gravaçêo ou exige API paga. |
 | T6.1 Evals | qwen2.5-7b + judge model | 24 GB | recomendado | ⚠️ | Judge ideal é frontier; OSS local roda mas com bias documentado. |
-| T6.2 Produção (beta) | qwen2.5-7b q4 | 16 GB | não | ✅ | Tracing/logging são lib-side, não dependem do modelo. |
+| T6.2 Produçêo (beta) | qwen2.5-7b q4 | 16 GB | nêo | ✅ | Tracing/logging sêo lib-side, nêo dependem do modelo. |
 
-## Capacidades NÃO disponíveis em OSS local
+## Capacidades NêO disponíveis em OSS local
 
 | Capacidade | Provider | Workaround |
 |-----------|---------|-----------|
 | Long context >128k confiável | qualquer OSS local 2026-Q2 | API paga OU truncar para 32k |
-| Prompt caching nativo | qualquer OSS local | Simulação por gravação em `fixtures/recorded/` |
+| Prompt caching nativo | qualquer OSS local | Simulaçêo por gravaçêo em `fixtures/recorded/` |
 | Tool calling avançado robusto | OSS pequenos | qwen2.5 OK; modelos &lt;7B falham |
 | MCP nativo | qualquer OSS local | Adapter manual |
 
 ## Programas de créditos (alternativa)
 
-Quem não tem hardware E não quer pagar pode tentar programas de créditos:
+Quem nêo tem hardware E nêo quer pagar pode tentar programas de créditos:
 
 - **Anthropic** — créditos iniciais para novos developers.
 - **OpenAI** — créditos free tier (verificar elegibilidade).
 - **Google AI Studio** — tier gratuito generoso (Gemini Flash).
 
-Cobertura desses programas não é garantida — verificar no momento de fazer o lab.
+Cobertura desses programas nêo é garantida — verificar no momento de fazer o lab.
 
 ## Como configurar Ollama
 
@@ -68,4 +68,4 @@ Detalhes específicos do Ollama em [ollama.ai/docs](https://ollama.ai).
 
 ## Reportar incompatibilidade
 
-Modelo OSS não roda no hardware listado? Abrir issue com label `ollama` + ambiente exato.
+Modelo OSS nêo roda no hardware listado? Abrir issue com label `ollama` + ambiente exato.

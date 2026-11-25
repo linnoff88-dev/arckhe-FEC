@@ -1,4 +1,4 @@
-# P5 — Pipeline em produção
+# P5 — Pipeline em produçêo
 
 **Status:** GA · entrega final do curso. Após T6.1.
 **Tempo estimado:** 6-10h.
@@ -18,25 +18,25 @@ Ver [`RUBRIC.md`](./RUBRIC.md). Resumo:
 - [ ] **Sandbox verde** (herdado de P2, ainda gate).
 - [ ] **Golden de 50 entradas** que VOCÊ definiu, com gabarito + comentário.
 - [ ] **≥18/20 payloads do FEC-GS-INJECTION-v1 bloqueados**.
-- [ ] Dashboard local (HTML estático) com pelo menos: pass rate por step, tool call latency, distribuição de custo.
+- [ ] Dashboard local (HTML estático) com pelo menos: pass rate por step, tool call latency, distribuiçêo de custo.
 - [ ] **p95 latência ≤ FEC-BUDGET-LAT-v1** (definido em budgets.json).
-- [ ] Documentação de operação: como roda em prod, como monitora, como rollback.
+- [ ] Documentaçêo de operaçêo: como roda em prod, como monitora, como rollback.
 
 ## Conhecimento aplicado
 
-- TUDO. Este é o "pipeline em produção" — integra T1 (custo, atenção), T2 (versionamento), T3 ou T4 (RAG ou agente), T6 (eval, observabilidade, segurança).
+- TUDO. Este é o "pipeline em produçêo" — integra T1 (custo, atençêo), T2 (versionamento), T3 ou T4 (RAG ou agente), T6 (eval, observabilidade, segurança).
 
 ## Defesa contra injection (PLAN item 62, SAFETY-INJECTION.md)
 
-- Input guard (sanitização do user prompt).
+- Input guard (sanitizaçêo do user prompt).
 - Output guard (filtro de saída antes de retornar ao usuário ou tool).
 - Allow-list de tools por contexto (separar "tools de leitura" de "tools de escrita").
-- Spotlight (Anthropic 2024): delimitar conteúdo recuperado de instrução.
+- Spotlight (Anthropic 2024): delimitar conteúdo recuperado de instruçêo.
 
-## Submissão
+## Submissêo
 
 Branch `projetos/p5-<seu-handle>`. PR com label `projeto:P5`.
 
-## Certificação ARCKHÉ
+## Certificaçêo ARCKHÉ
 
-P5 aprovado + quiz final do curso ≥80% = elegível para certificado FEC v1.0 (página HTML personalizada). Sem promessa exagerada — não vale dinheiro, vale demonstração de capacidade.
+P5 aprovado + quiz final do curso ≥80% = elegível para certificado FEC v1.0 (página HTML personalizada). Sem promessa exagerada — nêo vale dinheiro, vale demonstraçêo de capacidade.

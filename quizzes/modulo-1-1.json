@@ -2,7 +2,7 @@
   "$schema": "../schemas/quiz.schema.json",
   "schema_version": "1",
   "module_id": "modulo-1-1",
-  "title": "Janela, atenção e lost in the middle",
+  "title": "Janela, atençêo e lost in the middle",
   "questions": [
     {
       "id": "q1",
@@ -10,9 +10,9 @@
       "question": "O que descreve melhor o fenômeno 'lost in the middle' em LLMs?",
       "options": [
         { "id": "a", "text": "Modelos esquecem completamente tokens fora da janela." },
-        { "id": "b", "text": "Acurácia degrada quando informação crítica está no meio da janela; permanece alta no início e fim." },
+        { "id": "b", "text": "Acurácia degrada quando informaçêo crítica está no meio da janela; permanece alta no início e fim." },
         { "id": "c", "text": "Tokens no meio da janela custam mais caro que os do início." },
-        { "id": "d", "text": "Modelos pequenos não sofrem do efeito; só os grandes." }
+        { "id": "d", "text": "Modelos pequenos nêo sofrem do efeito; só os grandes." }
       ],
       "correct": "b",
       "rationale": "Liu et al. (2023) mostram a curva U: bom no início (prefix bias) e fim (recency bias), degradado no meio.",
@@ -23,19 +23,19 @@
       "type": "single",
       "question": "Por que colocar seções estáveis (system prompt, few-shot fixos) no INÍCIO da janela é boa engenharia?",
       "options": [
-        { "id": "a", "text": "Porque o modelo não consegue ler o que vem depois." },
-        { "id": "b", "text": "Porque maximiza reuso de prompt cache (KV cache do prefixo) e evita invalidação a cada turn." },
-        { "id": "c", "text": "Porque tokens no início são mais baratos." },
+        { "id": "a", "text": "Porque o modelo nêo consegue ler o que vem depois." },
+        { "id": "b", "text": "Porque maximiza reuso de prompt cache (KV cache do prefixo) e evita invalidaçêo a cada turn." },
+        { "id": "c", "text": "Porque tokens no início sêo mais baratos." },
         { "id": "d", "text": "Porque o tokenizer prioriza início da string." }
       ],
       "correct": "b",
-      "rationale": "Prompt caching reutiliza o KV cache do prefixo. Mexer no system prompt invalida tudo. Anthropic 2024 documenta o padrão.",
+      "rationale": "Prompt caching reutiliza o KV cache do prefixo. Mexer no system prompt invalida tudo. Anthropic 2024 documenta o padrêo.",
       "level": "eng-produto"
     },
     {
       "id": "q3",
       "type": "multiple",
-      "question": "Quais mitigações são VÁLIDAS para 'lost in the middle' em RAG? (escolha todas)",
+      "question": "Quais mitigações sêo VÁLIDAS para 'lost in the middle' em RAG? (escolha todas)",
       "options": [
         { "id": "a", "text": "Reranking — colocar os mais relevantes nas extremidades da lista." },
         { "id": "b", "text": "Recuperar menos documentos, com qualidade maior." },
@@ -43,7 +43,7 @@
         { "id": "d", "text": "Ancoragem — repetir a pergunta antes E depois da lista." }
       ],
       "correct": ["a", "b", "d"],
-      "rationale": "(c) é falso; janela maior NÃO resolve degradação no meio (ver RULER, Hsieh et al. 2024). As outras três têm evidência.",
+      "rationale": "(c) é falso; janela maior NêO resolve degradaçêo no meio (ver RULER, Hsieh et al. 2024). As outras três têm evidência.",
       "level": "eng-plataforma"
     },
     {
@@ -54,19 +54,19 @@
         { "id": "a", "text": "$0.003 — só conta a saída." },
         { "id": "b", "text": "$0.30 — input completo + saída pequena." },
         { "id": "c", "text": "$1.50 — janela inteira × preço de output." },
-        { "id": "d", "text": "$0.0006 — só os tokens 'atendidos' pela atenção." }
+        { "id": "d", "text": "$0.0006 — só os tokens 'atendidos' pela atençêo." }
       ],
       "correct": "b",
-      "rationale": "Input: 100k × $3/M = $0.30. Output: 200 × $15/M ≈ $0.003. Total ~$0.30. Atenção não-uniforme NÃO dá desconto — você paga pela janela inteira.",
+      "rationale": "Input: 100k × $3/M = $0.30. Output: 200 × $15/M ≈ $0.003. Total ~$0.30. Atençêo nêo-uniforme NêO dá desconto — você paga pela janela inteira.",
       "level": "builder-solo"
     },
     {
       "id": "q5",
       "type": "single",
-      "question": "Quando você ESCOLHERIA NÃO usar contexto longo (>50k tokens)?",
+      "question": "Quando você ESCOLHERIA NêO usar contexto longo (>50k tokens)?",
       "options": [
         { "id": "a", "text": "Quando o modelo é frontier — só contexto curto desperdiça capacidade." },
-        { "id": "b", "text": "Quando a tarefa é extração de campo único e RAG já recupera documentos relevantes." },
+        { "id": "b", "text": "Quando a tarefa é extraçêo de campo único e RAG já recupera documentos relevantes." },
         { "id": "c", "text": "Quando você quer máxima qualidade — sempre quanto mais contexto, melhor." },
         { "id": "d", "text": "Nunca — contexto longo é universalmente superior." }
       ],

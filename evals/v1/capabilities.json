@@ -23,7 +23,7 @@
         "anthropic": { "status": "native", "doc_url": "https://docs.anthropic.com" },
         "openai": { "status": "adapter", "notes": "Equivalente parcial via cached prompts." },
         "google": { "status": "adapter" },
-        "ollama": { "status": "mock", "notes": "Sem caching nativo; lab usa simulação por gravação." }
+        "ollama": { "status": "mock", "notes": "Sem caching nativo; lab usa simulaçêo por gravaçêo." }
       }
     },
     {
@@ -41,7 +41,7 @@
     {
       "id": "mcp",
       "name": "Model Context Protocol",
-      "description": "Protocolo para integração de tools/recursos externos.",
+      "description": "Protocolo para integraçêo de tools/recursos externos.",
       "taught_in_modules": ["modulo-4-3"],
       "providers": {
         "anthropic": { "status": "native" },

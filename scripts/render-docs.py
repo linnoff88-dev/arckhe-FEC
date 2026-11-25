@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """render-docs.py — gera Markdown a partir dos JSONs canônicos. PLAN item 95.
 
-Saída sempre tem header de aviso "_⚠️ Gerado de <arquivo>.json. NÃO edite manualmente._"
+Saída sempre tem header de aviso "_⚠️ Gerado de <arquivo>.json. NêO edite manualmente._"
 Pre-commit hook regenera; CI confirma `git diff --quiet` após render.
 
 Uso:
@@ -20,7 +20,7 @@ from textwrap import dedent
 
 REPO = Path(__file__).resolve().parent.parent
 
-WARNING = "> _⚠️ **Gerado de `{src}`.** NÃO edite manualmente — mudanças no MD são sobrescritas. Edite o JSON via PR (CODEOWNERS protege)._\n\n"
+WARNING = "> _⚠️ **Gerado de `{src}`.** NêO edite manualmente — mudanças no MD sêo sobrescritas. Edite o JSON via PR (CODEOWNERS protege)._\n\n"
 
 
 def render_compat() -> str:
@@ -41,7 +41,7 @@ def render_compat() -> str:
         out.append(f"## {label}\n\n")
         combos = data.get(key, [])
         if not combos:
-            out.append("_Nenhuma combinação registrada ainda._\n\n")
+            out.append("_Nenhuma combinaçêo registrada ainda._\n\n")
             continue
         out.append("| Course | fec_sdk | Python | Provedor (SDK) | Status | Nota |\n")
         out.append("|--------|---------|--------|----------------|--------|------|\n")
@@ -73,7 +73,7 @@ def render_capabilities() -> str:
     src = "evals/v1/capabilities.json"
     data = json.loads((REPO / src).read_text())
     out = [f"# CAPACIDADES — Por provedor\n\n", WARNING.format(src=src)]
-    out.append("**Status:** `native` (suporte direto), `adapter` (via `fec_sdk`), `mock` (simulação por gravação), `not_supported`.\n\n")
+    out.append("**Status:** `native` (suporte direto), `adapter` (via `fec_sdk`), `mock` (simulaçêo por gravaçêo), `not_supported`.\n\n")
     for cap in data["capabilities"]:
         out.append(f"## {cap['name']} (`{cap['id']}`)\n\n")
         if cap.get("description"):
@@ -90,9 +90,9 @@ def render_capabilities() -> str:
 def render_alerts() -> str:
     src = "evals/v1/alerts.json"
     data = json.loads((REPO / src).read_text())
-    out = [f"# ALERTS — Mapeamento métrica → severidade → ação\n\n", WARNING.format(src=src)]
+    out = [f"# ALERTS — Mapeamento métrica → severidade → açêo\n\n", WARNING.format(src=src)]
     out.append("Consumido pelo `dashboard.py` e pelos runbooks.\n\n")
-    out.append("| ID | Métrica | Condição | Sev | Owner | Ação | Runbook |\n")
+    out.append("| ID | Métrica | Condiçêo | Sev | Owner | Açêo | Runbook |\n")
     out.append("|-----|---------|----------|-----|-------|------|---------|\n")
     for a in data["alerts"]:
         out.append(f"| `{a['id']}` | `{a['metric']}` | {a['condition']} | **{a['severity']}** | {a['owner_role']} | {a['action']} | [{a['runbook']}](./{a['runbook']}) |\n")
@@ -103,7 +103,7 @@ def render_risk_acceptance() -> str:
     src = "evals/v1/risk-acceptance.json"
     data = json.loads((REPO / src).read_text())
     out = [f"# RISK-ACCEPTANCE — Aceites de risco residual\n\n", WARNING.format(src=src)]
-    out.append("Apenas `severity:high` em classes NÃO bloqueantes. Classes `security`, `data-integrity`, `sandbox`, `licensing`, `lab-breaking`, `injection-bypass` **não podem** estar aqui (PLAN item 74).\n\n")
+    out.append("Apenas `severity:high` em classes NêO bloqueantes. Classes `security`, `data-integrity`, `sandbox`, `licensing`, `lab-breaking`, `injection-bypass` **nêo podem** estar aqui (PLAN item 74).\n\n")
     accs = data.get("acceptances", [])
     if not accs:
         out.append("_Nenhum aceite de risco ativo._\n")

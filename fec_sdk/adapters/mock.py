@@ -6,7 +6,7 @@ Uso:
     >>> mock.chat([Message(role=MessageRole.USER, content="hello")]).content
     'olá!'
 
-Quando o lab depende de capacidade não-portável (ex.: prompt caching), o adapter
+Quando o lab depende de capacidade nêo-portável (ex.: prompt caching), o adapter
 mock pode reproduzir o comportamento determinístico e medições gravadas.
 """
 

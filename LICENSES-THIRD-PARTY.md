@@ -1,34 +1,34 @@
 # LICENSES-THIRD-PARTY — Manifesto de licenças de terceiros
 
-> _CI bloqueia inclusão de fixture/screenshot/diagrama-base sem entrada aqui. PLAN item 44._
+> _CI bloqueia inclusêo de fixture/screenshot/diagrama-base sem entrada aqui. PLAN item 44._
 
 ## Política
 
 Todo conteúdo de terceiros incluído ou referenciado tem:
 
 1. **Entrada neste arquivo** com fonte, licença, e uso permitido.
-2. **Atribuição** no contexto onde aparece (legenda da figura, footnote, etc.).
+2. **Atribuiçêo** no contexto onde aparece (legenda da figura, footnote, etc.).
 3. **Licença compatível** com o resto do projeto (CC BY, CC BY-SA, MIT, Apache, domínio público, ou similar).
 
-CI verifica: cada arquivo em `fixtures/` deve ter entrada aqui. Se não tem, falha.
+CI verifica: cada arquivo em `fixtures/` deve ter entrada aqui. Se nêo tem, falha.
 
 ## Fixtures
 
-| Caminho | Fonte | Licença | Uso permitido | Atribuição em |
+| Caminho | Fonte | Licença | Uso permitido | Atribuiçêo em |
 |---------|-------|---------|---------------|---------------|
-| _(vazio — primeiros datasets serão adicionados em T3)_ | | | | |
+| _(vazio — primeiros datasets serêo adicionados em T3)_ | | | | |
 
 ### Datasets planejados
 
 #### `fixtures/arxiv-cs-100/`
 - **Fonte:** ArXiv (cs.LG / cs.CL abstracts).
-- **Licença:** ArXiv abstracts são de domínio público para uso não-comercial / educacional sob fair use; texto integral varia. Manter apenas abstracts e metadados (título, autores, ID, ano).
-- **Uso permitido:** RAG, indexação, eval — uso educacional não-comercial.
-- **Atribuição:** "Dataset construído a partir de abstracts do ArXiv (arxiv.org), uso educacional. IDs originais preservados em `metadata.json`."
+- **Licença:** ArXiv abstracts sêo de domínio público para uso nêo-comercial / educacional sob fair use; texto integral varia. Manter apenas abstracts e metadados (título, autores, ID, ano).
+- **Uso permitido:** RAG, indexaçêo, eval — uso educacional nêo-comercial.
+- **Atribuiçêo:** "Dataset construído a partir de abstracts do ArXiv (arxiv.org), uso educacional. IDs originais preservados em `metadata.json`."
 
 ## Diagramas / SVGs
 
-Diagramas em `assets/diagrams/` são originais ou derivados. Sem importar SVGs de terceiros sem entrada aqui.
+Diagramas em `assets/diagrams/` sêo originais ou derivados. Sem importar SVGs de terceiros sem entrada aqui.
 
 | Arquivo | Fonte | Licença | Uso |
 |---------|-------|---------|-----|
@@ -39,7 +39,7 @@ Diagramas em `assets/diagrams/` são originais ou derivados. Sem importar SVGs d
 
 Evitamos screenshots de produtos de terceiros para reduzir superfície de licença. Quando inevitável:
 
-| Arquivo | Origem | Licença / autorização | Atribuição |
+| Arquivo | Origem | Licença / autorizaçêo | Atribuiçêo |
 |---------|--------|----------------------|-----------|
 | _(vazio)_ | | | |
 
@@ -51,9 +51,9 @@ Código importado (ex.: utility de outro repo OSS) entra com licença + comentá
 |---------|--------|---------|--------------|
 | _(vazio até importarmos algo)_ | | | |
 
-## Papers citados (apenas link, não conteúdo)
+## Papers citados (apenas link, nêo conteúdo)
 
-ArXiv abstracts e DOIs em `bibliografia/T<n>.md` são links — não copiamos texto. Citação não exige entrada aqui (é fair use academic).
+ArXiv abstracts e DOIs em `bibliografia/T<n>.md` sêo links — nêo copiamos texto. Citaçêo nêo exige entrada aqui (é fair use academic).
 
 ## Auditoria
 

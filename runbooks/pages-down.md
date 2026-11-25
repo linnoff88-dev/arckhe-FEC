@@ -17,17 +17,17 @@
    - `git fetch origin gh-pages && git checkout gh-pages`
    - confronte `v1.0.0/` local com a URL pública
 3. **Rollback de Pages** via `scripts/rollback-pages.py` se confirmado:
-   - opção A — flip do alias `/latest/` para sucessor.
-   - opção B — shell de deprecação em `index.html` da versão afetada.
+   - opçêo A — flip do alias `/latest/` para sucessor.
+   - opçêo B — shell de deprecaçêo em `index.html` da versêo afetada.
 4. **Investigue causa raiz:** workflow editado? Token comprometido? Rebuild diário do `/status/` invadiu `/v1.0.0/`?
 
-## Comunicação
+## Comunicaçêo
 
 - Banner em `index.html` (raiz) avisando "Pages incidente em <data>".
 - Issue público com label `incident`.
 - Postmortem em `postmortems/`.
 
-## Prevenção
+## Prevençêo
 
 - Path versionado imutável (`/v1.0.0/` nunca rebuilta — PLAN item 74a).
 - `audit-pages.py` no release.yml gate.

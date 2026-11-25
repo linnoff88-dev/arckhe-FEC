@@ -3,7 +3,7 @@
 
 Modos:
   --mode=block  : XSS hard checks (no <script>, no on*=, javascript:, iframe sem sandbox).
-  --mode=strict : palavras 2.5k-4.5k, ≥3 refs, "Quando NÃO usar", evidência ligada ao harness.
+  --mode=strict : palavras 2.5k-4.5k, ≥3 refs, "Quando NêO usar", evidência ligada ao harness.
 
 Bloqueante em ci-fast (mode=block) e ci-scheduled (mode=strict).
 """
@@ -64,7 +64,7 @@ def lint_xss(path: Path) -> list[str]:
 
 
 def lint_strict(path: Path) -> list[str]:
-    """Lint estrita: word count, refs, "Quando NÃO usar", evidência."""
+    """Lint estrita: word count, refs, "Quando NêO usar", evidência."""
     if "modulo-" not in path.name or path.suffix != ".html":
         return []
     text = path.read_text(encoding="utf-8")
@@ -83,9 +83,9 @@ def lint_strict(path: Path) -> list[str]:
     if refs < 3:
         errors.append(f"Apenas {refs} referências externas — mínimo 3 (PLAN item 35)")
 
-    # "Quando NÃO usar"
-    if "quando não usar" not in text.lower():
-        errors.append('Seção "Quando NÃO usar" ausente (PLAN item 20)')
+    # "Quando NêO usar"
+    if "quando nêo usar" not in text.lower():
+        errors.append('Seçêo "Quando NêO usar" ausente (PLAN item 20)')
 
     # evidência linkada ao harness ou paper datado
     has_harness = bool(re.search(r"evals/v1/runs/", text))
@@ -112,7 +112,7 @@ def main() -> int:
         if errs:
             errors[rel] = errs
 
-    # Markdown — só XSS via referência (raras), não wordcount
+    # Markdown — só XSS via referência (raras), nêo wordcount
     if args.mode == "block":
         for path in REPO.rglob("*.md"):
             if "node_modules" in path.parts:

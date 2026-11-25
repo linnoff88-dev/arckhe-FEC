@@ -8,8 +8,8 @@ Regras (bloqueantes em ci-fast):
 - Link ARCKHÉ AI presente com `text-sky-400`.
 - Light mode CSS presente (`@media (prefers-color-scheme: light)`).
 - Badge GA/beta presente no front-matter.
-- Botão sempre `justify-start` (regra crítica ARCKHÉ).
-- "Quando NÃO usar" presente em módulo de padrão técnico.
+- Botêo sempre `justify-start` (regra crítica ARCKHÉ).
+- "Quando NêO usar" presente em módulo de padrêo técnico.
 
 Skip: index.html da raiz e índices de trilha (têm estrutura diferente).
 """
@@ -40,7 +40,7 @@ def _has_ARCKHÉ_link(html: str) -> bool:
 
 
 def _has_light_mode(html: str) -> bool:
-    # Em v1.0 light mode foi desabilitado (ver HOSTING-DECISION.md). Esta verificação
+    # Em v1.0 light mode foi desabilitado (ver HOSTING-DECISION.md). Esta verificaçêo
     # agora aceita: (a) link para ARCKHÉ.css (CSS fonte tem `color-scheme: dark`),
     # (b) presença de meta color-scheme, ou (c) regra inline.
     if "color-scheme" in html:
@@ -58,7 +58,7 @@ def _has_status_badge(html: str) -> bool:
 
 
 def _has_quando_nao_usar(html: str) -> bool:
-    return "quando não usar" in html.lower() or "quando-nao-usar" in html
+    return "quando nêo usar" in html.lower() or "quando-nao-usar" in html
 
 
 def validate_module(path: Path) -> list[str]:
@@ -79,9 +79,9 @@ def validate_module(path: Path) -> list[str]:
     if not _has_status_badge(html):
         errors.append('Badge "GA" ou "beta" ausente (front-matter ou data-status)')
     if JUSTIFY_CENTER_BTN.search(html):
-        errors.append('Botão usa justify-center — REGRA CRÍTICA: usar justify-start')
+        errors.append('Botêo usa justify-center — REGRA CRÍTICA: usar justify-start')
     if not _has_quando_nao_usar(html):
-        errors.append('Seção "Quando NÃO usar" obrigatória ausente (PLAN item 20)')
+        errors.append('Seçêo "Quando NêO usar" obrigatória ausente (PLAN item 20)')
 
     return errors
 

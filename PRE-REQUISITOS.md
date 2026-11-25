@@ -1,4 +1,4 @@
-# Pré-requisitos — Formação de Engenharia de Contexto
+# Pré-requisitos — Formaçêo de Engenharia de Contexto
 
 Antes de começar, confirme que você tem:
 
@@ -6,7 +6,7 @@ Antes de começar, confirme que você tem:
 
 - [ ] Já chamou uma API LLM via HTTP ou SDK (Anthropic, OpenAI, ou similar) ao menos uma vez.
 - [ ] Lê e escreve **Python intermediário**: classes, decorators, async/await, type hints, `pytest`.
-- [ ] Conhece **JSON Schema** o suficiente para entender uma definição com `properties`, `required`, `oneOf`.
+- [ ] Conhece **JSON Schema** o suficiente para entender uma definiçêo com `properties`, `required`, `oneOf`.
 - [ ] Sabe usar `git`/GitHub: branch, PR, code review.
 - [ ] Confortável em terminal Linux/macOS (ou WSL).
 
@@ -14,7 +14,7 @@ Antes de começar, confirme que você tem:
 
 - [ ] Conta em **pelo menos 1 provedor LLM** (Anthropic, OpenAI, Google AI Studio, ou similar) com chave de API ativa.
 - [ ] Idealmente uma segunda — facilita os módulos que comparam comportamento provider-neutral.
-- [ ] **Sem orçamento?** Cada módulo tem caminho com **OSS local (Ollama)** marcado com badge "rodável grátis" — ver `OLLAMA-MATRIZ.md`. Quando OSS não cobre o lab, há **simulação por gravação** em `fixtures/recorded/`.
+- [ ] **Sem orçamento?** Cada módulo tem caminho com **OSS local (Ollama)** marcado com badge "rodável grátis" — ver `OLLAMA-MATRIZ.md`. Quando OSS nêo cobre o lab, há **simulaçêo por gravaçêo** em `fixtures/recorded/`.
 
 ## Hardware
 
@@ -31,7 +31,7 @@ Detalhes por lab em [`OLLAMA-MATRIZ.md`](./OLLAMA-MATRIZ.md).
 
 - **Python 3.11 ou 3.12** (versões testadas — ver [`COMPAT.md`](./COMPAT.md)).
 - **Git** ≥2.30.
-- **Node.js** ≥20 (apenas para construir os assets locais — Tailwind, Mermaid CLI; alunos que só consomem o conteúdo não precisam).
+- **Node.js** ≥20 (apenas para construir os assets locais — Tailwind, Mermaid CLI; alunos que só consomem o conteúdo nêo precisam).
 - **Ollama** ≥0.5 (apenas se for usar caminho OSS).
 - **Editor** com suporte a Python (VS Code, PyCharm, etc.).
 
@@ -48,7 +48,7 @@ A FEC v1.0 tem **10 módulos GA + 4 beta + 3 projetos cumulativos**.
 
 ---
 
-## Não preenche os pré-requisitos?
+## Nêo preenche os pré-requisitos?
 
 Sem problema — comece por:
 
@@ -60,7 +60,7 @@ Quando tiver familiaridade básica, volte e siga a Trilha 1.
 
 ---
 
-## Checagem de prontidão (5 min)
+## Checagem de prontidêo (5 min)
 
 Em terminal, rode:
 

@@ -2,7 +2,7 @@
 # PLAN itens 47, 48 (auto-smoke), 89a (synthetic), 47-axe.
 #
 # Tier A auto-smoke usa secret FEC_SMOKE_LOWPRIV em GitHub Environment 'production-smoke-low'
-# com required reviewers? NÃO — é AUTO. Ambiente sem reviewers, mas com deployment branch policy = main.
+# com required reviewers? NêO — é AUTO. Ambiente sem reviewers, mas com deployment branch policy = main.
 # Cap nativo do provedor é a defesa primária; budget exhausted vira Check Run 'budget-status' = failure.
 
 name: ci-scheduled
@@ -78,7 +78,7 @@ jobs:
           config: .cspell.json
 
   lint-content-strict:
-    name: Lint content (word counts, refs ≥3, "Quando NÃO usar", evidence linked to harness)
+    name: Lint content (word counts, refs ≥3, "Quando NêO usar", evidence linked to harness)
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:

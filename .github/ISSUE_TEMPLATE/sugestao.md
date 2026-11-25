@@ -1,5 +1,5 @@
 ---
-name: Sugestão de tópico ou módulo
+name: Sugestêo de tópico ou módulo
 about: Proposta de novo conteúdo, exercício ou projeto
 title: "[sugestao] <resumo>"
 labels: sugestao
@@ -16,15 +16,15 @@ Que problema do aluno isso resolve? Quem é o público-alvo nivelado (builder so
 
 ## Como se encaixa no escopo
 
-Confirme que não está em [`ESCOPO.md`](../../ESCOPO.md) → "Fora do escopo". Se estiver, justifique a mudança.
+Confirme que nêo está em [`ESCOPO.md`](../../ESCOPO.md) → "Fora do escopo". Se estiver, justifique a mudança.
 
 Trilha onde encaixaria:
 Módulo (existente ou novo):
 
 ## Evidência
 
-- Paper, post técnico ou run no harness que valida a alegação central.
-- Se padrão técnico, qual o "Quando NÃO usar"?
+- Paper, post técnico ou run no harness que valida a alegaçêo central.
+- Se padrêo técnico, qual o "Quando NêO usar"?
 
 ## Esforço estimado
 

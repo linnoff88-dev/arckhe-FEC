@@ -20,7 +20,7 @@
 
   h1, h2, h3, h4, h5, h6 { @apply text-zinc-50 font-bold; }
 
-  /* Garantia: links sem decoração default mas visíveis */
+  /* Garantia: links sem decoraçêo default mas visíveis */
   a { color: inherit; }
 }
 
@@ -44,7 +44,7 @@
     @apply rounded-full flex items-center justify-center font-semibold;
   }
 
-  /* Botão padrão — ALWAYS justify-start (regra crítica ARCKHÉ) */
+  /* Botêo padrêo — ALWAYS justify-start (regra crítica ARCKHÉ) */
   .btn { @apply inline-flex items-center justify-start px-4 py-2 rounded font-semibold transition-colors; }
   .btn-primary { @apply bg-yellow-400 text-zinc-900 hover:bg-yellow-300; }
   .btn-outline { @apply border border-zinc-700 text-zinc-200 hover:bg-zinc-800; }
@@ -57,7 +57,7 @@
   /* Subseções ARCKHÉ (3 obrigatórias) */
   .subsecao-ARCKHÉ h4 { @apply text-sm uppercase tracking-wider text-zinc-500 mb-1; }
 
-  /* Quando NÃO usar (alerta vermelho) */
+  /* Quando NêO usar (alerta vermelho) */
   .quando-nao-usar h4 { @apply text-red-400 text-sm font-semibold mb-2; }
 
   /* Bloco de evidência (linka run-id do harness) */
@@ -76,7 +76,7 @@
 
 /* ===== Garantias específicas (defesa em profundidade) ===== */
 
-/* text-primary fallback caso o config customizado não carregue */
+/* text-primary fallback caso o config customizado nêo carregue */
 .text-primary { color: #FACC15 !important; }
 .bg-primary { background-color: #FACC15 !important; }
 .bg-primary\/10 { background-color: rgba(250, 204, 21, 0.10) !important; }

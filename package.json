@@ -2,7 +2,7 @@
   "name": "fec-build",
   "private": true,
   "version": "1.0.0",
-  "description": "Build pipeline (Tailwind CSS + Mermaid pre-render + Playwright tests) para FEC. NÃO publicado em npm.",
+  "description": "Build pipeline (Tailwind CSS + Mermaid pre-render + Playwright tests) para FEC. NêO publicado em npm.",
   "type": "module",
   "scripts": {
     "build:css": "tailwindcss -i ./assets/css/ARCKHÉ.src.css -o ./assets/css/ARCKHÉ.css --minify",

@@ -1,10 +1,10 @@
 # MEDIDAS — Métricas operacionais da FEC
 
-> _Métricas declaradas e medidas. NÃO use stars/downloads como sinal de saúde. PLAN item 86._
+> _Métricas declaradas e medidas. NêO use stars/downloads como sinal de saúde. PLAN item 86._
 
 ## Saúde do CI
 
-| Métrica | Fonte | Atualização | Atual |
+| Métrica | Fonte | Atualizaçêo | Atual |
 |---------|-------|-------------|-------|
 | `auto_smoke.pass_rate_7d` | dashboard.py | diário | _aguardando primeiro release_ |
 | `auto_smoke.pass_rate_30d` | dashboard.py | diário | — |
@@ -31,7 +31,7 @@ Alertas:
 
 | Métrica | Atual |
 |---------|-------|
-| Issues `errata` abertas | _aguardando publicação_ |
+| Issues `errata` abertas | _aguardando publicaçêo_ |
 | Issues `errata` fechadas (30d) | — |
 | Tempo médio fechamento `errata` por severidade | — |
 | Links externos quebrados (lychee scheduled) | — |
@@ -47,10 +47,10 @@ Alertas:
 ## Métricas vetadas como sinal de saúde
 
 - ⛔ **Stars** sozinhas — ego metric.
-- ⛔ **Downloads** sozinhos — não diferencia uso real de scraping.
+- ⛔ **Downloads** sozinhos — nêo diferencia uso real de scraping.
 - ⛔ **Tweets/posts** — ruído.
 
-Estas servem como **contexto** para postmortems / planning, não como semáforo.
+Estas servem como **contexto** para postmortems / planning, nêo como semáforo.
 
 ## Drills semestrais
 

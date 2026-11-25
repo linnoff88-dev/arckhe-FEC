@@ -16,10 +16,10 @@ def reordenar(documentos: list[str], pergunta: str) -> list[str]:
     Returns:
         Lista reordenada (e/ou truncada).
     """
-    # TODO: implemente sua mitigação aqui.
+    # TODO: implemente sua mitigaçêo aqui.
     # Estratégias ensinadas no módulo:
     # 1. Reranking simples (por keyword, densidade, etc.) — coloca os mais relevantes no topo/fim.
     # 2. Truncation — recuperar menos e melhor.
     # 3. Ancoragem — repetir a pergunta antes E depois da lista de documentos.
-    # 4. Combinação das três.
+    # 4. Combinaçêo das três.
     return documentos  # placeholder; substitua.

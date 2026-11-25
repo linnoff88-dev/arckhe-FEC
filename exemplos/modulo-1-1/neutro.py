@@ -1,4 +1,4 @@
-"""Exemplo provider-neutral — medição básica de "lost in the middle".
+"""Exemplo provider-neutral — mediçêo básica de "lost in the middle".
 
 Roda com qualquer adapter via fec_sdk. Adaptadores específicos:
 - exemplos/modulo-1-1/anthropic.py
@@ -20,7 +20,7 @@ def medir(provider: str, model: str | None = None) -> None:
     if provider == "mock":
         client = get_adapter("mock", scripted=[
             ("início", "200000 tokens"),
-            ("meio", "não sei"),
+            ("meio", "nêo sei"),
             ("fim", "200000 tokens"),
         ])
     else:
@@ -37,7 +37,7 @@ def medir(provider: str, model: str | None = None) -> None:
 
     for posicao, contexto in cenarios.items():
         resp = client.chat([
-            Message(role=MessageRole.SYSTEM, content="Responda apenas com fatos do contexto. Se não houver, diga 'não sei'."),
+            Message(role=MessageRole.SYSTEM, content="Responda apenas com fatos do contexto. Se nêo houver, diga 'nêo sei'."),
             Message(role=MessageRole.USER, content=f"{contexto}\n\nQual a janela do modelo X?"),
         ])
         print(f"[{posicao:>6s}] in={resp.input_tokens:>5d} out={resp.output_tokens:>3d}  →  {resp.content[:80]}")

@@ -1,28 +1,28 @@
-# HANDOFF — Passagem de plantão
+# HANDOFF — Passagem de plantêo
 
-> _Atualize ao fim de cada semana de rotação. PLAN item 90._
+> _Atualize ao fim de cada semana de rotaçêo. PLAN item 90._
 
 ## Template
 
 Copie e preencha:
 
 ```markdown
-## Plantão: <YYYY-W##>
+## Plantêo: <YYYY-W##>
 
 **De:** @<maintainer-saindo>
 **Para:** @<maintainer-entrando>
 **Período:** <data início> a <data fim>
 
-### Incidentes durante o plantão
+### Incidentes durante o plantêo
 - [SEV-X] <breve> — resolvido / em aberto (link issue) / em postmortem
 
-### Issues em aberto que precisam atenção
-- [#123] <título> — severidade, status, próxima ação esperada
+### Issues em aberto que precisam atençêo
+- [#123] <título> — severidade, status, próxima açêo esperada
 - ...
 
 ### Mudanças em flags / kill-switches
 - `SMOKE-KILLSWITCH.json` — sem mudança / ligado em <data> por <motivo>, expected_off_until=<data>
-- `BUDGETS-EXCEPTIONS.md` — sem nova exceção / nova exceção <id>
+- `BUDGETS-EXCEPTIONS.md` — sem nova exceçêo / nova exceçêo <id>
 
 ### Saúde do sistema (snapshot)
 - auto-smoke (7d): <X> pass / <Y> fail
@@ -34,7 +34,7 @@ Copie e preencha:
 ### Tarefas planejadas para a próxima semana
 - ...
 
-### Notas / contexto não-óbvio
+### Notas / contexto nêo-óbvio
 - ...
 ```
 
@@ -44,9 +44,9 @@ Copie e preencha:
 
 _(arquivo cresce abaixo conforme o curso for sendo desenvolvido e mantido)_
 
-### Plantão: 2026-W18
+### Plantêo: 2026-W18
 
-**De:** N/A (primeiro plantão)
+**De:** N/A (primeiro plantêo)
 **Para:** _TBD_
 **Período:** 2026-04-27 a 2026-05-03
 

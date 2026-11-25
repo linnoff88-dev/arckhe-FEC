@@ -4,26 +4,26 @@
 
 ## Escopo educacional
 
-A FEC ensina prompt injection na trilha **T6** (avaliação e produção) com foco em **defesa**. Cobertura:
+A FEC ensina prompt injection na trilha **T6** (avaliaçêo e produçêo) com foco em **defesa**. Cobertura:
 
 ### In-scope
 - Classes documentadas de ataque: jailbreak básico, indirect injection (via documentos recuperados), exfiltration via tool, tool poisoning.
-- Payloads em **fixtures testáveis** (`fixtures/injection/`) — não copy-paste em texto corrido.
+- Payloads em **fixtures testáveis** (`fixtures/injection/`) — nêo copy-paste em texto corrido.
 - Sandbox local (P5) onde o aluno executa contra um agente HIPOTÉTICO do curso.
-- Defesas ensinadas: input/output guard, allow-list de tools, separação de escopo do prompt do usuário, *spotlight* (Anthropic 2024), prompt sanitization patterns.
+- Defesas ensinadas: input/output guard, allow-list de tools, separaçêo de escopo do prompt do usuário, *spotlight* (Anthropic 2024), prompt sanitization patterns.
 
-### Out-of-scope (não cobrimos)
+### Out-of-scope (nêo cobrimos)
 - Payloads contra produtos reais nomeados (ChatGPT, Claude.ai, Gemini app, etc.).
 - Bypass de safety models específicos por nome.
 - Conteúdo CSAM, armas biológicas/químicas, instruções para ataques contra pessoas reais ou infraestrutura crítica.
-- "Jailbreak para fazer o modelo XYZ produzir conteúdo proibido" — não interessa pedagogicamente.
+- "Jailbreak para fazer o modelo XYZ produzir conteúdo proibido" — nêo interessa pedagogicamente.
 
-## Apresentação do conteúdo
+## Apresentaçêo do conteúdo
 
 - **Payloads ficam em fixtures** (`fixtures/injection/<classe>/<id>.json`) com schema validado. NUNCA em texto corrido nos módulos HTML.
 - **Aluno carrega fixture** via lab; código que executa fica em sandbox (`SECURITY-SANDBOX.md`).
-- **Texto dos módulos** descreve a CLASSE de ataque conceitualmente, não fornece o payload pronto para colar em produtos reais.
-- **Exemplos visuais** (diagramas SVG) mostram fluxo abstrato — "tool A recebe instrução não-confiável" — sem payload literal.
+- **Texto dos módulos** descreve a CLASSE de ataque conceitualmente, nêo fornece o payload pronto para colar em produtos reais.
+- **Exemplos visuais** (diagramas SVG) mostram fluxo abstrato — "tool A recebe instruçêo nêo-confiável" — sem payload literal.
 
 ## Golden de injection
 
@@ -40,10 +40,10 @@ P5 exige **≥18/20 bloqueados** (sandbox + defesas) antes de virar GA.
 
 Todo módulo que cobre injection abre com:
 
-> ⚠️ **Conteúdo educacional.** Os payloads abaixo são para você aprender a **detectar e defender**. Não use contra produtos de terceiros sem autorização explícita; pode violar ToS e leis de cibersegurança.
+> ⚠️ **Conteúdo educacional.** Os payloads abaixo sêo para você aprender a **detectar e defender**. Nêo use contra produtos de terceiros sem autorizaçêo explícita; pode violar ToS e leis de cibersegurança.
 
 ## Política
 
 - PR que adiciona payload PRECISA classificar em uma das classes in-scope.
-- PR com payload out-of-scope é fechado com explicação.
-- Reporter externo de novo padrão de injection: GHSA + decisão de cobertura por maintainers + revisão externa de segurança.
+- PR com payload out-of-scope é fechado com explicaçêo.
+- Reporter externo de novo padrêo de injection: GHSA + decisêo de cobertura por maintainers + revisêo externa de segurança.

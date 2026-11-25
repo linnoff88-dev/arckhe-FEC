@@ -1,5 +1,5 @@
 # ci-fast.yml — bloqueante em PR e push, alvo <90s wall (PLAN item 46).
-# Não recebe secrets. Forks rodam aqui sem credenciais.
+# Nêo recebe secrets. Forks rodam aqui sem credenciais.
 
 name: ci-fast
 

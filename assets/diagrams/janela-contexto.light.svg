@@ -53,7 +53,7 @@
   <g>
     <rect x="340" y="210" width="220" height="70" rx="8" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
     <text x="450" y="240" text-anchor="middle" font-size="14" font-weight="700" fill="#581c87">Modelo (LLM)</text>
-    <text x="450" y="260" text-anchor="middle" font-size="11" fill="#6b21a8">atenção causal • KV cache</text>
+    <text x="450" y="260" text-anchor="middle" font-size="11" fill="#6b21a8">atençêo causal • KV cache</text>
   </g>
 
   <line x1="450" y1="280" x2="450" y2="310" stroke="#525252" stroke-width="2" marker-end="url(#arr-l)"/>

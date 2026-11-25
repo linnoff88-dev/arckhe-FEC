@@ -5,7 +5,7 @@ Defesas:
 - deny absolute paths.
 - deny `..` em qualquer segmento.
 - deny symlinks (resolve antes de abrir e compara).
-- cap de tamanho por arquivo (1 MB default) e por sessão (50 MB default).
+- cap de tamanho por arquivo (1 MB default) e por sessêo (50 MB default).
 - allowlist de extensões.
 
 Tools que tocam filesystem DEVEM rodar dentro de uma instância de
@@ -85,7 +85,7 @@ class FilesystemSandbox:
         p = os.fspath(raw)
         if os.path.isabs(p):
             raise SandboxViolation(f"Absolute path forbidden: {p!r}", kind="absolute-path")
-        # `..` em qualquer segmento (mesmo isolado, mesmo após normalização parcial)
+        # `..` em qualquer segmento (mesmo isolado, mesmo após normalizaçêo parcial)
         norm = os.path.normpath(p)
         if norm.startswith(".."):
             raise SandboxViolation(f"Path traversal forbidden: {p!r}", kind="path-traversal")
@@ -93,7 +93,7 @@ class FilesystemSandbox:
             if part == "..":
                 raise SandboxViolation(f"Path traversal forbidden in segment: {p!r}", kind="path-traversal")
 
-        # construção sem resolução para checar symlink primeiro
+        # construçêo sem resoluçêo para checar symlink primeiro
         full_unresolved = self.root / p
 
         # symlink check em qualquer parte do caminho (incluindo o alvo) ANTES de resolve
@@ -105,7 +105,7 @@ class FilesystemSandbox:
                 break
             cur = cur.parent
 
-        # confina dentro do root mesmo após resolução
+        # confina dentro do root mesmo após resoluçêo
         full = full_unresolved.resolve(strict=False)
         try:
             full.relative_to(self.root.resolve(strict=True))

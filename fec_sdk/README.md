@@ -1,8 +1,8 @@
 # fec-sdk
 
-Cliente provider-neutral da [Formação de Engenharia de Contexto (FEC)](https://github.com/linnoff88-dev/FEC).
+Cliente provider-neutral da [Formaçêo de Engenharia de Contexto (FEC)](https://github.com/linnoff88-dev/FEC).
 
-## Instalação
+## Instalaçêo
 
 ```bash
 pip install fec-sdk
@@ -61,7 +61,7 @@ print(selftest())  # {'version': '1.0.0', 'sandbox': 'ok', 'import': 'ok'}
 ## Política
 
 - **Determinístico por default:** `temperature=0`, sem seed implícita.
-- **Sem I/O na importação** (exceto `check_compat()` quando explicitamente chamado).
-- **Erros tipados** (`ProviderError`, `SandboxViolation`, `RevokedVersionError`, `IncompatibleVersionError`) — não exceções genéricas.
+- **Sem I/O na importaçêo** (exceto `check_compat()` quando explicitamente chamado).
+- **Erros tipados** (`ProviderError`, `SandboxViolation`, `RevokedVersionError`, `IncompatibleVersionError`) — nêo exceções genéricas.
 
 Licença: MIT (ver [LICENSE-CODE](../LICENSE-CODE)).

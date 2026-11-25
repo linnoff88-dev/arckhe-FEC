@@ -1,4 +1,4 @@
-"""Adapters provider-específicos. Importação tardia para não exigir todas as deps.
+"""Adapters provider-específicos. Importaçêo tardia para nêo exigir todas as deps.
 
 Uso:
     from fec_sdk.adapters import get_adapter
@@ -13,7 +13,7 @@ from fec_sdk.adapters.base import Adapter, ChatResponse
 
 
 def get_adapter(provider: str, **kwargs: Any) -> Adapter:
-    """Factory provider-neutral. Lança ImportError se a dep do provedor não está instalada."""
+    """Factory provider-neutral. Lança ImportError se a dep do provedor nêo está instalada."""
     if provider == "mock":
         from fec_sdk.adapters.mock import MockAdapter
         return MockAdapter(**kwargs)

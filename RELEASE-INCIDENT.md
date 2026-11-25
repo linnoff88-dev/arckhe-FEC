@@ -4,7 +4,7 @@
 
 ## Severidades
 
-- **SEV-1:** secret no zip, malware, exfil real, XSS em produção, sandbox quebrado.
+- **SEV-1:** secret no zip, malware, exfil real, XSS em produçêo, sandbox quebrado.
 - **SEV-2:** módulo GA com erro técnico que invalida lab, benchmark errado, quebra de licença.
 
 ## Checklist linear (siga em ordem; cada passo tem owner e prazo)
@@ -12,11 +12,11 @@
 ### Passo 1 — Confirmar incidente (≤30 min)
 
 - [ ] Reproduzir o problema localmente (se possível).
-- [ ] Identificar versão afetada (`v1.0.0`, `v1.0.0-rc.X`, etc.).
+- [ ] Identificar versêo afetada (`v1.0.0`, `v1.0.0-rc.X`, etc.).
 - [ ] Identificar artefatos afetados (zip, wheel, Pages, Zenodo).
 - [ ] Classificar severidade.
 
-### Passo 2 — Banner de deprecação (≤1h)
+### Passo 2 — Banner de deprecaçêo (≤1h)
 
 - [ ] PR no banner: `assets/banners/deprecation.html` atualizado com data, severidade, link.
 - [ ] PR em `index.html` e `README.md` adicionando o banner via `<picture>` ou inline.
@@ -28,7 +28,7 @@
 - [ ] Título atualizado: `⚠️ DEPRECATED — see vX.Y.Z` (X.Y.Z = sucessor).
 - [ ] Notes editadas: bloco "## ⚠️ Deprecated" no topo com motivo + link para sucessor.
 - [ ] Assets renomeados via `gh release upload --clobber` com sufixo `-DEPRECATED-DO-NOT-USE`.
-- [ ] **NÃO delete a tag** — preserva história e quebra menos quem clonou.
+- [ ] **NêO delete a tag** — preserva história e quebra menos quem clonou.
 
 ### Passo 4 — `evals/v1/checksums-revocation.json` (≤2h)
 
@@ -54,7 +54,7 @@ PR atualizando o manifesto:
 
 ### Passo 5 — Pages rollback (≤2h)
 
-- [ ] `scripts/rollback-pages.py` opção A (swap `/latest/` para sucessor) OU opção B (shell de deprecação em `/v1.0.0/index.html`).
+- [ ] `scripts/rollback-pages.py` opçêo A (swap `/latest/` para sucessor) OU opçêo B (shell de deprecaçêo em `/v1.0.0/index.html`).
 - [ ] `synthetic-check.py` verifica que `/latest/` aponta para sucessor.
 
 ### Passo 6 — Sucessor `v1.0.1` (≤24h)
@@ -63,12 +63,12 @@ PR atualizando o manifesto:
 - [ ] Smoke + tests verdes.
 - [ ] Release via `release.yml` workflow_dispatch.
 - [ ] Lockfile atualizado (`releases/v1.0.1/lockfile.toml`).
-- [ ] Verificação pós-upload no PyPI.
+- [ ] Verificaçêo pós-upload no PyPI.
 - [ ] Zenodo successor com `IsNewVersionOf` apontando ao DOI antigo.
 
-### Passo 7 — Comunicação (≤24h pós-banner)
+### Passo 7 — Comunicaçêo (≤24h pós-banner)
 
-- [ ] **GitHub Discussion fixada** com timeline e instrução de upgrade.
+- [ ] **GitHub Discussion fixada** com timeline e instruçêo de upgrade.
 - [ ] Update no anúncio original (LinkedIn/X).
 - [ ] **E-mail para alunos beta cadastrados** (lista em `MEDIDAS.md` opt-in).
 - [ ] Discord post em `#fec-announcements`.
@@ -78,9 +78,9 @@ PR atualizando o manifesto:
 
 Salvar em `postmortems/<YYYY-MM-DD>-<slug>.md` usando template em `RUNBOOK.md#postmortem`. Inclui:
 
-- Timeline UTC com cada passo do checklist e duração.
+- Timeline UTC com cada passo do checklist e duraçêo.
 - Causa raiz (5 porquês).
-- Por que gates de promoção (PLAN item 74) não pegaram.
+- Por que gates de promoçêo (PLAN item 74) nêo pegaram.
 - Mudanças nos gates / runbooks / código para prevenir.
 
 ### Passo 9 — Drill subsequente
@@ -91,7 +91,7 @@ Próximo drill semestral exercita o cenário específico que ocorreu. Update em 
 
 | Se... | Fallback |
 |-------|----------|
-| Zenodo offline | Seguir `runbooks/zenodo-down.md`. Não bloqueia release principal. |
+| Zenodo offline | Seguir `runbooks/zenodo-down.md`. Nêo bloqueia release principal. |
 | PyPI offline | Seguir `runbooks/pypi-down.md`. Comunique URL alternativa. |
 | Pages offline | `index.html` no asset zip do GitHub Release como contingência. |
 | Maintainer único disponível | Use `BREAK-GLASS.md` para ações pré-autorizadas; postmortem captura sub-staffing. |

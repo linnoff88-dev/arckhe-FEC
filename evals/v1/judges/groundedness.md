@@ -1,6 +1,6 @@
 # Judge — groundedness (FEC-EVAL-v1)
 
-> _Prompt do LLM-as-judge. Versionado e congelado por release. Calibração contra 30 amostras humanas (Cohen κ ≥0.6). PLAN item 26._
+> _Prompt do LLM-as-judge. Versionado e congelado por release. Calibraçêo contra 30 amostras humanas (Cohen κ ≥0.6). PLAN item 26._
 
 **Judge model recomendado:** frontier (`evals/v1/models.json` papel `frontier`).
 **Temperature:** 0.0
@@ -15,7 +15,7 @@ Para cada exemplo, você recebe:
 - A pergunta original.
 - As CITAÇÕES esperadas (lista de IDs de fonte, formato `arxiv:XXXX.XXXXX`).
 - Os FATOS esperados (lista de afirmações que devem aparecer na resposta).
-- A RESPOSTA do modelo sob avaliação.
+- A RESPOSTA do modelo sob avaliaçêo.
 
 Sua tarefa: avaliar se a RESPOSTA está GROUNDED nas citações e fatos esperados.
 
@@ -32,18 +32,18 @@ Responda em JSON estrito com este schema:
 
 Critério de groundedness:
 - 1.0: todas as expected_citations presentes, todos expected_facts cobertos, sem alegações fora do esperado.
-- 0.85: todas as citações presentes, ≥80% dos fatos cobertos, sem invenção.
-- 0.5: parcial — alguma citação ausente OU fato importante faltando.
-- 0.0: alegações inventadas, citações fabricadas, contradição direta.
+- 0.85: todas as citações presentes, ≥80% dos fatos cobertos, sem invençêo.
+- 0.5: parcial — alguma citaçêo ausente OU fato importante faltando.
+- 0.0: alegações inventadas, citações fabricadas, contradiçêo direta.
 ```
 
-## Calibração
+## Calibraçêo
 
 - 30 amostras com gabarito humano em `evals/v1/judges/groundedness.calibration.json` (a preencher).
 - Cohen κ entre judge e humanos ≥0.6 obrigatório antes de uso em release.
 - Recalibrar quando trocar modelo do judge.
 
-## Ablação obrigatória
+## Ablaçêo obrigatória
 
 `scripts/run-judge-ablation.py` (a implementar) compara:
 
@@ -53,11 +53,11 @@ Critério de groundedness:
 ## Limitações conhecidas
 
 - LLM-as-judge tem viés de tamanho (favorece respostas longas). Mitigado por critério explícito ("alegações sem fonte" penaliza padding).
-- Viés de posição (favorece primeira opção em comparação A/B). Não aplicável aqui — é classificação absoluta.
+- Viés de posiçêo (favorece primeira opçêo em comparaçêo A/B). Nêo aplicável aqui — é classificaçêo absoluta.
 - Provider-specific quirks (Claude tende a ser conservador; GPT mais permissivo). Anti-mitigado: cross-provider check em release.
 
-## Quando NÃO usar este judge
+## Quando NêO usar este judge
 
 - Questões factuais com resposta única objetiva → use exact-match.
-- Avaliação de criatividade → judge groundedness não serve.
-- Avaliação de segurança (injection) → use `evals/v1/judges/injection-defense.md` (a criar em T6).
+- Avaliaçêo de criatividade → judge groundedness nêo serve.
+- Avaliaçêo de segurança (injection) → use `evals/v1/judges/injection-defense.md` (a criar em T6).

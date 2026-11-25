@@ -32,7 +32,7 @@
         <a href="../trilha3/index.html" class="px-2.5 py-1 rounded border border-purple-500/30 text-purple-400 hover:bg-purple-500/20 transition whitespace-nowrap" title="T3 RAG">T3 · RAG</a>
         <a href="../trilha4/index.html" class="px-2.5 py-1 rounded border border-amber-500/30 text-amber-400 hover:bg-amber-500/20 transition whitespace-nowrap bg-amber-500/20" title="T4 Tools/Agentes">T4 · Agentes</a>
         <a href="../trilha5/index.html" class="px-2.5 py-1 rounded border border-teal-500/30 text-teal-400 hover:bg-teal-500/20 transition whitespace-nowrap" title="T5 Memória">T5 · Memória</a>
-        <a href="../trilha6/index.html" class="px-2.5 py-1 rounded border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition whitespace-nowrap" title="T6 Avaliação">T6 · Avaliação</a>
+        <a href="../trilha6/index.html" class="px-2.5 py-1 rounded border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition whitespace-nowrap" title="T6 Avaliaçêo">T6 · Avaliaçêo</a>
       </div>
       <div class="flex items-center gap-3 text-sm flex-shrink-0">
         <a href="index.html" class="md:hidden text-amber-400">← T4</a>
@@ -86,7 +86,7 @@
   <!-- CONTEÚDO -->
   <main class="max-w-6xl mx-auto px-6 py-12">
 
-    <!-- Introdução -->
+    <!-- Introduçêo -->
     <section class="mb-12 prose prose-invert max-w-none">
       <p class="text-lg text-zinc-200 leading-relaxed">Tool calling transforma o LLM em <strong class='text-amber-400'>orquestrador de funções</strong>. O modelo decide qual chamar, com quais argumentos, e usa o resultado para continuar. Aqui você aprende a desenhar tools robustos — JSON Schema bem definido, erro tipado, sandbox obrigatório.</p>
     </section>
@@ -96,14 +96,14 @@
       <div class="bg-gradient-to-br from-amber-900/30 to-zinc-900 rounded-xl border border-amber-500/30 p-6 mb-8">
         <h3 class="text-lg font-bold text-amber-400 mb-3 flex items-center"><span class="mr-2">🛠️</span> Tool é interface: schema + executor</h3>
         <p class="text-zinc-300 mb-4">Cada tool tem dois lados: o schema que o LLM lê, e o executor que roda quando chamado. Ambos vivem juntos.</p>
-        <ul class="space-y-2 text-zinc-300 text-sm"><li class='flex items-start space-x-2'><span class='text-amber-400 mt-1'>•</span><span><strong>Schema</strong>: nome, descrição, JSON Schema dos params.</span></li><li class='flex items-start space-x-2'><span class='text-amber-400 mt-1'>•</span><span><strong>Executor</strong>: função Python que recebe args validados, retorna resultado.</span></li><li class='flex items-start space-x-2'><span class='text-amber-400 mt-1'>•</span><span><strong>Sandbox</strong>: executor roda jailed se tocar FS/rede.</span></li><li class='flex items-start space-x-2'><span class='text-amber-400 mt-1'>•</span><span><strong>Erro</strong>: tipo claro (retry-able, fatal, partial).</span></li></ul>
+        <ul class="space-y-2 text-zinc-300 text-sm"><li class='flex items-start space-x-2'><span class='text-amber-400 mt-1'>•</span><span><strong>Schema</strong>: nome, descriçêo, JSON Schema dos params.</span></li><li class='flex items-start space-x-2'><span class='text-amber-400 mt-1'>•</span><span><strong>Executor</strong>: funçêo Python que recebe args validados, retorna resultado.</span></li><li class='flex items-start space-x-2'><span class='text-amber-400 mt-1'>•</span><span><strong>Sandbox</strong>: executor roda jailed se tocar FS/rede.</span></li><li class='flex items-start space-x-2'><span class='text-amber-400 mt-1'>•</span><span><strong>Erro</strong>: tipo claro (retry-able, fatal, partial).</span></li></ul>
       </div>
 
     
     
       <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-8">
         <h3 class="text-lg font-bold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Description é prompt — itere</h3>
-        <p class="text-zinc-300 text-sm">Comece com descrição básica. Em casos onde o modelo escolhe errado, refine a descrição (não a lógica do tool). Eval no harness mostra impacto.</p>
+        <p class="text-zinc-300 text-sm">Comece com descriçêo básica. Em casos onde o modelo escolhe errado, refine a descriçêo (nêo a lógica do tool). Eval no harness mostra impacto.</p>
       </div>
 
 
@@ -114,12 +114,12 @@
           <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">1</span>
           <div>
             <h2 class="text-2xl font-bold">📋 JSON Schema: o contrato do tool</h2>
-            <p class="text-zinc-400 text-sm mt-1">Tipo, descrição, validação</p>
+            <p class="text-zinc-400 text-sm mt-1">Tipo, descriçêo, validaçêo</p>
           </div>
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">JSON Schema é o contrato declarativo entre você e o modelo. Define o que cada parâmetro é, se é obrigatório, qual o domínio de valores. Modelos modernos validam o schema antes de retornar — você quase nunca recebe args malformados. Schema bom = chamada confiável; schema vago = surpresa em produção.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">JSON Schema é o contrato declarativo entre você e o modelo. Define o que cada parâmetro é, se é obrigatório, qual o domínio de valores. Modelos modernos validam o schema antes de retornar — você quase nunca recebe args malformados. Schema bom = chamada confiável; schema vago = surpresa em produçêo.</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
           <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">schema bem-tipado para tool de busca</div>
@@ -147,8 +147,8 @@
           <details class="mt-6 bg-zinc-900/40 border border-zinc-800 rounded-lg p-4 text-sm">
             <summary class="cursor-pointer text-amber-400 font-semibold list-none">📑 Resumo navegável</summary>
             <div class="mt-3 space-y-2">
-              <div><span class="text-amber-400 font-semibold">O que é:</span> <span class="text-zinc-300">Cada tool tem schema declarativo: nome, descrição, parâmetros tipados (string, number, enum, etc.) com required.</span></div>
-              <div><span class="text-amber-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Schema bom = chamada confiável. Modelo usa descrição para escolher e schema para formatar argumentos.</span></div>
+              <div><span class="text-amber-400 font-semibold">O que é:</span> <span class="text-zinc-300">Cada tool tem schema declarativo: nome, descriçêo, parâmetros tipados (string, number, enum, etc.) com required.</span></div>
+              <div><span class="text-amber-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Schema bom = chamada confiável. Modelo usa descriçêo para escolher e schema para formatar argumentos.</span></div>
               <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">JSON Schema 2020-12, parameter validation, required fields, oneOf.</span></div>
             </div>
           </details>
@@ -159,23 +159,23 @@
         <div class="flex items-center space-x-4 mb-6">
           <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">2</span>
           <div>
-            <h2 class="text-2xl font-bold">✏️ Descrição do tool: o prompt do prompt</h2>
+            <h2 class="text-2xl font-bold">✏️ Descriçêo do tool: o prompt do prompt</h2>
             <p class="text-zinc-400 text-sm mt-1">Onde a magia acontece</p>
           </div>
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4"><strong>Description é o prompt do tool</strong>. O modelo escolhe a tool com base nela. 'busca_web' vs 'busca_web_para_eventos_recentes_e_noticias' muda comportamento drasticamente. Inclua quando usar (and quando NÃO usar), com 1 frase de exemplo. Itere com eval — descrição vaga é causa #1 de tool calling errado.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4"><strong>Description é o prompt do tool</strong>. O modelo escolhe a tool com base nela. 'busca_web' vs 'busca_web_para_eventos_recentes_e_noticias' muda comportamento drasticamente. Inclua quando usar (and quando NêO usar), com 1 frase de exemplo. Itere com eval — descriçêo vaga é causa #1 de tool calling errado.</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
           <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">boa vs ruim</div>
           <pre class="p-4 text-sm overflow-x-auto"><code class="text-zinc-200"># RUIM (vago)
-description = 'Busca informação na web.'
+description = 'Busca informaçêo na web.'
 
 # BOM (when-to-use explícito)
 description = '''Busca em um índice local de documentos do curso FEC.
 USE quando o usuário fizer pergunta sobre conceitos, definições ou referências do curso.
-NÃO USE para perguntas matemáticas (use `calculadora`) ou eventos atuais (não temos cobertura web).
+NêO USE para perguntas matemáticas (use `calculadora`) ou eventos atuais (nêo temos cobertura web).
 Exemplo: usuário pergunta 'o que é prompt caching?' → use esta tool com query='prompt caching'.'''</code></pre>
         </div>
 
@@ -183,7 +183,7 @@ Exemplo: usuário pergunta 'o que é prompt caching?' → use esta tool com quer
             <summary class="cursor-pointer text-amber-400 font-semibold list-none">📑 Resumo navegável</summary>
             <div class="mt-3 space-y-2">
               <div><span class="text-amber-400 font-semibold">O que é:</span> <span class="text-zinc-300">Texto livre que descreve quando usar o tool. É lido pelo LLM ao decidir ferramenta.</span></div>
-              <div><span class="text-amber-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Modelos escolhem tool com base na descrição. 'busca_web' vs 'busca_web_para_eventos_recentes_e_notícias' muda comportamento.</span></div>
+              <div><span class="text-amber-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Modelos escolhem tool com base na descriçêo. 'busca_web' vs 'busca_web_para_eventos_recentes_e_notícias' muda comportamento.</span></div>
               <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Tool description, disambiguation, when-to-use clauses.</span></div>
             </div>
           </details>
@@ -200,7 +200,7 @@ Exemplo: usuário pergunta 'o que é prompt caching?' → use esta tool com quer
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Tool não pode retornar exception genérica — modelo fica perdido. Padrão: result tipado com <code>{ok: bool, content?, error?, retry_able?: bool}</code>. Modelo lê e decide: retry, fallback, abort. Recovery inteligente vem disso.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Tool nêo pode retornar exception genérica — modelo fica perdido. Padrêo: result tipado com <code>{ok: bool, content?, error?, retry_able?: bool}</code>. Modelo lê e decide: retry, fallback, abort. Recovery inteligente vem disso.</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
           <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">result types</div>
@@ -262,7 +262,7 @@ with FilesystemSandbox() as fs:
             <summary class="cursor-pointer text-amber-400 font-semibold list-none">📑 Resumo navegável</summary>
             <div class="mt-3 space-y-2">
               <div><span class="text-amber-400 font-semibold">O que é:</span> <span class="text-zinc-300">Toda tool que toca FS/rede/processo roda dentro de FilesystemSandbox + NetworkPolicy do fec_sdk.</span></div>
-              <div><span class="text-amber-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Prompt injection consegue fazer tool ler ~/.aws/credentials se não houver sandbox. PLAN item 62a é gate de GA.</span></div>
+              <div><span class="text-amber-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Prompt injection consegue fazer tool ler ~/.aws/credentials se nêo houver sandbox. PLAN item 62a é gate de GA.</span></div>
               <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Path traversal, deny-by-default, allowlist, jail.</span></div>
             </div>
           </details>
@@ -279,7 +279,7 @@ with FilesystemSandbox() as fs:
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">O loop simples é: modelo decide → tool executa → resultado vira <code>role=tool</code> message → modelo continua. Esse é o building block; agentes de T4.2 são apenas múltiplas iterações desse loop com critério de parada. Cada iteração é um chat completion.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">O loop simples é: modelo decide → tool executa → resultado vira <code>role=tool</code> message → modelo continua. Esse é o building block; agentes de T4.2 sêo apenas múltiplas iterações desse loop com critério de parada. Cada iteraçêo é um chat completion.</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
           <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">loop básico (1 turn de tool use)</div>
@@ -315,7 +315,7 @@ if resp.tool_calls:
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4"><code>tool_choice</code> controla a disposição do modelo: <strong>auto</strong> (decide), <strong>any</strong> (deve chamar alguma tool), <strong>specific</strong> (deve chamar X). Útil em fluxos forçados (extração obrigatória) e em pipelines where você sabe que precisa do tool.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4"><code>tool_choice</code> controla a disposiçêo do modelo: <strong>auto</strong> (decide), <strong>any</strong> (deve chamar alguma tool), <strong>specific</strong> (deve chamar X). Útil em fluxos forçados (extraçêo obrigatória) e em pipelines where você sabe que precisa do tool.</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
           <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">forçar tool específica</div>
@@ -350,23 +350,23 @@ resp = client.messages.create(
           <summary class="cursor-pointer flex items-center gap-3 text-base font-semibold list-none">
             <span class="topico-numero w-6 h-6 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-xs font-bold flex items-center justify-center">1</span>
             <span>📋 JSON Schema: o contrato do tool</span>
-            <span class="text-zinc-500 text-xs ml-2">— Tipo, descrição, validação</span>
+            <span class="text-zinc-500 text-xs ml-2">— Tipo, descriçêo, validaçêo</span>
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
-            <div><span class="text-amber-400 font-semibold">O que é:</span> <span class="text-zinc-300">Cada tool tem schema declarativo: nome, descrição, parâmetros tipados (string, number, enum, etc.) com required.</span></div>
-            <div><span class="text-amber-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Schema bom = chamada confiável. Modelo usa descrição para escolher e schema para formatar argumentos.</span></div>
+            <div><span class="text-amber-400 font-semibold">O que é:</span> <span class="text-zinc-300">Cada tool tem schema declarativo: nome, descriçêo, parâmetros tipados (string, number, enum, etc.) com required.</span></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Schema bom = chamada confiável. Modelo usa descriçêo para escolher e schema para formatar argumentos.</span></div>
             <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">JSON Schema 2020-12, parameter validation, required fields, oneOf.</span></div>
           </div>
         </details>
         <details class="topico-expansivel border-b border-zinc-800 py-3">
           <summary class="cursor-pointer flex items-center gap-3 text-base font-semibold list-none">
             <span class="topico-numero w-6 h-6 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-xs font-bold flex items-center justify-center">2</span>
-            <span>✏️ Descrição do tool: o prompt do prompt</span>
+            <span>✏️ Descriçêo do tool: o prompt do prompt</span>
             <span class="text-zinc-500 text-xs ml-2">— Onde a magia acontece</span>
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
             <div><span class="text-amber-400 font-semibold">O que é:</span> <span class="text-zinc-300">Texto livre que descreve quando usar o tool. É lido pelo LLM ao decidir ferramenta.</span></div>
-            <div><span class="text-amber-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Modelos escolhem tool com base na descrição. 'busca_web' vs 'busca_web_para_eventos_recentes_e_notícias' muda comportamento.</span></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Modelos escolhem tool com base na descriçêo. 'busca_web' vs 'busca_web_para_eventos_recentes_e_notícias' muda comportamento.</span></div>
             <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Tool description, disambiguation, when-to-use clauses.</span></div>
           </div>
         </details>
@@ -390,7 +390,7 @@ resp = client.messages.create(
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
             <div><span class="text-amber-400 font-semibold">O que é:</span> <span class="text-zinc-300">Toda tool que toca FS/rede/processo roda dentro de FilesystemSandbox + NetworkPolicy do fec_sdk.</span></div>
-            <div><span class="text-amber-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Prompt injection consegue fazer tool ler ~/.aws/credentials se não houver sandbox. PLAN item 62a é gate de GA.</span></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Prompt injection consegue fazer tool ler ~/.aws/credentials se nêo houver sandbox. PLAN item 62a é gate de GA.</span></div>
             <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Path traversal, deny-by-default, allowlist, jail.</span></div>
           </div>
         </details>
@@ -429,16 +429,16 @@ resp = client.messages.create(
           <ul class="space-y-3 text-zinc-300"><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Sandbox obrigatório para tools com side-effect</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Erro tipado com retry-able vs fatal</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Description com 'when to use' explícito</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Validar JSON Schema dos args antes de executar</span></li></ul>
         </div>
         <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NÃO fazer</h4>
-          <ul class="space-y-3 text-zinc-300"><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'><code>os.system(arg)</code> direto</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Levantar exceção genérica</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Description vaga: 'busca informação'</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Confiar que o modelo preencheu certo</span></li></ul>
+          <h4 class="font-bold text-red-400 mb-4">✗ O que NêO fazer</h4>
+          <ul class="space-y-3 text-zinc-300"><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'><code>os.system(arg)</code> direto</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Levantar exceçêo genérica</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Description vaga: 'busca informaçêo'</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Confiar que o modelo preencheu certo</span></li></ul>
         </div>
       </div>
 
 
-    <!-- Quando NÃO usar -->
+    <!-- Quando NêO usar -->
     
       <div class="quando-nao-usar bg-red-900/10 rounded-xl border border-red-500/30 p-6 mb-8">
-        <h3 class="text-lg font-bold text-red-400 mb-3 flex items-center"><span class="mr-2">🚫</span> Quando NÃO usar</h3>
+        <h3 class="text-lg font-bold text-red-400 mb-3 flex items-center"><span class="mr-2">🚫</span> Quando NêO usar</h3>
         <ul class="space-y-2"><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Tarefa pode ser feita só com prompt</strong>: tool adiciona complexidade desnecessária.</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Modelo OSS pequeno sem suporte estável a tool</strong>: força adapter ou mock.</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Latência crítica</strong>: tool call adiciona 1+ roundtrip.</span></li></ul>
       </div>
 
@@ -496,7 +496,7 @@ with FilesystemSandbox() as fs:
       </div>
 
 
-    <!-- Resumo Final + Navegação -->
+    <!-- Resumo Final + Navegaçêo -->
     
       <section class="mb-12">
         <div class="bg-gradient-to-br from-amber-900/55 via-zinc-900 to-zinc-900 rounded-xl border border-amber-500/30 p-8">

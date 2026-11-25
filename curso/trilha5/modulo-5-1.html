@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; frame-src 'self' 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5.1 Estratégias de memória: curto, longo prazo e summarização hierárquica · FEC T5</title>
+  <title>5.1 Estratégias de memória: curto, longo prazo e summarizaçêo hierárquica · FEC T5</title>
   <link rel="stylesheet" href="../../assets/css/ARCKHÉ.css?v=2a7d0678">
   <meta name="trilha" content="T5">
   <meta name="status" content="GA">
@@ -32,7 +32,7 @@
         <a href="../trilha3/index.html" class="px-2.5 py-1 rounded border border-purple-500/30 text-purple-400 hover:bg-purple-500/20 transition whitespace-nowrap" title="T3 RAG">T3 · RAG</a>
         <a href="../trilha4/index.html" class="px-2.5 py-1 rounded border border-amber-500/30 text-amber-400 hover:bg-amber-500/20 transition whitespace-nowrap" title="T4 Tools/Agentes">T4 · Agentes</a>
         <a href="../trilha5/index.html" class="px-2.5 py-1 rounded border border-teal-500/30 text-teal-400 hover:bg-teal-500/20 transition whitespace-nowrap bg-teal-500/20" title="T5 Memória">T5 · Memória</a>
-        <a href="../trilha6/index.html" class="px-2.5 py-1 rounded border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition whitespace-nowrap" title="T6 Avaliação">T6 · Avaliação</a>
+        <a href="../trilha6/index.html" class="px-2.5 py-1 rounded border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition whitespace-nowrap" title="T6 Avaliaçêo">T6 · Avaliaçêo</a>
       </div>
       <div class="flex items-center gap-3 text-sm flex-shrink-0">
         <a href="index.html" class="md:hidden text-teal-400">← T5</a>
@@ -59,8 +59,8 @@
         <span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full">MÓDULO 5.1</span>
         <span class="px-2 py-1 bg-teal-500/20 border border-teal-500/30 text-teal-400 rounded text-xs">GA</span>
       </div>
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-zinc-100">💾 Estratégias de memória: curto, longo prazo e summarização hierárquica</h1>
-      <p class="text-lg text-zinc-300 max-w-3xl mb-8">Como dar 'memória' a um agente: buffer de turn, summarização hierárquica, vetor de longo prazo, recall sob demanda.</p>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-zinc-100">💾 Estratégias de memória: curto, longo prazo e summarizaçêo hierárquica</h1>
+      <p class="text-lg text-zinc-300 max-w-3xl mb-8">Como dar 'memória' a um agente: buffer de turn, summarizaçêo hierárquica, vetor de longo prazo, recall sob demanda.</p>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl">
         <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
@@ -86,24 +86,24 @@
   <!-- CONTEÚDO -->
   <main class="max-w-6xl mx-auto px-6 py-12">
 
-    <!-- Introdução -->
+    <!-- Introduçêo -->
     <section class="mb-12 prose prose-invert max-w-none">
-      <p class="text-lg text-zinc-200 leading-relaxed">Modelos não têm memória entre chamadas — você reconstrói a janela cada vez. Aqui você aprende a <strong class='text-teal-400'>simular memória</strong>: buffer de últimos turns, sumarização incremental, vetor para longo prazo, recall por similaridade. Um chat 'que lembra' é resultado dessas técnicas combinadas.</p>
+      <p class="text-lg text-zinc-200 leading-relaxed">Modelos nêo têm memória entre chamadas — você reconstrói a janela cada vez. Aqui você aprende a <strong class='text-teal-400'>simular memória</strong>: buffer de últimos turns, sumarizaçêo incremental, vetor para longo prazo, recall por similaridade. Um chat 'que lembra' é resultado dessas técnicas combinadas.</p>
     </section>
 
     <!-- Conceito Principal + Dados/Dica -->
     
       <div class="bg-gradient-to-br from-teal-900/30 to-zinc-900 rounded-xl border border-teal-500/30 p-6 mb-8">
         <h3 class="text-lg font-bold text-teal-400 mb-3 flex items-center"><span class="mr-2">🏗️</span> Camadas de memória</h3>
-        <p class="text-zinc-300 mb-4">Não é uma estratégia única — é um stack de camadas, cada uma com trade-off de custo, fidelidade e velocidade.</p>
-        <ul class="space-y-2 text-zinc-300 text-sm"><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>Curto prazo</strong>: buffer dos últimos N turns (simples, alto detalhe).</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>Médio prazo</strong>: sumarização hierárquica (compacto, perde detalhe).</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>Longo prazo</strong>: vetor + recall (escala, exige busca).</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>Estado do usuário</strong>: ficha estruturada (estável, no system prompt).</span></li></ul>
+        <p class="text-zinc-300 mb-4">Nêo é uma estratégia única — é um stack de camadas, cada uma com trade-off de custo, fidelidade e velocidade.</p>
+        <ul class="space-y-2 text-zinc-300 text-sm"><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>Curto prazo</strong>: buffer dos últimos N turns (simples, alto detalhe).</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>Médio prazo</strong>: sumarizaçêo hierárquica (compacto, perde detalhe).</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>Longo prazo</strong>: vetor + recall (escala, exige busca).</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>Estado do usuário</strong>: ficha estruturada (estável, no system prompt).</span></li></ul>
       </div>
 
     
     
       <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-8">
-        <h3 class="text-lg font-bold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Não invente memória — comece com buffer</h3>
-        <p class="text-zinc-300 text-sm">Para a maioria dos casos, buffer de 10 últimos turns + system prompt resolve. Adicione sumarização quando buffer estourar; vetor quando precisar de meses-atrás real.</p>
+        <h3 class="text-lg font-bold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Nêo invente memória — comece com buffer</h3>
+        <p class="text-zinc-300 text-sm">Para a maioria dos casos, buffer de 10 últimos turns + system prompt resolve. Adicione sumarizaçêo quando buffer estourar; vetor quando precisar de meses-atrás real.</p>
       </div>
 
 
@@ -119,7 +119,7 @@
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Para chats curtos (5-10 turns), buffer FIFO dos últimos N turns inteiros é o suficiente. Modelos atendem bem em janela &lt;10k. Implementação trivial: <code>deque(maxlen=N)</code>. Não invente memória vetorial dia 1.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Para chats curtos (5-10 turns), buffer FIFO dos últimos N turns inteiros é o suficiente. Modelos atendem bem em janela &lt;10k. Implementaçêo trivial: <code>deque(maxlen=N)</code>. Nêo invente memória vetorial dia 1.</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
           <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">buffer simples</div>
@@ -150,7 +150,7 @@ def turn(user_msg: str) -&gt; str:
         <div class="flex items-center space-x-4 mb-6">
           <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl flex-shrink-0">2</span>
           <div>
-            <h2 class="text-2xl font-bold">📝 Summarização incremental</h2>
+            <h2 class="text-2xl font-bold">📝 Summarizaçêo incremental</h2>
             <p class="text-zinc-400 text-sm mt-1">Comprimir o que sai do buffer</p>
           </div>
         </div>
@@ -159,7 +159,7 @@ def turn(user_msg: str) -&gt; str:
           <p class="text-zinc-200 leading-relaxed mb-4">Quando o buffer estoura, em vez de descartar mensagens antigas, sumarize. Sumário fica no system prompt; perde detalhe mas mantém continuidade. Trigger típico: a cada 10 turns, sumarize os 5 mais antigos em parágrafo curto.</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
-          <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">sumarização por trigger</div>
+          <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">sumarizaçêo por trigger</div>
           <pre class="p-4 text-sm overflow-x-auto"><code class="text-zinc-200">def maybe_sumarizar(state):
     if len(state.buffer) &gt;= 10:
         antigos = list(state.buffer)[:5]
@@ -186,13 +186,13 @@ def turn(user_msg: str) -&gt; str:
         <div class="flex items-center space-x-4 mb-6">
           <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl flex-shrink-0">3</span>
           <div>
-            <h2 class="text-2xl font-bold">🌳 Sumarização hierárquica: árvore de memória</h2>
+            <h2 class="text-2xl font-bold">🌳 Sumarizaçêo hierárquica: árvore de memória</h2>
             <p class="text-zinc-400 text-sm mt-1">Múltiplos níveis</p>
           </div>
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Para chats muito longos (centenas de turns), uma única sumarização perde detalhe demais. Hierarquia: turns viram sumário-de-1; sumários-de-1 viram sumário-de-2; etc. Estrutura tipo árvore. MemGPT (Packer et al. 2023) é a referência sistemática.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Para chats muito longos (centenas de turns), uma única sumarizaçêo perde detalhe demais. Hierarquia: turns viram sumário-de-1; sumários-de-1 viram sumário-de-2; etc. Estrutura tipo árvore. MemGPT (Packer et al. 2023) é a referência sistemática.</p>
           
         <div class="mt-4 bg-zinc-900/50 border border-zinc-800 rounded-lg p-5">
           <p class="text-xs uppercase tracking-wider text-teal-400 font-semibold mb-3">níveis típicos</p>
@@ -220,7 +220,7 @@ def turn(user_msg: str) -&gt; str:
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Para 'lembrar' meses depois, sumário hierárquico não basta — você precisa indexar turns como vetores e recuperar por similaridade quando relevante. Cada turn vira embedding; em novo turn, busca turns similares ao tópico atual e injeta no contexto. Fica grande? Use TTL ou compactação periódica.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Para 'lembrar' meses depois, sumário hierárquico nêo basta — você precisa indexar turns como vetores e recuperar por similaridade quando relevante. Cada turn vira embedding; em novo turn, busca turns similares ao tópico atual e injeta no contexto. Fica grande? Use TTL ou compactaçêo periódica.</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
           <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">memória vetorial básica</div>
@@ -258,7 +258,7 @@ def turn(user_msg: str) -&gt; str:
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Alternativa ao injection automático: agente tem tool <code>buscar_memoria(termos)</code> e decide quando usar. Mais explícito (debugável); custo: 1 roundtrip extra quando aciona. Padrão útil em assistentes onde a memória é explícita ('lembre-se que eu sou vegetariano').</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Alternativa ao injection automático: agente tem tool <code>buscar_memoria(termos)</code> e decide quando usar. Mais explícito (debugável); custo: 1 roundtrip extra quando aciona. Padrêo útil em assistentes onde a memória é explícita ('lembre-se que eu sou vegetariano').</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
           <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">tool de memória explícita</div>
@@ -274,8 +274,8 @@ def turn(user_msg: str) -&gt; str:
           <details class="mt-6 bg-zinc-900/40 border border-zinc-800 rounded-lg p-4 text-sm">
             <summary class="cursor-pointer text-teal-400 font-semibold list-none">📑 Resumo navegável</summary>
             <div class="mt-3 space-y-2">
-              <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Padrão alternativo: agente tem tool 'buscar_memoria' e decide quando precisa de info antiga.</span></div>
-              <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Mais explícito que injection automático. Custo: mais roundtrips, mas precisão maior.</span></div>
+              <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Padrêo alternativo: agente tem tool 'buscar_memoria' e decide quando precisa de info antiga.</span></div>
+              <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Mais explícito que injection automático. Custo: mais roundtrips, mas precisêo maior.</span></div>
               <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Active recall, memory tool, on-demand retrieval.</span></div>
             </div>
           </details>
@@ -286,7 +286,7 @@ def turn(user_msg: str) -&gt; str:
         <div class="flex items-center space-x-4 mb-6">
           <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl flex-shrink-0">6</span>
           <div>
-            <h2 class="text-2xl font-bold">🧠 Personalização: persona + perfil do usuário</h2>
+            <h2 class="text-2xl font-bold">🧠 Personalizaçêo: persona + perfil do usuário</h2>
             <p class="text-zinc-400 text-sm mt-1">Memória como facto</p>
           </div>
         </div>
@@ -299,7 +299,7 @@ def turn(user_msg: str) -&gt; str:
           <pre class="p-4 text-sm overflow-x-auto"><code class="text-zinc-200">perfil = {
     'nome': 'Nei',
     'idioma_preferido': 'pt-BR',
-    'expertise': 'engenharia de software, LLM em produção',
+    'expertise': 'engenharia de software, LLM em produçêo',
     'notas': ['vegetariano', 'reside em SC, Brasil']
 }
 
@@ -341,7 +341,7 @@ system = (
         <details class="topico-expansivel border-b border-zinc-800 py-3">
           <summary class="cursor-pointer flex items-center gap-3 text-base font-semibold list-none">
             <span class="topico-numero w-6 h-6 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-400 text-xs font-bold flex items-center justify-center">2</span>
-            <span>📝 Summarização incremental</span>
+            <span>📝 Summarizaçêo incremental</span>
             <span class="text-zinc-500 text-xs ml-2">— Comprimir o que sai do buffer</span>
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
@@ -353,7 +353,7 @@ system = (
         <details class="topico-expansivel border-b border-zinc-800 py-3">
           <summary class="cursor-pointer flex items-center gap-3 text-base font-semibold list-none">
             <span class="topico-numero w-6 h-6 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-400 text-xs font-bold flex items-center justify-center">3</span>
-            <span>🌳 Sumarização hierárquica: árvore de memória</span>
+            <span>🌳 Sumarizaçêo hierárquica: árvore de memória</span>
             <span class="text-zinc-500 text-xs ml-2">— Múltiplos níveis</span>
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
@@ -381,15 +381,15 @@ system = (
             <span class="text-zinc-500 text-xs ml-2">— Agente busca a memória</span>
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
-            <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Padrão alternativo: agente tem tool 'buscar_memoria' e decide quando precisa de info antiga.</span></div>
-            <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Mais explícito que injection automático. Custo: mais roundtrips, mas precisão maior.</span></div>
+            <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Padrêo alternativo: agente tem tool 'buscar_memoria' e decide quando precisa de info antiga.</span></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Mais explícito que injection automático. Custo: mais roundtrips, mas precisêo maior.</span></div>
             <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Active recall, memory tool, on-demand retrieval.</span></div>
           </div>
         </details>
         <details class="topico-expansivel border-b border-zinc-800 py-3">
           <summary class="cursor-pointer flex items-center gap-3 text-base font-semibold list-none">
             <span class="topico-numero w-6 h-6 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-400 text-xs font-bold flex items-center justify-center">6</span>
-            <span>🧠 Personalização: persona + perfil do usuário</span>
+            <span>🧠 Personalizaçêo: persona + perfil do usuário</span>
             <span class="text-zinc-500 text-xs ml-2">— Memória como facto</span>
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
@@ -406,20 +406,20 @@ system = (
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
           <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-zinc-300"><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Buffer simples para chats curtos (&lt;10 turns)</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Sumarização incremental quando buffer estoura</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Ficha estruturada do usuário no system prompt</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Recall explícito via tool em casos críticos</span></li></ul>
+          <ul class="space-y-3 text-zinc-300"><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Buffer simples para chats curtos (&lt;10 turns)</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Sumarizaçêo incremental quando buffer estoura</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Ficha estruturada do usuário no system prompt</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Recall explícito via tool em casos críticos</span></li></ul>
         </div>
         <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NÃO fazer</h4>
+          <h4 class="font-bold text-red-400 mb-4">✗ O que NêO fazer</h4>
           <ul class="space-y-3 text-zinc-300"><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Implementar memória vetorial dia 1</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Crescer janela indefinidamente</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Spreadar info do usuário em N turns</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Injection automático sem controle</span></li></ul>
         </div>
       </div>
 
 
-    <!-- Quando NÃO usar -->
+    <!-- Quando NêO usar -->
     
       <div class="quando-nao-usar bg-red-900/10 rounded-xl border border-red-500/30 p-6 mb-8">
-        <h3 class="text-lg font-bold text-red-400 mb-3 flex items-center"><span class="mr-2">🚫</span> Quando NÃO usar</h3>
-        <ul class="space-y-2"><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Chat estateless de 1-2 turns</strong>: nem precisa de memória, contexto da query basta.</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Quando privacy não permite armazenar</strong>: conformidade limita memória persistente.</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Casos onde fato muda</strong>: memória vetorial não distingue atual de antigo bem.</span></li></ul>
+        <h3 class="text-lg font-bold text-red-400 mb-3 flex items-center"><span class="mr-2">🚫</span> Quando NêO usar</h3>
+        <ul class="space-y-2"><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Chat estateless de 1-2 turns</strong>: nem precisa de memória, contexto da query basta.</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Quando privacy nêo permite armazenar</strong>: conformidade limita memória persistente.</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Casos onde fato muda</strong>: memória vetorial nêo distingue atual de antigo bem.</span></li></ul>
       </div>
 
 
@@ -465,7 +465,7 @@ class ChatComMemoria:
     
       <div class="bg-amber-900/10 rounded-xl border border-amber-500/30 p-6 mb-8">
         <h3 class="text-lg font-bold text-amber-400 mb-3 flex items-center"><span class="mr-2">🏋️</span> Exercício hands-on</h3>
-        <p class="text-zinc-300 text-sm">Implemente chat com 3 camadas (buffer + sumarização + vetorial). Teste com 50 turns, medindo custo médio e recall de fatos antigos. Em <code>exercicios/modulo-5-1/</code>.</p>
+        <p class="text-zinc-300 text-sm">Implemente chat com 3 camadas (buffer + sumarizaçêo + vetorial). Teste com 50 turns, medindo custo médio e recall de fatos antigos. Em <code>exercicios/modulo-5-1/</code>.</p>
       </div>
 
 
@@ -477,15 +477,15 @@ class ChatComMemoria:
       </div>
 
 
-    <!-- Resumo Final + Navegação -->
+    <!-- Resumo Final + Navegaçêo -->
     
       <section class="mb-12">
         <div class="bg-gradient-to-br from-teal-900/55 via-zinc-900 to-zinc-900 rounded-xl border border-teal-500/30 p-8">
           <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span> Resumo do Módulo</h2>
-          <ul class="space-y-3 mb-8"><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Memória é construção</strong> — modelos não têm memória nativa.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Buffer simples</strong> resolve chats curtos.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Sumarização hierárquica</strong> escala para chats longos.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Vetor + recall</strong> permite memória de longo prazo.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Estado do usuário</strong> = ficha estruturada no system prompt.</span></li></ul>
+          <ul class="space-y-3 mb-8"><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Memória é construçêo</strong> — modelos nêo têm memória nativa.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Buffer simples</strong> resolve chats curtos.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Sumarizaçêo hierárquica</strong> escala para chats longos.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Vetor + recall</strong> permite memória de longo prazo.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Estado do usuário</strong> = ficha estruturada no system prompt.</span></li></ul>
           <div class="bg-zinc-900/50 rounded-lg p-4 mb-6">
             <h3 class="font-semibold text-teal-400 mb-2">Próximo Módulo:</h3>
-            <p class="text-zinc-300 text-sm">Caching e compressão (beta)</p>
+            <p class="text-zinc-300 text-sm">Caching e compressêo (beta)</p>
           </div>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="index.html" class="btn flex-1 text-center px-6 py-3 bg-zinc-800 text-zinc-300 rounded-lg font-semibold hover:bg-zinc-700 transition-colors justify-start">← Voltar para Trilha</a>

@@ -1,7 +1,7 @@
-"""FEC SDK — cliente provider-neutral para a Formação de Engenharia de Contexto.
+"""FEC SDK — cliente provider-neutral para a Formaçêo de Engenharia de Contexto.
 
-Importar este pacote NÃO faz I/O com a internet por default. `check_compat()`
-faz o lookup remoto de revogação, mas é chamado apenas quando o usuário
+Importar este pacote NêO faz I/O com a internet por default. `check_compat()`
+faz o lookup remoto de revogaçêo, mas é chamado apenas quando o usuário
 executa código (em laboratórios e exemplos).
 """
 
@@ -34,9 +34,9 @@ __all__ = [
 
 
 def selftest() -> dict[str, str]:
-    """Smoke mínimo invocado por synthetic-check pós-publicação no PyPI.
+    """Smoke mínimo invocado por synthetic-check pós-publicaçêo no PyPI.
 
-    Não chama provedores; apenas valida que o pacote carrega e que o sandbox
+    Nêo chama provedores; apenas valida que o pacote carrega e que o sandbox
     inicializa. Retorna dict simples para fácil parsing em CI.
     """
     from fec_sdk.sandbox import FilesystemSandbox

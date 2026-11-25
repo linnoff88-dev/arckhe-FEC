@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "fec-sdk"
 version = "1.0.0"
-description = "Cliente provider-neutral da Formação de Engenharia de Contexto (FEC)."
+description = "Cliente provider-neutral da Formaçêo de Engenharia de Contexto (FEC)."
 readme = "fec_sdk/README.md"
 requires-python = ">=3.11,<3.13"
 license = "MIT"

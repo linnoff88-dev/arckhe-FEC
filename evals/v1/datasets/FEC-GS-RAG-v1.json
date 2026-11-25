@@ -10,7 +10,7 @@
       "question": "O que Liu et al. (2023) chamam de 'lost in the middle' e qual o impacto em RAG?",
       "expected_citations": ["arxiv:2307.03172"],
       "expected_facts": [
-        "acurácia degrada quando informação crítica está no meio da janela",
+        "acurácia degrada quando informaçêo crítica está no meio da janela",
         "modelos performam bem no início e fim da janela"
       ],
       "category": "core-concept"
@@ -31,11 +31,11 @@
       "question": "Como o Rotary Position Embedding (RoPE) funciona em alto nível?",
       "expected_citations": ["arxiv:2104.09864"],
       "expected_facts": [
-        "codifica posição via rotação de pares de dimensões",
-        "permite extrapolação parcial para sequências mais longas"
+        "codifica posiçêo via rotaçêo de pares de dimensões",
+        "permite extrapolaçêo parcial para sequências mais longas"
       ],
       "category": "mechanism"
     }
   ],
-  "_note": "Apenas 3 exemplos no scaffolding inicial. Os outros 27 serão preenchidos antes de P1 entrar em produção. Cada exemplo deve ter expected_citations (formato 'arxiv:XXXX.XXXXX') e expected_facts (lista de strings que o judge confere por subsequência semântica)."
+  "_note": "Apenas 3 exemplos no scaffolding inicial. Os outros 27 serêo preenchidos antes de P1 entrar em produçêo. Cada exemplo deve ter expected_citations (formato 'arxiv:XXXX.XXXXX') e expected_facts (lista de strings que o judge confere por subsequência semântica)."
 }

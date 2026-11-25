@@ -5,7 +5,7 @@
 ## Política
 
 - Cada release publica um SBOM machine-readable em SPDX ou CycloneDX.
-- Geração via `scripts/build-sbom.sh` (a implementar) usando `syft`/`pip-licenses`/equivalente.
+- Geraçêo via `scripts/build-sbom.sh` (a implementar) usando `syft`/`pip-licenses`/equivalente.
 - Anexado à GitHub Release como asset.
 - Verificado no synthetic monitor pós-release.
 
@@ -13,7 +13,7 @@
 
 Dependências runtime (de `pyproject.toml`):
 
-| Componente | Versão | Licença | Origem |
+| Componente | Versêo | Licença | Origem |
 |-----------|--------|---------|--------|
 | httpx | >=0.27,<1 | BSD-3-Clause | https://github.com/encode/httpx |
 | pydantic | >=2.7,<3 | MIT | https://github.com/pydantic/pydantic |
@@ -21,16 +21,16 @@ Dependências runtime (de `pyproject.toml`):
 
 Optional extras:
 
-| Extra | Componente | Versão | Licença |
+| Extra | Componente | Versêo | Licença |
 |-------|-----------|--------|---------|
 | anthropic | anthropic | >=0.40,<1 | MIT |
 | openai | openai | >=1.50,<2 | Apache-2.0 |
 | google | google-generativeai | >=0.8,<1 | Apache-2.0 |
 | ollama | ollama | >=0.5,<1 | MIT |
 
-## Componentes do build pipeline (não vão para usuário final)
+## Componentes do build pipeline (nêo vêo para usuário final)
 
-| Componente | Versão | Licença |
+| Componente | Versêo | Licença |
 |-----------|--------|---------|
 | @mermaid-js/mermaid-cli | 11.4.2 | MIT |
 | @playwright/test | 1.49.0 | Apache-2.0 |
@@ -44,11 +44,11 @@ Optional extras:
 - Conteúdo do curso: **CC BY-SA 4.0**.
 - Código (fec_sdk, scripts, exemplos, exercícios): **MIT**.
 - Dependências runtime: **MIT, BSD-3-Clause, Apache-2.0** — todas compatíveis com MIT.
-- Dependências dev/build: variadas; não vão para usuário.
+- Dependências dev/build: variadas; nêo vêo para usuário.
 
-## Verificação
+## Verificaçêo
 
-`scripts/audit-licenses.py` percorre dependências resolvidas no lockfile e flagra licenças não listadas aqui ou incompatíveis.
+`scripts/audit-licenses.py` percorre dependências resolvidas no lockfile e flagra licenças nêo listadas aqui ou incompatíveis.
 
 ## CVE / advisory
 

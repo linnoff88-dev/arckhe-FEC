@@ -1,4 +1,4 @@
-"""Especificação dos 14 módulos da FEC v1.0.
+"""Especificaçêo dos 14 módulos da FEC v1.0.
 
 Estrutura de cada módulo é consumida por scripts/build-modulos.py.
 Atualizar aqui regenera o HTML.
@@ -9,71 +9,71 @@ from __future__ import annotations
 TRILHAS = {
     1: {"nome": "Fundamentos de Contexto", "cor": "emerald", "emoji": "🧠"},
     2: {"nome": "Engenharia da Mensagem",   "cor": "blue",    "emoji": "✉️"},
-    3: {"nome": "RAG e Recuperação",        "cor": "purple",  "emoji": "📚"},
+    3: {"nome": "RAG e Recuperaçêo",        "cor": "purple",  "emoji": "📚"},
     4: {"nome": "Tools, Agentes e Multi-Agente", "cor": "amber", "emoji": "🛠️"},
-    5: {"nome": "Memória e Compressão",     "cor": "teal",    "emoji": "💾"},
-    6: {"nome": "Avaliação e Produção",     "cor": "rose",    "emoji": "📊"},
+    5: {"nome": "Memória e Compressêo",     "cor": "teal",    "emoji": "💾"},
+    6: {"nome": "Avaliaçêo e Produçêo",     "cor": "rose",    "emoji": "📊"},
 }
 
 MODULOS = [
     # =================== T1 — FUNDAMENTOS ===================
     {
         "id": "modulo-1-1", "trilha": 1, "numero": "1.1", "status": "GA",
-        "titulo": "Janela de contexto, atenção e \"lost in the middle\"",
+        "titulo": "Janela de contexto, atençêo e \"lost in the middle\"",
         "emoji": "🪟",
-        "descricao": "A anatomia operacional da janela: o que é atenção, por que tokens no meio são esquecidos, e como isso muda decisões de engenharia.",
+        "descricao": "A anatomia operacional da janela: o que é atençêo, por que tokens no meio sêo esquecidos, e como isso muda decisões de engenharia.",
         "minutos": 60, "nivel": "Básico", "tipo": "Teoria",
         "introducao": (
-            "Engenharia de contexto começa com uma realização operacional: o modelo NÃO recebe uma 'conversa'; "
+            "Engenharia de contexto começa com uma realizaçêo operacional: o modelo NêO recebe uma 'conversa'; "
             "ele recebe uma sequência fixa de tokens — a <strong class='text-emerald-400'>janela de contexto</strong>. "
             "O system prompt, o histórico, o resultado de uma busca RAG, o turn atual e até as saídas anteriores, "
             "tudo é serializado nessa mesma sequência. Quem decide a ordem, a estrutura e o que entra é você."
         ),
         "topicos": [
             {
-                "emoji": "🪟", "titulo": "A janela é o ambiente físico do modelo", "subtitulo": "Tokens, não conversas",
+                "emoji": "🪟", "titulo": "A janela é o ambiente físico do modelo", "subtitulo": "Tokens, nêo conversas",
                 "o_que_e": "Sequência fixa de tokens que o modelo lê em uma chamada. System prompt + histórico + contexto recuperado + user turn — tudo junto.",
-                "por_que": "Sem essa visão, você assume que o modelo tem 'memória da conversa'. Não tem — você reconstrói a cada chamada.",
+                "por_que": "Sem essa visêo, você assume que o modelo tem 'memória da conversa'. Nêo tem — você reconstrói a cada chamada.",
                 "conceitos": "Janela nominal, janela efetiva, ordem de seções, custo do input total."
             },
             {
-                "emoji": "🎯", "titulo": "Atenção causal e KV cache", "subtitulo": "O mecanismo que pesa tokens",
+                "emoji": "🎯", "titulo": "Atençêo causal e KV cache", "subtitulo": "O mecanismo que pesa tokens",
                 "o_que_e": "Cada token só 'olha' tokens anteriores. Estados intermediários (KV cache) podem ser reutilizados — base do prompt caching.",
-                "por_que": "Entender KV cache explica por que prefixos estáveis no início têm custo amortizado e por que mexer no system prompt invalida cache da sessão.",
+                "por_que": "Entender KV cache explica por que prefixos estáveis no início têm custo amortizado e por que mexer no system prompt invalida cache da sessêo.",
                 "conceitos": "Self-attention, causal mask, KV cache, attention heads, prefix prefill."
             },
             {
-                "emoji": "📍", "titulo": "Posição: rotary embeddings e o efeito recência", "subtitulo": "Por que tokens recentes têm vantagem",
-                "o_que_e": "Modelos modernos codificam posição via Rotary Position Embeddings (RoPE). Tokens recentes têm vantagem estrutural; tokens iniciais têm vantagem de fixação.",
-                "por_que": "Esse é o mecanismo concreto por trás do 'lost in the middle'. Tokens no meio simplesmente não têm vantagem estrutural nenhuma.",
+                "emoji": "📍", "titulo": "Posiçêo: rotary embeddings e o efeito recência", "subtitulo": "Por que tokens recentes têm vantagem",
+                "o_que_e": "Modelos modernos codificam posiçêo via Rotary Position Embeddings (RoPE). Tokens recentes têm vantagem estrutural; tokens iniciais têm vantagem de fixaçêo.",
+                "por_que": "Esse é o mecanismo concreto por trás do 'lost in the middle'. Tokens no meio simplesmente nêo têm vantagem estrutural nenhuma.",
                 "conceitos": "RoPE (Su et al. 2021), prefix bias, recency bias, position interpolation."
             },
             {
-                "emoji": "📜", "titulo": "Lost in the middle (Liu et al. 2023)", "subtitulo": "A curva U de atenção",
-                "o_que_e": "Em testes controlados, acurácia de QA cai até 30% quando a informação crítica está no meio da janela. Permanece alta no início e fim.",
-                "por_que": "RAG ingênuo coloca 50 documentos esperando que o modelo dê peso uniforme. Não dá. Precisa rerankear ou recuperar menos.",
-                "conceitos": "Curva U, U-shape attention, mitigação por reranking, ancoragem."
+                "emoji": "📜", "titulo": "Lost in the middle (Liu et al. 2023)", "subtitulo": "A curva U de atençêo",
+                "o_que_e": "Em testes controlados, acurácia de QA cai até 30% quando a informaçêo crítica está no meio da janela. Permanece alta no início e fim.",
+                "por_que": "RAG ingênuo coloca 50 documentos esperando que o modelo dê peso uniforme. Nêo dá. Precisa rerankear ou recuperar menos.",
+                "conceitos": "Curva U, U-shape attention, mitigaçêo por reranking, ancoragem."
             },
             {
-                "emoji": "🧭", "titulo": "Ordem das seções: estável → variável → instrução", "subtitulo": "O padrão que casa atenção e cache",
-                "o_que_e": "System prompt e few-shot fixos primeiro (estáveis, cacheáveis), contexto recuperado depois (variável), instrução do usuário no fim (atenção máxima).",
-                "por_que": "Esta ordem maximiza cache hit rate (Anthropic 2024) e coloca a instrução do usuário na posição mais 'atendida' pelo modelo.",
+                "emoji": "🧭", "titulo": "Ordem das seções: estável → variável → instruçêo", "subtitulo": "O padrêo que casa atençêo e cache",
+                "o_que_e": "System prompt e few-shot fixos primeiro (estáveis, cacheáveis), contexto recuperado depois (variável), instruçêo do usuário no fim (atençêo máxima).",
+                "por_que": "Esta ordem maximiza cache hit rate (Anthropic 2024) e coloca a instruçêo do usuário na posiçêo mais 'atendida' pelo modelo.",
                 "conceitos": "Prefix stability, cache breakpoints, instruction-at-the-end pattern, ancoragem."
             },
             {
                 "emoji": "📏", "titulo": "Janela nominal vs. efetiva", "subtitulo": "200k de marketing ≠ 200k de qualidade",
                 "o_que_e": "Janela nominal é o que o modelo aceita sem erro de API. Janela efetiva é onde a qualidade se mantém. Frequentemente bem menor (RULER, Hsieh et al. 2024).",
-                "por_que": "Decidir 'cabe' e 'funciona bem' são duas perguntas diferentes. A segunda exige eval no harness.",
+                "por_que": "Decidir 'cabe' e 'funciona bem' sêo duas perguntas diferentes. A segunda exige eval no harness.",
                 "conceitos": "Effective context length, needle-in-a-haystack, RULER benchmark."
             },
         ],
         "conceito_principal": {
             "emoji": "💡", "titulo": "Janela de contexto: a unidade fundamental de engenharia",
-            "texto": "Pense no modelo como uma função pura: recebe uma string (a janela serializada) e devolve uma string (a saída). Tudo o que muda no comportamento mora nessa string de entrada — system prompt, exemplos, contexto recuperado, ordem. Não há 'memória' fora dela.",
+            "texto": "Pense no modelo como uma funçêo pura: recebe uma string (a janela serializada) e devolve uma string (a saída). Tudo o que muda no comportamento mora nessa string de entrada — system prompt, exemplos, contexto recuperado, ordem. Nêo há 'memória' fora dela.",
             "lista": [
                 "Você decide o que entra e em que ordem.",
-                "Cada token de entrada custa, mesmo se o modelo 'ignora' por atenção baixa.",
-                "Mudanças no início da janela invalidam cache; mudanças no fim, não."
+                "Cada token de entrada custa, mesmo se o modelo 'ignora' por atençêo baixa.",
+                "Mudanças no início da janela invalidam cache; mudanças no fim, nêo."
             ]
         },
         "dados_pesquisa": {
@@ -81,7 +81,7 @@ MODULOS = [
             "items": [
                 "<strong>30%</strong> — queda média de acurácia quando info crítica está no meio.",
                 "<strong>U-shape</strong> — curva replicada em modelos de janela 4k até 32k+.",
-                "<strong>Mitigação validada:</strong> reranking + recuperar menos resolvem na prática."
+                "<strong>Mitigaçêo validada:</strong> reranking + recuperar menos resolvem na prática."
             ]
         },
         "dica_pratica": {
@@ -95,7 +95,7 @@ MODULOS = [
             ("Medir janela efetiva no harness (eval)", "Confiar que '200k = 200k' funciona igual"),
         ],
         "quando_nao_usar": [
-            "<strong>Tarefas pontuais e estruturadas</strong> (classificação binária, extração de campo único): system prompt curto + user turn é suficiente.",
+            "<strong>Tarefas pontuais e estruturadas</strong> (classificaçêo binária, extraçêo de campo único): system prompt curto + user turn é suficiente.",
             "<strong>Quando RAG resolve</strong>: 3-5 documentos relevantes batem 50 documentos despejados.",
             "<strong>Quando latência importa</strong>: 100k tokens adicionam centenas de ms de prefill mesmo com cache.",
             "<strong>Modelos OSS pequenos</strong>: janela efetiva raramente passa 8-16k mesmo se anunciada como 32k+.",
@@ -104,7 +104,7 @@ MODULOS = [
             "from fec_sdk import Message, MessageRole, check_compat\n"
             "from fec_sdk.adapters import get_adapter\n\n"
             "check_compat(\"modulo-1-1\", expected_sdk_version=\">=1.0,<2.0\")\n\n"
-            "client = get_adapter(\"mock\", scripted=[(\"Liu\", \"Posição 12 (meio)\")])\n\n"
+            "client = get_adapter(\"mock\", scripted=[(\"Liu\", \"Posiçêo 12 (meio)\")])\n\n"
             "doc_relevante = \"FATO: a janela do modelo X é 200000 tokens.\"\n"
             "ruido = \"\\n\".join(f\"Doc {i}: lorem ipsum...\" for i in range(20))\n\n"
             "# Doc relevante NO MEIO — prejudicial\n"
@@ -115,7 +115,7 @@ MODULOS = [
             "])\n"
             "print(resp.content)"
         ),
-        "exercicio": "Em <code>exercicios/modulo-1-1/</code> você recebe 5 cenários onde o doc relevante está no meio. Sua função <code>reordenar(documentos)</code> deve aplicar uma das mitigações ensinadas e fazer ≥4/5 casos passarem. Rode <code>pytest exercicios/modulo-1-1/test.py</code>.",
+        "exercicio": "Em <code>exercicios/modulo-1-1/</code> você recebe 5 cenários onde o doc relevante está no meio. Sua funçêo <code>reordenar(documentos)</code> deve aplicar uma das mitigações ensinadas e fazer ≥4/5 casos passarem. Rode <code>pytest exercicios/modulo-1-1/test.py</code>.",
         "bibliografia": [
             ("Liu et al. (2023)", "Lost in the Middle: How Language Models Use Long Contexts", "https://arxiv.org/abs/2307.03172"),
             ("Su et al. (2021)", "RoFormer: Enhanced Transformer with Rotary Position Embedding", "https://arxiv.org/abs/2104.09864"),
@@ -124,9 +124,9 @@ MODULOS = [
         ],
         "resumo": [
             "<strong>Janela de contexto</strong> é a unidade operacional — sequência fixa de tokens.",
-            "<strong>Atenção é não-uniforme</strong> — início e fim atendem mais que o meio.",
+            "<strong>Atençêo é nêo-uniforme</strong> — início e fim atendem mais que o meio.",
             "<strong>Lost in the middle</strong> documentado: até 30% de queda quando info está no meio.",
-            "<strong>Ordem importa</strong>: estável→variável→instrução maximiza cache e atenção.",
+            "<strong>Ordem importa</strong>: estável→variável→instruçêo maximiza cache e atençêo.",
             "<strong>Janela nominal ≠ efetiva</strong> — meça no harness antes de assumir.",
         ],
         "proximo_id": "modulo-1-2",
@@ -147,7 +147,7 @@ MODULOS = [
         ),
         "topicos": [
             {
-                "emoji": "🔤", "titulo": "Tokenização: BPE e SentencePiece", "subtitulo": "Por que tokens ≠ palavras",
+                "emoji": "🔤", "titulo": "Tokenizaçêo: BPE e SentencePiece", "subtitulo": "Por que tokens ≠ palavras",
                 "o_que_e": "BPE/SentencePiece quebram texto em unidades sub-palavra aprendidas. 'engenharia' pode virar 3 tokens; 'engineering' pode virar 1.",
                 "por_que": "Estimativa de custo precisa do tokenizer correto. Heurísticas universais ('1 token ≈ 4 chars') falham em PT-BR (~3 chars/token), código e emoji.",
                 "conceitos": "BPE (Sennrich 2016), SentencePiece (Kudo 2018), vocabulário, multi-byte tokens, UNK."
@@ -155,18 +155,18 @@ MODULOS = [
             {
                 "emoji": "💰", "titulo": "Custo: input vs. output (cuidado com a ratio)", "subtitulo": "Output é caro mas input é volume",
                 "o_que_e": "Output tokens custam 3-5× mais que input. Mas em janelas longas, você gasta mais em input total porque ele é grande.",
-                "por_que": "Otimização incorreta — tentar reduzir output enquanto a janela está inflada — não move custo significativamente.",
+                "por_que": "Otimizaçêo incorreta — tentar reduzir output enquanto a janela está inflada — nêo move custo significativamente.",
                 "conceitos": "Pricing por 1M tokens, ratio input/output, batch discounts, prompt caching."
             },
             {
                 "emoji": "🏗️", "titulo": "Os três níveis de modelo", "subtitulo": "Frontier, low-cost, OSS local",
-                "o_que_e": "Frontier (~$3-15/M): raciocínio complexo, contexto grande. Low-cost (~$0.10-0.30/M): volume alto, classificação. OSS local: $0/chamada, hardware-bound.",
+                "o_que_e": "Frontier (~$3-15/M): raciocínio complexo, contexto grande. Low-cost (~$0.10-0.30/M): volume alto, classificaçêo. OSS local: $0/chamada, hardware-bound.",
                 "por_que": "Engenheiros pulam direto para frontier por inércia. Em volume, isso queima orçamento sem ganho.",
                 "conceitos": "Capability vs. context vs. cost, model routing, hierarchical inference."
             },
             {
                 "emoji": "⏱️", "titulo": "Latência: prefill vs. decode", "subtitulo": "TTFT em janelas longas",
-                "o_que_e": "Prefill é o tempo para o modelo 'ler' o input. Decode é o tempo de geração. Janela longa = prefill longo = TTFT (time-to-first-token) grande.",
+                "o_que_e": "Prefill é o tempo para o modelo 'ler' o input. Decode é o tempo de geraçêo. Janela longa = prefill longo = TTFT (time-to-first-token) grande.",
                 "por_que": "Para UX de chat ao vivo, prefill domina o 'tempo até primeiro token'. Cache reduz drasticamente — entender isso é entender UX real.",
                 "conceitos": "TTFT, tokens/sec, KV cache reuse, streaming."
             },
@@ -180,12 +180,12 @@ MODULOS = [
                 "emoji": "🆓", "titulo": "OSS local: a matriz de hardware", "subtitulo": "O que cabe na sua máquina",
                 "o_que_e": "Qwen2.5-7B q4 cabe em 16GB RAM. Llama-3.1-8B-instruct também. Modelos >13B exigem GPU. Detalhes em <code>OLLAMA-MATRIZ.md</code>.",
                 "por_que": "O caminho gratuito do curso usa OSS — entenda o que cabe antes de tentar T4.3 (multi-agente).",
-                "conceitos": "Quantização (q4, q5, q8), VRAM/RAM, throughput CPU vs. GPU, vLLM."
+                "conceitos": "Quantizaçêo (q4, q5, q8), VRAM/RAM, throughput CPU vs. GPU, vLLM."
             },
         ],
         "conceito_principal": {
             "emoji": "🧮", "titulo": "Estimar custo ANTES de chamar",
-            "texto": "Use o tokenizer offline do provedor para calcular tokens de uma chamada antes de mandar. Custos não-triviais devem ser orçados, não chutados.",
+            "texto": "Use o tokenizer offline do provedor para calcular tokens de uma chamada antes de mandar. Custos nêo-triviais devem ser orçados, nêo chutados.",
             "lista": [
                 "Anthropic: <code>client.messages.count_tokens()</code> ou Anthropic Tokenizer.",
                 "OpenAI: biblioteca <code>tiktoken</code> roda local sem chamar API.",
@@ -194,7 +194,7 @@ MODULOS = [
             ]
         },
         "dados_pesquisa": {
-            "titulo": "Comparação real de custo (2026-Q2, ordens de grandeza)",
+            "titulo": "Comparaçêo real de custo (2026-Q2, ordens de grandeza)",
             "items": [
                 "<strong>Frontier (ex: Claude Sonnet 4.6):</strong> ~$3 input / $15 output por 1M tokens.",
                 "<strong>Low-cost (ex: GPT-5 mini):</strong> ~$0.15 input / $0.60 output por 1M tokens.",
@@ -204,19 +204,19 @@ MODULOS = [
         },
         "dica_pratica": {
             "emoji": "💡", "titulo": "Regra dos 80%",
-            "texto": "Se a tarefa é estruturada (classificação, extração) E o input cabe em &lt;8k tokens, low-cost ou OSS resolvem 80% dos casos com 1/20 do custo. Só vá para frontier quando precisar do reasoning."
+            "texto": "Se a tarefa é estruturada (classificaçêo, extraçêo) E o input cabe em &lt;8k tokens, low-cost ou OSS resolvem 80% dos casos com 1/20 do custo. Só vá para frontier quando precisar do reasoning."
         },
         "fazer_evitar": [
             ("Estimar tokens com tokenizer offline antes de mandar", "Chutar 'mais ou menos' o tamanho da janela"),
             ("Usar low-cost para tarefas estruturadas em volume", "Mandar tudo para frontier por inércia"),
             ("Habilitar prompt caching em chats com prefixo grande", "Reescrever o system prompt a cada turn (invalida cache)"),
-            ("Pinar versão exata do modelo (com data)", "Apontar para apelido genérico que pode mudar"),
+            ("Pinar versêo exata do modelo (com data)", "Apontar para apelido genérico que pode mudar"),
         ],
         "quando_nao_usar": [
-            "<strong>Quando a chamada é única ou rara</strong>: custo total é trivial; gaste seu tempo em qualidade, não em centavos.",
+            "<strong>Quando a chamada é única ou rara</strong>: custo total é trivial; gaste seu tempo em qualidade, nêo em centavos.",
             "<strong>Em prototipagem inicial</strong>: use frontier para estabelecer o teto de qualidade; otimize depois.",
-            "<strong>Quando otimização frita qualidade</strong>: trocar frontier por low-cost que cai groundedness em 20% NÃO é economia.",
-            "<strong>Quando privacidade exige local</strong>: custo deixa de ser o critério; OSS é a única opção.",
+            "<strong>Quando otimizaçêo frita qualidade</strong>: trocar frontier por low-cost que cai groundedness em 20% NêO é economia.",
+            "<strong>Quando privacidade exige local</strong>: custo deixa de ser o critério; OSS é a única opçêo.",
         ],
         "exemplo_codigo": (
             "from fec_sdk import check_compat\n"
@@ -225,7 +225,7 @@ MODULOS = [
             "system_prompt = \"Você é um assistente conciso.\"\n"
             "user_query = \"Resuma este texto em 3 bullets.\"\n"
             "contexto = open(\"documento.txt\").read()\n\n"
-            "# PT-BR: ~3 chars/token (use tokenizer real do provedor para precisão)\n"
+            "# PT-BR: ~3 chars/token (use tokenizer real do provedor para precisêo)\n"
             "tokens_input  = (len(system_prompt) + len(user_query) + len(contexto)) // 3\n"
             "tokens_output = 200  # estimativa do tamanho da resposta\n\n"
             "# Frontier hipotético\n"
@@ -242,7 +242,7 @@ MODULOS = [
             ("Anthropic (2024)", "Prompt caching with Claude", "https://docs.anthropic.com"),
         ],
         "resumo": [
-            "<strong>Tokens não são palavras</strong> — use tokenizer do provedor para estimativa.",
+            "<strong>Tokens nêo sêo palavras</strong> — use tokenizer do provedor para estimativa.",
             "<strong>Output 3-5× mais caro</strong> que input, mas input domina em janelas longas.",
             "<strong>Três níveis de modelo</strong>: frontier, low-cost, OSS — cada um para um caso.",
             "<strong>Prompt caching</strong> reduz input cacheado para 10% do preço.",
@@ -262,7 +262,7 @@ MODULOS = [
         "introducao": (
             "Engenheiros que mandam 'string solta' entregam resultados imprevisíveis. "
             "<strong class='text-blue-400'>Estrutura é a primeira alavanca de qualidade</strong> — antes de RAG, antes de tools, antes de eval. "
-            "Aqui você aprende a anatomia: system prompt, few-shot, formato declarativo (XML/JSON), e o padrão 'instruction at the end'."
+            "Aqui você aprende a anatomia: system prompt, few-shot, formato declarativo (XML/JSON), e o padrêo 'instruction at the end'."
         ),
         "topicos": [
             {
@@ -273,31 +273,31 @@ MODULOS = [
             },
             {
                 "emoji": "📚", "titulo": "Few-shot: ensinando por exemplo", "subtitulo": "2-N exemplos canônicos",
-                "o_que_e": "Padrão de incluir 2-N exemplos input→output no prompt para guiar o modelo. Funciona melhor que descrição abstrata para tarefas com formato específico.",
-                "por_que": "In-context learning: o modelo extrapola do padrão dos exemplos. Para classificação, extração estruturada e tradução, few-shot consistentemente bate zero-shot.",
+                "o_que_e": "Padrêo de incluir 2-N exemplos input→output no prompt para guiar o modelo. Funciona melhor que descriçêo abstrata para tarefas com formato específico.",
+                "por_que": "In-context learning: o modelo extrapola do padrêo dos exemplos. Para classificaçêo, extraçêo estruturada e traduçêo, few-shot consistentemente bate zero-shot.",
                 "conceitos": "In-context learning, GPT-3 paper (Brown et al. 2020), exemplo canônico, ordem dos exemplos."
             },
             {
                 "emoji": "🏷️", "titulo": "Formato declarativo: XML, JSON, Markdown", "subtitulo": "Tags que ancoram",
                 "o_que_e": "Usar tags XML (<code>&lt;documento&gt;</code>, <code>&lt;pergunta&gt;</code>) ou JSON Schema declara seções e ajuda o modelo a separá-las.",
-                "por_que": "Modelos modernos foram fine-tunados em prompts com estrutura. XML reduz confusão entre 'o que é instrução' e 'o que é dado'.",
+                "por_que": "Modelos modernos foram fine-tunados em prompts com estrutura. XML reduz confusêo entre 'o que é instruçêo' e 'o que é dado'.",
                 "conceitos": "XML tags, JSON Schema, structured outputs, delimitadores."
             },
             {
-                "emoji": "📍", "titulo": "Ordem das seções: estável → variável → instrução", "subtitulo": "O padrão FEC",
-                "o_que_e": "System prompt e few-shot fixos primeiro (cacheáveis); contexto recuperado depois (variável); instrução do usuário no fim.",
-                "por_que": "Maximiza cache hit rate e coloca a pergunta na zona de atenção alta (recência).",
+                "emoji": "📍", "titulo": "Ordem das seções: estável → variável → instruçêo", "subtitulo": "O padrêo FEC",
+                "o_que_e": "System prompt e few-shot fixos primeiro (cacheáveis); contexto recuperado depois (variável); instruçêo do usuário no fim.",
+                "por_que": "Maximiza cache hit rate e coloca a pergunta na zona de atençêo alta (recência).",
                 "conceitos": "Cache stability, instruction-at-end, anchoring, prefix-suffix split."
             },
             {
-                "emoji": "🪢", "titulo": "Ancoragem: repita a pergunta antes E depois", "subtitulo": "Mitigação contra lost-in-middle",
+                "emoji": "🪢", "titulo": "Ancoragem: repita a pergunta antes E depois", "subtitulo": "Mitigaçêo contra lost-in-middle",
                 "o_que_e": "Quando o contexto recuperado é grande, repetir a pergunta no início E no fim do bloco de contexto reduz a chance de o modelo esquecer.",
                 "por_que": "Liu et al. (2023) mostra que info no meio é menos atendida. Ancoragem é uma das mitigações validadas.",
                 "conceitos": "Anchoring, repetition prompt, query injection."
             },
             {
                 "emoji": "🔧", "titulo": "Chain-of-thought: pensar antes de responder", "subtitulo": "Raciocínio explícito",
-                "o_que_e": "Padrão de pedir ao modelo para 'pensar passo a passo' antes da resposta final. Tags como <code>&lt;raciocinio&gt;</code> antes de <code>&lt;resposta&gt;</code>.",
+                "o_que_e": "Padrêo de pedir ao modelo para 'pensar passo a passo' antes da resposta final. Tags como <code>&lt;raciocinio&gt;</code> antes de <code>&lt;resposta&gt;</code>.",
                 "por_que": "Em problemas multi-passo (matemática, lógica), CoT melhora acurácia significativamente. Wei et al. (2022).",
                 "conceitos": "CoT (Wei 2022), zero-shot CoT (Kojima 2022), reasoning models, scratchpad."
             },
@@ -309,31 +309,31 @@ MODULOS = [
                 "<strong>1. System prompt</strong> — persona, regras (ESTÁVEL, cacheável)",
                 "<strong>2. Few-shot</strong> — 2-N exemplos canônicos (ESTÁVEL, cacheável)",
                 "<strong>3. Contexto recuperado</strong> — RAG, tools, dados externos (VARIÁVEL)",
-                "<strong>4. Pergunta âncora</strong> (opcional) — repetição da pergunta no início do contexto",
-                "<strong>5. User turn</strong> — pergunta de fato (FIM, atenção alta)"
+                "<strong>4. Pergunta âncora</strong> (opcional) — repetiçêo da pergunta no início do contexto",
+                "<strong>5. User turn</strong> — pergunta de fato (FIM, atençêo alta)"
             ]
         },
         "dados_pesquisa": {
             "titulo": "Wei et al. (2022) — Chain-of-Thought",
             "items": [
                 "<strong>+17.9%</strong> em GSM8K (problemas matemáticos) com CoT vs. resposta direta.",
-                "<strong>Padrão 'Vamos pensar passo a passo'</strong> dispara CoT em zero-shot (Kojima 2022).",
+                "<strong>Padrêo 'Vamos pensar passo a passo'</strong> dispara CoT em zero-shot (Kojima 2022).",
                 "<strong>CoT é caro</strong> — gera mais output tokens, custo aumenta proporcionalmente."
             ]
         },
         "dica_pratica": {
-            "emoji": "🎯", "titulo": "Use XML para separar dado de instrução",
-            "texto": "Quando o prompt tem dados de usuário (texto livre, documento), envolva em tags como <code>&lt;documento_usuario&gt;...&lt;/documento_usuario&gt;</code>. Reduz risco de prompt injection (o modelo não confunde texto do doc com instrução)."
+            "emoji": "🎯", "titulo": "Use XML para separar dado de instruçêo",
+            "texto": "Quando o prompt tem dados de usuário (texto livre, documento), envolva em tags como <code>&lt;documento_usuario&gt;...&lt;/documento_usuario&gt;</code>. Reduz risco de prompt injection (o modelo nêo confunde texto do doc com instruçêo)."
         },
         "fazer_evitar": [
             ("Definir persona e formato no system prompt", "Esperar que o modelo 'adivinhe' o comportamento"),
             ("Incluir 2-3 exemplos canônicos para tarefas estruturadas", "Descrever o formato em prosa sem mostrar exemplo"),
             ("Usar XML/JSON para separar seções claramente", "Concatenar tudo em um único bloco de texto"),
-            ("Colocar a instrução no fim (zona de atenção alta)", "Enterrar a instrução no meio de contexto longo"),
+            ("Colocar a instruçêo no fim (zona de atençêo alta)", "Enterrar a instruçêo no meio de contexto longo"),
         ],
         "quando_nao_usar": [
             "<strong>Tarefas simples e bem-tipadas</strong>: para 'traduza esta frase', system prompt + user turn já bastam.",
-            "<strong>Quando você não tem exemplos canônicos</strong>: few-shot ruim atrapalha mais que ajuda — prefira zero-shot.",
+            "<strong>Quando você nêo tem exemplos canônicos</strong>: few-shot ruim atrapalha mais que ajuda — prefira zero-shot.",
             "<strong>Modelos pequenos OSS</strong>: alguns ignoram XML/JSON estrutural; teste primeiro.",
             "<strong>CoT em modelos de raciocínio (o-series)</strong>: já fazem internamente; pedir CoT explícito é redundante e caro.",
         ],
@@ -345,7 +345,7 @@ MODULOS = [
             "Saída: apenas 'positivo', 'negativo' ou 'neutro'.\n\n"
             "<exemplos>\n"
             "<exemplo><entrada>Adorei o produto, recomendo!</entrada><saida>positivo</saida></exemplo>\n"
-            "<exemplo><entrada>Decepcionante, não recomendo.</entrada><saida>negativo</saida></exemplo>\n"
+            "<exemplo><entrada>Decepcionante, nêo recomendo.</entrada><saida>negativo</saida></exemplo>\n"
             "<exemplo><entrada>É um produto comum.</entrada><saida>neutro</saida></exemplo>\n"
             "</exemplos>\"\"\"\n\n"
             "resp = client.chat([\n"
@@ -365,8 +365,8 @@ MODULOS = [
             "<strong>5 seções</strong>: system + few-shot + contexto + âncora + user.",
             "<strong>System prompt</strong> define persona, regras, formato — estável e cacheável.",
             "<strong>Few-shot</strong> 2-3 exemplos canônicos batem zero-shot em tarefas estruturadas.",
-            "<strong>XML/JSON</strong> separa dado de instrução, reduz confusão e injection.",
-            "<strong>Pergunta no fim</strong> + ancoragem em contexto longo = atenção máxima.",
+            "<strong>XML/JSON</strong> separa dado de instruçêo, reduz confusêo e injection.",
+            "<strong>Pergunta no fim</strong> + ancoragem em contexto longo = atençêo máxima.",
         ],
         "proximo_id": "modulo-2-2",
         "proximo_titulo": "Templates e versionamento de prompt",
@@ -376,28 +376,28 @@ MODULOS = [
         "id": "modulo-2-2", "trilha": 2, "numero": "2.2", "status": "GA",
         "titulo": "Templates, versionamento de prompt e eval primer",
         "emoji": "📝",
-        "descricao": "Prompts viram código: têm versão, diff, teste. Toda mudança em prompt deve passar por mini-eval no harness antes de ir para produção.",
+        "descricao": "Prompts viram código: têm versêo, diff, teste. Toda mudança em prompt deve passar por mini-eval no harness antes de ir para produçêo.",
         "minutos": 60, "nivel": "Intermediário", "tipo": "Prático",
         "introducao": (
-            "Prompts são código. Você não muda código de produção sem teste — não mude prompt sem eval. "
-            "Aqui você aprende a tratar prompts como artefatos versionáveis: <strong class='text-blue-400'>template, hash, golden set, comparação A/B</strong>. "
+            "Prompts sêo código. Você nêo muda código de produçêo sem teste — nêo mude prompt sem eval. "
+            "Aqui você aprende a tratar prompts como artefatos versionáveis: <strong class='text-blue-400'>template, hash, golden set, comparaçêo A/B</strong>. "
             "É a sementeira da disciplina que se aprofunda em T6."
         ),
         "topicos": [
             {
                 "emoji": "📦", "titulo": "Prompt como código: template + variáveis", "subtitulo": "Separar dado de prompt",
-                "o_que_e": "Padrão template com placeholders (Jinja2, f-string, mustache). O prompt fica em arquivo versionado; dados entram no momento da chamada.",
+                "o_que_e": "Padrêo template com placeholders (Jinja2, f-string, mustache). O prompt fica em arquivo versionado; dados entram no momento da chamada.",
                 "por_que": "Prompts hardcoded em código Python ficam impossíveis de revisar e versionar. Templates externos permitem PR review do prompt isoladamente.",
-                "conceitos": "Template engine, variáveis, schema de input, sanitização."
+                "conceitos": "Template engine, variáveis, schema de input, sanitizaçêo."
             },
             {
                 "emoji": "🔢", "titulo": "Versionamento: SemVer aplicado a prompts", "subtitulo": "v1.0.0 do prompt",
-                "o_que_e": "Major: mudança que invalida saídas anteriores (formato, persona). Minor: capability nova compatível. Patch: correção de typo, clareza.",
-                "por_que": "Sem versionamento, regressão silenciosa é certeza. Você muda 'só uma palavra' e quebra 30% dos casos sem perceber.",
+                "o_que_e": "Major: mudança que invalida saídas anteriores (formato, persona). Minor: capability nova compatível. Patch: correçêo de typo, clareza.",
+                "por_que": "Sem versionamento, regressêo silenciosa é certeza. Você muda 'só uma palavra' e quebra 30% dos casos sem perceber.",
                 "conceitos": "SemVer, prompt diff, breaking change, hash de prompt."
             },
             {
-                "emoji": "🎯", "titulo": "Golden set: o conjunto de validação", "subtitulo": "20-50 exemplos canônicos",
+                "emoji": "🎯", "titulo": "Golden set: o conjunto de validaçêo", "subtitulo": "20-50 exemplos canônicos",
                 "o_que_e": "Conjunto fixado de input → output esperado, usado para medir se o prompt continua funcionando após mudança.",
                 "por_que": "É o teste automatizado do prompt. Sem golden set, 'A/B' vira 'achei que melhorou'.",
                 "conceitos": "Golden set, regression test, eval frozen, harness."
@@ -405,54 +405,54 @@ MODULOS = [
             {
                 "emoji": "⚖️", "titulo": "Eval primer: medir antes de mergear", "subtitulo": "A regra que enraíza em T6",
                 "o_que_e": "Toda mudança em prompt entra com mini-eval contra o golden set. Métrica primária + 1-2 secundárias. Diff documentado.",
-                "por_que": "Disciplina anti-regressão. Sem isso, o prompt vai sendo 'melhorado' ad hoc até parar de funcionar.",
+                "por_que": "Disciplina anti-regressêo. Sem isso, o prompt vai sendo 'melhorado' ad hoc até parar de funcionar.",
                 "conceitos": "Mini-eval, A/B no harness, statistical significance, eval cost."
             },
             {
                 "emoji": "📊", "titulo": "Métricas: exact match, BLEU, LLM-as-judge", "subtitulo": "Escolha pela tarefa",
-                "o_que_e": "Exact match para classificação. BLEU/ROUGE para tradução/sumarização. LLM-as-judge para qualidade subjetiva (com cuidado dos vieses).",
+                "o_que_e": "Exact match para classificaçêo. BLEU/ROUGE para traduçêo/sumarizaçêo. LLM-as-judge para qualidade subjetiva (com cuidado dos vieses).",
                 "por_que": "Cada tipo de tarefa pede sua métrica. LLM-as-judge é poderoso mas tem vieses — detalhado em T6.1.",
                 "conceitos": "Exact match, BLEU, ROUGE, LLM-as-judge, judge bias."
             },
             {
-                "emoji": "🔁", "titulo": "Iterativa, não one-shot: o ciclo do prompt", "subtitulo": "Hipótese → eval → diff",
+                "emoji": "🔁", "titulo": "Iterativa, nêo one-shot: o ciclo do prompt", "subtitulo": "Hipótese → eval → diff",
                 "o_que_e": "Ciclo: hipótese de mudança → escrever variant → rodar contra golden → comparar métricas → decidir.",
-                "por_que": "Prompt engineering não é arte intuitiva — é ciência empírica. Ciclos rápidos e medidos batem 'feeling'.",
+                "por_que": "Prompt engineering nêo é arte intuitiva — é ciência empírica. Ciclos rápidos e medidos batem 'feeling'.",
                 "conceitos": "Hypothesis-driven, eval cycle, prompt diff, A/B significant."
             },
         ],
         "conceito_principal": {
             "emoji": "🧬", "titulo": "Prompt-as-code: o ciclo de vida",
-            "texto": "Trate o prompt exatamente como você trata código de produção: arquivo versionado, PR com diff, CI que roda eval, deploy só com aprovação.",
+            "texto": "Trate o prompt exatamente como você trata código de produçêo: arquivo versionado, PR com diff, CI que roda eval, deploy só com aprovaçêo.",
             "lista": [
                 "<strong>Edita</strong>: novo arquivo <code>prompts/classify_v1.2.0.j2</code>.",
                 "<strong>Testa</strong>: <code>pytest evals/classify/</code> roda contra golden set.",
-                "<strong>Compara</strong>: diff métrica vs. versão anterior em PR.",
-                "<strong>Deploy</strong>: merge só se métrica não regrediu (≥0 delta) E PR aprovado."
+                "<strong>Compara</strong>: diff métrica vs. versêo anterior em PR.",
+                "<strong>Deploy</strong>: merge só se métrica nêo regrediu (≥0 delta) E PR aprovado."
             ]
         },
         "dados_pesquisa": {
-            "titulo": "Por que isso importa: regressão silenciosa é o normal",
+            "titulo": "Por que isso importa: regressêo silenciosa é o normal",
             "items": [
-                "<strong>30%+</strong> dos casos quebram em mudanças 'pequenas' não-validadas (estudo interno comum).",
+                "<strong>30%+</strong> dos casos quebram em mudanças 'pequenas' nêo-validadas (estudo interno comum).",
                 "<strong>Modelo do provedor é atualizado sem aviso</strong> — eval contínuo captura.",
                 "<strong>Prompt drift</strong>: ao longo de meses, prompts viram colcha de retalhos sem ninguém perceber.",
             ]
         },
         "dica_pratica": {
             "emoji": "💡", "titulo": "Comece pequeno",
-            "texto": "Não precisa de Weights & Biases dia 1. <code>prompts/v1.0.0.txt</code> + 20 exemplos em <code>golden.jsonl</code> + <code>pytest test_prompt.py</code> já estabelece a disciplina."
+            "texto": "Nêo precisa de Weights & Biases dia 1. <code>prompts/v1.0.0.txt</code> + 20 exemplos em <code>golden.jsonl</code> + <code>pytest test_prompt.py</code> já estabelece a disciplina."
         },
         "fazer_evitar": [
             ("Versionar prompts em arquivos separados", "Hardcoded como string em código Python"),
             ("Rodar mini-eval em toda mudança de prompt", "'Eu testei manualmente em 2 casos'"),
             ("Documentar o diff e métricas no PR", "Mergear com 'melhora performance' sem números"),
-            ("Pinar versão do modelo no eval", "Eval que vira ruído porque o modelo muda"),
+            ("Pinar versêo do modelo no eval", "Eval que vira ruído porque o modelo muda"),
         ],
         "quando_nao_usar": [
             "<strong>Em prototipagem inicial (primeiras horas)</strong>: vá rápido, depois codifique a disciplina.",
-            "<strong>Para prompts triviais usados 1 vez</strong>: 'resumir este texto' não precisa de SemVer.",
-            "<strong>Quando golden set ainda não existe</strong>: defina-o antes de virar disciplina obrigatória.",
+            "<strong>Para prompts triviais usados 1 vez</strong>: 'resumir este texto' nêo precisa de SemVer.",
+            "<strong>Quando golden set ainda nêo existe</strong>: defina-o antes de virar disciplina obrigatória.",
         ],
         "exemplo_codigo": (
             "# prompts/classify_v1.0.0.j2\n"
@@ -483,26 +483,26 @@ MODULOS = [
             ("Lin (2004)", "ROUGE: Recall-oriented eval", "https://aclanthology.org/W04-1013/"),
         ],
         "resumo": [
-            "<strong>Prompts são código</strong> — versione em arquivo separado.",
+            "<strong>Prompts sêo código</strong> — versione em arquivo separado.",
             "<strong>SemVer</strong> aplicado: major/minor/patch para prompts.",
             "<strong>Golden set</strong> de 20-50 exemplos é o teste automatizado.",
             "<strong>Mini-eval</strong> em toda mudança — antes de mergear.",
             "<strong>Eval primer</strong> aqui é semente do que aprofunda em T6.1.",
         ],
         "proximo_id": "../trilha3/index.html",
-        "proximo_titulo": "T3 — RAG e Recuperação",
+        "proximo_titulo": "T3 — RAG e Recuperaçêo",
     },
 
-    # =================== T3 — RAG E RECUPERAÇÃO ===================
+    # =================== T3 — RAG E RECUPERAÇêO ===================
     {
         "id": "modulo-3-1", "trilha": 3, "numero": "3.1", "status": "GA",
-        "titulo": "Indexação: chunking, embeddings e BM25 híbrido",
+        "titulo": "Indexaçêo: chunking, embeddings e BM25 híbrido",
         "emoji": "📚",
         "descricao": "Como transformar um corpus em um índice consultável: estratégias de chunking, embeddings densos, BM25 sparse, e por que híbrido bate ambos.",
         "minutos": 60, "nivel": "Intermediário", "tipo": "Prático",
         "introducao": (
-            "RAG bom é resultado de <strong class='text-purple-400'>indexação boa</strong>. "
-            "Cada decisão — tamanho do chunk, modelo de embedding, índice sparse vs. denso — "
+            "RAG bom é resultado de <strong class='text-purple-400'>indexaçêo boa</strong>. "
+            "Cada decisêo — tamanho do chunk, modelo de embedding, índice sparse vs. denso — "
             "tem trade-offs concretos de recall, latência e custo. Aqui você aprende a navegar essas decisões."
         ),
         "topicos": [
@@ -510,7 +510,7 @@ MODULOS = [
                 "emoji": "✂️", "titulo": "Chunking: dividir o corpus", "subtitulo": "Tamanho, overlap, fronteiras semânticas",
                 "o_que_e": "Quebrar documentos em pedaços (chunks) de 200-1000 tokens com overlap de 10-20%. Pode ser por caracteres, sentenças ou parágrafos.",
                 "por_que": "Chunks muito grandes diluem relevância; muito pequenos perdem contexto. Overlap evita corte abrupto entre fronteiras.",
-                "conceitos": "Sliding window, semantic chunking, fronteira de seção, recursive splitter."
+                "conceitos": "Sliding window, semantic chunking, fronteira de seçêo, recursive splitter."
             },
             {
                 "emoji": "🧮", "titulo": "Embeddings densos: vetores semânticos", "subtitulo": "Modelos sentence-transformers",
@@ -520,12 +520,12 @@ MODULOS = [
             },
             {
                 "emoji": "🔤", "titulo": "BM25: o sparse clássico que ainda manda", "subtitulo": "TF-IDF refinado",
-                "o_que_e": "Algoritmo probabilístico de relevância baseado em frequência de termo (TF) e raridade (IDF). Não usa ML.",
+                "o_que_e": "Algoritmo probabilístico de relevância baseado em frequência de termo (TF) e raridade (IDF). Nêo usa ML.",
                 "por_que": "Robusto, rápido, captura match exato (números, IDs, nomes próprios) que embeddings densas erram.",
                 "conceitos": "TF-IDF, BM25, sparse vector, lexical match, rare term boost."
             },
             {
-                "emoji": "🤝", "titulo": "Híbrido: BM25 + denso, fusão por RRF", "subtitulo": "O melhor dos dois",
+                "emoji": "🤝", "titulo": "Híbrido: BM25 + denso, fusêo por RRF", "subtitulo": "O melhor dos dois",
                 "o_que_e": "Roda ambos em paralelo, funde rankings via Reciprocal Rank Fusion (RRF) ou peso linear (alpha).",
                 "por_que": "Ganhos consistentes em benchmarks (BEIR). Cada método cobre falhas do outro: BM25 pega match exato, denso pega paráfrase.",
                 "conceitos": "RRF, alpha-fusion, hybrid search, ColBERT (alternativa late-interaction)."
@@ -539,12 +539,12 @@ MODULOS = [
             {
                 "emoji": "🏷️", "titulo": "Metadata e filtros: além do match semântico", "subtitulo": "Filtragem antes/depois do retrieval",
                 "o_que_e": "Anexar metadados a cada chunk (data, autor, categoria, idioma) e filtrar por eles antes ou depois da busca vetorial.",
-                "por_que": "Pergunta 'eventos de 2024' não deve trazer chunks de 2019, mesmo que semanticamente similares. Filtros resolvem.",
+                "por_que": "Pergunta 'eventos de 2024' nêo deve trazer chunks de 2019, mesmo que semanticamente similares. Filtros resolvem.",
                 "conceitos": "Metadata filtering, pre-filter, post-filter, namespace."
             },
         ],
         "conceito_principal": {
-            "emoji": "🏗️", "titulo": "Pipeline canônico de indexação",
+            "emoji": "🏗️", "titulo": "Pipeline canônico de indexaçêo",
             "texto": "Cada documento entra, é processado por uma pipeline determinística e sai como N chunks indexados. Reproducibilidade vem de fixar cada passo.",
             "lista": [
                 "<strong>1. Parse</strong>: extrai texto (PDF→text, HTML→text), normaliza encoding.",
@@ -556,10 +556,10 @@ MODULOS = [
         },
         "dica_pratica": {
             "emoji": "💡", "titulo": "Comece com 500 tokens + 50 overlap",
-            "texto": "Para a maioria dos corpora técnicos em PT-BR, chunks de ~500 tokens com 10% overlap dão recall razoável. Ajuste depois com base em eval real, não em achismo."
+            "texto": "Para a maioria dos corpora técnicos em PT-BR, chunks de ~500 tokens com 10% overlap dêo recall razoável. Ajuste depois com base em eval real, nêo em achismo."
         },
         "fazer_evitar": [
-            ("Hash do corpus + versão da pipeline em metadata", "Re-indexar e perder reproducibilidade"),
+            ("Hash do corpus + versêo da pipeline em metadata", "Re-indexar e perder reproducibilidade"),
             ("Híbrido (BM25 + denso) com RRF como default", "Confiar só em embeddings densas"),
             ("Filtros de metadata (data, idioma, fonte)", "Match puramente semântico em corpus heterogêneo"),
             ("Chunks com fronteira semântica (parágrafo)", "Cortar no meio de sentença ou fórmula"),
@@ -567,7 +567,7 @@ MODULOS = [
         "quando_nao_usar": [
             "<strong>Quando contexto longo basta</strong>: corpus pequeno (&lt;50k tokens) cabe direto na janela.",
             "<strong>Quando a query exige raciocínio multi-hop</strong>: agente (T4) funciona melhor que RAG estático.",
-            "<strong>Quando o corpus muda a cada chamada</strong>: indexar não vale a pena; passe contexto direto.",
+            "<strong>Quando o corpus muda a cada chamada</strong>: indexar nêo vale a pena; passe contexto direto.",
         ],
         "exemplo_codigo": (
             "from fec_sdk import check_compat\n"
@@ -598,51 +598,51 @@ MODULOS = [
             "<strong>Embeddings densas</strong> capturam paráfrase; <strong>BM25</strong> pega match exato.",
             "<strong>Híbrido com RRF</strong> bate ambos consistentemente.",
             "<strong>Vector stores</strong> usam ANN (HNSW, IVF) para escalar.",
-            "<strong>Metadata + filtros</strong> são tão importantes quanto similaridade.",
+            "<strong>Metadata + filtros</strong> sêo têo importantes quanto similaridade.",
         ],
         "proximo_id": "modulo-3-2",
-        "proximo_titulo": "Recuperação e reranking",
+        "proximo_titulo": "Recuperaçêo e reranking",
     },
 
     {
         "id": "modulo-3-2", "trilha": 3, "numero": "3.2", "status": "GA",
-        "titulo": "Recuperação, reranking e contextual retrieval",
+        "titulo": "Recuperaçêo, reranking e contextual retrieval",
         "emoji": "🔍",
         "descricao": "Do índice à resposta: top-k retrieval, rerankers cross-encoder, contextual retrieval (Anthropic 2024) e citações obrigatórias.",
         "minutos": 60, "nivel": "Intermediário", "tipo": "Prático",
         "introducao": (
-            "Retrieval ingênuo recupera 50 docs e despeja na janela. RAG bom <strong class='text-purple-400'>recupera 100, rerankeia para 5, e mostra citação</strong>. "
+            "Retrieval ingênuo recupera 50 docs e despeja na janela. RAG bom <strong class='text-purple-400'>recupera 100, rerankeia para 5, e mostra citaçêo</strong>. "
             "Aqui você aprende a fechar o ciclo: top-k, reranker, contextual retrieval, e como forçar o modelo a citar a fonte."
         ),
         "topicos": [
             {
                 "emoji": "🎯", "titulo": "Top-k retrieval: quanto recuperar", "subtitulo": "Trade-off recall vs. ruído",
-                "o_que_e": "Pegar os k chunks mais similares à query. k=3-10 é o range típico para passar à geração.",
+                "o_que_e": "Pegar os k chunks mais similares à query. k=3-10 é o range típico para passar à geraçêo.",
                 "por_que": "k baixo perde recall; k alto enche a janela de ruído (vide lost-in-the-middle). Otimize empiricamente.",
                 "conceitos": "Recall@k, precision@k, k-tuning, MRR (mean reciprocal rank)."
             },
             {
-                "emoji": "🏆", "titulo": "Reranker cross-encoder: precisão alta", "subtitulo": "BGE-reranker, Cohere Rerank",
+                "emoji": "🏆", "titulo": "Reranker cross-encoder: precisêo alta", "subtitulo": "BGE-reranker, Cohere Rerank",
                 "o_que_e": "Modelo cross-encoder que recebe (query, chunk) e retorna score. Mais preciso que dual encoder, mas mais lento.",
-                "por_que": "Padrão: recupera top-50 com encoder rápido, rankeia para top-5 com cross-encoder. Ganho consistente em recall.",
+                "por_que": "Padrêo: recupera top-50 com encoder rápido, rankeia para top-5 com cross-encoder. Ganho consistente em recall.",
                 "conceitos": "Cross-encoder vs dual encoder, BGE reranker, Cohere Rerank, latency budget."
             },
             {
                 "emoji": "🪄", "titulo": "Contextual retrieval (Anthropic 2024)", "subtitulo": "Embed com contexto do documento",
-                "o_que_e": "Antes de embedar cada chunk, injeta uma descrição curta do documento de onde veio. Reduz miss em 35-50% (Anthropic 2024).",
+                "o_que_e": "Antes de embedar cada chunk, injeta uma descriçêo curta do documento de onde veio. Reduz miss em 35-50% (Anthropic 2024).",
                 "por_que": "Chunk isolado perde contexto; com contexto, embedding fica mais informativo. Custo: chamada extra ao LLM por chunk no index time.",
                 "conceitos": "Contextual retrieval, document-level prefix, prompt caching no index, late chunking."
             },
             {
-                "emoji": "📌", "titulo": "Citações obrigatórias na geração", "subtitulo": "Rastreabilidade da resposta",
-                "o_que_e": "Padrão de incluir IDs/URLs dos chunks recuperados no prompt e exigir que a resposta cite a fonte de cada afirmação.",
-                "por_que": "Sem citação, você não sabe se o modelo grounded a resposta ou alucinou. Eval (T6) precisa de citação para medir groundedness.",
+                "emoji": "📌", "titulo": "Citações obrigatórias na geraçêo", "subtitulo": "Rastreabilidade da resposta",
+                "o_que_e": "Padrêo de incluir IDs/URLs dos chunks recuperados no prompt e exigir que a resposta cite a fonte de cada afirmaçêo.",
+                "por_que": "Sem citaçêo, você nêo sabe se o modelo grounded a resposta ou alucinou. Eval (T6) precisa de citaçêo para medir groundedness.",
                 "conceitos": "Citation patterns, source tracking, groundedness, attribution."
             },
             {
-                "emoji": "🚫", "titulo": "Saber dizer 'não sei'", "subtitulo": "Quando não há contexto suficiente",
-                "o_que_e": "System prompt instrui: 'se a resposta não está no contexto, diga não sei'. Reduz alucinação.",
-                "por_que": "Modelos preferem responder algo a admitir ignorância. Instrução explícita + few-shot de 'não sei' equilibra.",
+                "emoji": "🚫", "titulo": "Saber dizer 'nêo sei'", "subtitulo": "Quando nêo há contexto suficiente",
+                "o_que_e": "System prompt instrui: 'se a resposta nêo está no contexto, diga nêo sei'. Reduz alucinaçêo.",
+                "por_que": "Modelos preferem responder algo a admitir ignorância. Instruçêo explícita + few-shot de 'nêo sei' equilibra.",
                 "conceitos": "Abstention, calibration, hallucination, RAG-fail-safe."
             },
             {
@@ -654,13 +654,13 @@ MODULOS = [
         ],
         "conceito_principal": {
             "emoji": "🎯", "titulo": "Pipeline de retrieval em 5 passos",
-            "texto": "Cada passo tem decisão clara e métrica de saúde. Sem instrumentação, você não sabe onde o pipeline degrada.",
+            "texto": "Cada passo tem decisêo clara e métrica de saúde. Sem instrumentaçêo, você nêo sabe onde o pipeline degrada.",
             "lista": [
-                "<strong>1. Query rewrite</strong> (opcional): expansão / HyDE.",
+                "<strong>1. Query rewrite</strong> (opcional): expansêo / HyDE.",
                 "<strong>2. Hybrid retrieval</strong>: BM25 + denso → top-50 via RRF.",
                 "<strong>3. Rerank</strong>: cross-encoder → top-5.",
                 "<strong>4. Format</strong>: monta prompt com IDs visíveis.",
-                "<strong>5. Generate + cite</strong>: modelo responde com citação obrigatória."
+                "<strong>5. Generate + cite</strong>: modelo responde com citaçêo obrigatória."
             ]
         },
         "dados_pesquisa": {
@@ -672,15 +672,15 @@ MODULOS = [
             ]
         },
         "fazer_evitar": [
-            ("Reranker cross-encoder após top-50 inicial", "Passar top-50 direto à geração"),
-            ("Citação obrigatória + ID visível no prompt", "Esperar que o modelo 'use' o contexto sem citar"),
-            ("Instrução 'diga não sei' + few-shot de abstenção", "Sempre forçar uma resposta"),
+            ("Reranker cross-encoder após top-50 inicial", "Passar top-50 direto à geraçêo"),
+            ("Citaçêo obrigatória + ID visível no prompt", "Esperar que o modelo 'use' o contexto sem citar"),
+            ("Instruçêo 'diga nêo sei' + few-shot de abstençêo", "Sempre forçar uma resposta"),
             ("Eval de groundedness no harness", "Confiar que 'a resposta parece boa'"),
         ],
         "quando_nao_usar": [
             "<strong>Query muito específica e bem-formada</strong>: query rewrite pode atrapalhar.",
             "<strong>Latência crítica</strong>: cross-encoder rerank adiciona 100-500ms.",
-            "<strong>Top-k já é alto e modelo aguenta</strong>: rerank dispensável se atenção der conta.",
+            "<strong>Top-k já é alto e modelo aguenta</strong>: rerank dispensável se atençêo der conta.",
         ],
         "exemplo_codigo": (
             "from fec_sdk import Message, MessageRole\n"
@@ -697,7 +697,7 @@ MODULOS = [
             "    system = (\n"
             "        \"Responda APENAS com base no contexto. \"\n"
             "        \"Cite o id de cada chunk usado, ex.: [chunk:42]. \"\n"
-            "        \"Se a resposta não está no contexto, diga 'não sei'.\"\n"
+            "        \"Se a resposta nêo está no contexto, diga 'nêo sei'.\"\n"
             "    )\n"
             "    client = get_adapter(\"mock\")\n"
             "    resp = client.chat([\n"
@@ -706,7 +706,7 @@ MODULOS = [
             "    ])\n"
             "    return {\"answer\": resp.content, \"citations\": [c.id for c in top5]}"
         ),
-        "exercicio": "Use o índice de 3.1 + reranker para responder 30 perguntas do golden FEC-GS-RAG-v1 com groundedness ≥0.85. Implementação em <code>exercicios/modulo-3-2/</code>.",
+        "exercicio": "Use o índice de 3.1 + reranker para responder 30 perguntas do golden FEC-GS-RAG-v1 com groundedness ≥0.85. Implementaçêo em <code>exercicios/modulo-3-2/</code>.",
         "bibliografia": [
             ("Anthropic (2024)", "Introducing Contextual Retrieval", "https://www.anthropic.com/news/contextual-retrieval"),
             ("Gao et al. (2022)", "Precise Zero-Shot Dense Retrieval (HyDE)", "https://arxiv.org/abs/2212.10496"),
@@ -717,8 +717,8 @@ MODULOS = [
             "<strong>Top-k</strong>: 3-10 é o range; meça empiricamente.",
             "<strong>Reranker cross-encoder</strong> após top-50 dá ganho consistente.",
             "<strong>Contextual retrieval</strong> (Anthropic 2024): -35-49% em failure rate.",
-            "<strong>Citação obrigatória</strong> é pré-requisito de eval de groundedness.",
-            "<strong>Saber dizer 'não sei'</strong> é parte do design, não exceção.",
+            "<strong>Citaçêo obrigatória</strong> é pré-requisito de eval de groundedness.",
+            "<strong>Saber dizer 'nêo sei'</strong> é parte do design, nêo exceçêo.",
         ],
         "proximo_id": "modulo-3-3",
         "proximo_titulo": "RAG agêntico e self-RAG (beta)",
@@ -728,7 +728,7 @@ MODULOS = [
         "id": "modulo-3-3", "trilha": 3, "numero": "3.3", "status": "beta",
         "titulo": "RAG agêntico e self-RAG (beta)",
         "emoji": "🤖",
-        "descricao": "Quando o RAG estático não basta: agente que decide se busca, o que busca, e quando parar. Self-RAG, multi-hop, e quando o custo NÃO compensa.",
+        "descricao": "Quando o RAG estático nêo basta: agente que decide se busca, o que busca, e quando parar. Self-RAG, multi-hop, e quando o custo NêO compensa.",
         "minutos": 70, "nivel": "Avançado", "tipo": "Avançado",
         "introducao": (
             "RAG estático recupera de uma vez. <strong class='text-purple-400'>RAG agêntico decide</strong>: busca? o quê? quantas vezes? "
@@ -737,37 +737,37 @@ MODULOS = [
         ),
         "topicos": [
             {
-                "emoji": "🔄", "titulo": "Multi-hop: encadear buscas", "subtitulo": "Quando uma busca não basta",
+                "emoji": "🔄", "titulo": "Multi-hop: encadear buscas", "subtitulo": "Quando uma busca nêo basta",
                 "o_que_e": "Pergunta exige info de múltiplas fontes em sequência. Agente busca, lê, refina query, busca de novo.",
                 "por_que": "Perguntas como 'compare A e B em 2024' precisam de 2+ buscas. RAG estático falha.",
                 "conceitos": "Multi-hop QA, iterative retrieval, query refinement, ReAct."
             },
             {
                 "emoji": "🤔", "titulo": "Self-RAG: decidir se buscar", "subtitulo": "Asai et al. 2023",
-                "o_que_e": "Modelo emite token especial decidindo se precisa buscar. Se não, responde do parâmetro; se sim, busca e cita.",
+                "o_que_e": "Modelo emite token especial decidindo se precisa buscar. Se nêo, responde do parâmetro; se sim, busca e cita.",
                 "por_que": "Nem toda pergunta precisa de RAG. Self-RAG evita custo e latência quando o conhecimento paramétrico basta.",
-                "conceitos": "Self-RAG, retrieve-or-not, calibração de confiança, paramétrico vs. retrieval."
+                "conceitos": "Self-RAG, retrieve-or-not, calibraçêo de confiança, paramétrico vs. retrieval."
             },
             {
                 "emoji": "🧭", "titulo": "Query decomposition", "subtitulo": "Quebrar pergunta complexa",
                 "o_que_e": "LLM decompõe pergunta em sub-perguntas, busca cada uma, junta as evidências.",
-                "por_que": "Para perguntas compostas ('o que mudou de A para B?'), decomposição melhora recall.",
+                "por_que": "Para perguntas compostas ('o que mudou de A para B?'), decomposiçêo melhora recall.",
                 "conceitos": "Query decomposition, sub-question answering, fan-out, planner."
             },
             {
-                "emoji": "🛡️", "titulo": "Guards: critic step e verificação", "subtitulo": "Checar antes de entregar",
-                "o_que_e": "Após resposta, segundo passo verifica: a resposta está grounded? Cita fonte? Se não, refaz.",
+                "emoji": "🛡️", "titulo": "Guards: critic step e verificaçêo", "subtitulo": "Checar antes de entregar",
+                "o_que_e": "Após resposta, segundo passo verifica: a resposta está grounded? Cita fonte? Se nêo, refaz.",
                 "por_que": "Qualidade > velocidade em casos sensíveis. Critic step pega regressões.",
                 "conceitos": "Critic loop, verification step, self-correction, faithfulness."
             },
             {
                 "emoji": "🚦", "titulo": "Stopping criteria", "subtitulo": "Quando o agente para de buscar",
                 "o_que_e": "Critério explícito: max iterações, confiança suficiente, ou custo orçado atingido.",
-                "por_que": "Sem critério, o agente loopa. Loops em produção são desastre de custo.",
+                "por_que": "Sem critério, o agente loopa. Loops em produçêo sêo desastre de custo.",
                 "conceitos": "Max iterations, confidence threshold, cost budget, early stop."
             },
             {
-                "emoji": "💸", "titulo": "Quando NÃO usar RAG agêntico", "subtitulo": "O custo é real",
+                "emoji": "💸", "titulo": "Quando NêO usar RAG agêntico", "subtitulo": "O custo é real",
                 "o_que_e": "Cada hop custa: tokens + latência + risco de loop. Para 80% dos casos, RAG estático com bom reranker basta.",
                 "por_que": "RAG agêntico pode 3-10× o custo de RAG estático sem ganho proporcional.",
                 "conceitos": "Cost amortization, complexity vs benefit, default to simple."
@@ -775,11 +775,11 @@ MODULOS = [
         ],
         "conceito_principal": {
             "emoji": "⚖️", "titulo": "Trade-off explícito: custo vs qualidade",
-            "texto": "RAG agêntico é uma promoção condicional do RAG estático — só compensa quando a pergunta REALMENTE exige.",
+            "texto": "RAG agêntico é uma promoçêo condicional do RAG estático — só compensa quando a pergunta REALMENTE exige.",
             "lista": [
                 "Pergunta single-hop, fonte clara → <strong>RAG estático.</strong>",
                 "Pergunta multi-hop, fontes múltiplas → <strong>RAG agêntico (com cap).</strong>",
-                "Verificação crítica → <strong>+ critic loop.</strong>",
+                "Verificaçêo crítica → <strong>+ critic loop.</strong>",
                 "Sempre: max_iterations + budget cap."
             ]
         },
@@ -790,8 +790,8 @@ MODULOS = [
         "fazer_evitar": [
             ("max_iterations explícito (ex.: 3)", "Loop indefinido"),
             ("Budget de tokens por chamada agêntica", "Custos fora de controle"),
-            ("Logs de cada hop com query e resultado", "Debug impossível em produção"),
-            ("RAG agêntico só onde estático falha", "Adotar por padrão"),
+            ("Logs de cada hop com query e resultado", "Debug impossível em produçêo"),
+            ("RAG agêntico só onde estático falha", "Adotar por padrêo"),
         ],
         "quando_nao_usar": [
             "<strong>Latência baixa exigida</strong>: cada hop é uma roundtrip.",
@@ -844,15 +844,15 @@ MODULOS = [
         ),
         "topicos": [
             {
-                "emoji": "📋", "titulo": "JSON Schema: o contrato do tool", "subtitulo": "Tipo, descrição, validação",
-                "o_que_e": "Cada tool tem schema declarativo: nome, descrição, parâmetros tipados (string, number, enum, etc.) com required.",
-                "por_que": "Schema bom = chamada confiável. Modelo usa descrição para escolher e schema para formatar argumentos.",
+                "emoji": "📋", "titulo": "JSON Schema: o contrato do tool", "subtitulo": "Tipo, descriçêo, validaçêo",
+                "o_que_e": "Cada tool tem schema declarativo: nome, descriçêo, parâmetros tipados (string, number, enum, etc.) com required.",
+                "por_que": "Schema bom = chamada confiável. Modelo usa descriçêo para escolher e schema para formatar argumentos.",
                 "conceitos": "JSON Schema 2020-12, parameter validation, required fields, oneOf."
             },
             {
-                "emoji": "✏️", "titulo": "Descrição do tool: o prompt do prompt", "subtitulo": "Onde a magia acontece",
+                "emoji": "✏️", "titulo": "Descriçêo do tool: o prompt do prompt", "subtitulo": "Onde a magia acontece",
                 "o_que_e": "Texto livre que descreve quando usar o tool. É lido pelo LLM ao decidir ferramenta.",
-                "por_que": "Modelos escolhem tool com base na descrição. 'busca_web' vs 'busca_web_para_eventos_recentes_e_notícias' muda comportamento.",
+                "por_que": "Modelos escolhem tool com base na descriçêo. 'busca_web' vs 'busca_web_para_eventos_recentes_e_notícias' muda comportamento.",
                 "conceitos": "Tool description, disambiguation, when-to-use clauses."
             },
             {
@@ -864,7 +864,7 @@ MODULOS = [
             {
                 "emoji": "🔒", "titulo": "Sandbox obrigatório (PLAN item 62a)", "subtitulo": "Filesystem, processo, rede",
                 "o_que_e": "Toda tool que toca FS/rede/processo roda dentro de FilesystemSandbox + NetworkPolicy do fec_sdk.",
-                "por_que": "Prompt injection consegue fazer tool ler ~/.aws/credentials se não houver sandbox. PLAN item 62a é gate de GA.",
+                "por_que": "Prompt injection consegue fazer tool ler ~/.aws/credentials se nêo houver sandbox. PLAN item 62a é gate de GA.",
                 "conceitos": "Path traversal, deny-by-default, allowlist, jail."
             },
             {
@@ -884,20 +884,20 @@ MODULOS = [
             "emoji": "🛠️", "titulo": "Tool é interface: schema + executor",
             "texto": "Cada tool tem dois lados: o schema que o LLM lê, e o executor que roda quando chamado. Ambos vivem juntos.",
             "lista": [
-                "<strong>Schema</strong>: nome, descrição, JSON Schema dos params.",
-                "<strong>Executor</strong>: função Python que recebe args validados, retorna resultado.",
+                "<strong>Schema</strong>: nome, descriçêo, JSON Schema dos params.",
+                "<strong>Executor</strong>: funçêo Python que recebe args validados, retorna resultado.",
                 "<strong>Sandbox</strong>: executor roda jailed se tocar FS/rede.",
                 "<strong>Erro</strong>: tipo claro (retry-able, fatal, partial).",
             ]
         },
         "dica_pratica": {
             "emoji": "💡", "titulo": "Description é prompt — itere",
-            "texto": "Comece com descrição básica. Em casos onde o modelo escolhe errado, refine a descrição (não a lógica do tool). Eval no harness mostra impacto."
+            "texto": "Comece com descriçêo básica. Em casos onde o modelo escolhe errado, refine a descriçêo (nêo a lógica do tool). Eval no harness mostra impacto."
         },
         "fazer_evitar": [
             ("Sandbox obrigatório para tools com side-effect", "<code>os.system(arg)</code> direto"),
-            ("Erro tipado com retry-able vs fatal", "Levantar exceção genérica"),
-            ("Description com 'when to use' explícito", "Description vaga: 'busca informação'"),
+            ("Erro tipado com retry-able vs fatal", "Levantar exceçêo genérica"),
+            ("Description com 'when to use' explícito", "Description vaga: 'busca informaçêo'"),
             ("Validar JSON Schema dos args antes de executar", "Confiar que o modelo preencheu certo"),
         ],
         "quando_nao_usar": [
@@ -959,18 +959,18 @@ MODULOS = [
         "minutos": 70, "nivel": "Avançado", "tipo": "Hands-on",
         "introducao": (
             "Agente é o próximo passo após tool calling: <strong class='text-amber-400'>loop autônomo</strong> de pensar→agir até concluir. "
-            "ReAct é o padrão dominante; planner/executor é alternativa para tarefas estruturadas. "
+            "ReAct é o padrêo dominante; planner/executor é alternativa para tarefas estruturadas. "
             "Aqui você aprende a controlar o loop — sem isso, agente vira disaster de custo."
         ),
         "topicos": [
             {
                 "emoji": "🧭", "titulo": "ReAct: Reason + Act", "subtitulo": "Yao et al. 2022",
-                "o_que_e": "Loop: modelo pensa em texto livre ('Pensamento: preciso buscar X') → decide tool ('Ação: search(X)') → recebe resultado ('Observação: ...') → repete.",
-                "por_que": "Padrão simples e eficaz. Pensamento explícito facilita debug e melhora qualidade em tarefas multi-passo.",
+                "o_que_e": "Loop: modelo pensa em texto livre ('Pensamento: preciso buscar X') → decide tool ('Açêo: search(X)') → recebe resultado ('Observaçêo: ...') → repete.",
+                "por_que": "Padrêo simples e eficaz. Pensamento explícito facilita debug e melhora qualidade em tarefas multi-passo.",
                 "conceitos": "ReAct (Yao 2022), Thought-Action-Observation, scratchpad, reasoning trace."
             },
             {
-                "emoji": "📐", "titulo": "Planner / Executor: separar plano de execução", "subtitulo": "Decomposição prévia",
+                "emoji": "📐", "titulo": "Planner / Executor: separar plano de execuçêo", "subtitulo": "Decomposiçêo prévia",
                 "o_que_e": "Primeiro passo: LLM gera plano em N passos. Segundo passo: executor segue passo por passo.",
                 "por_que": "Para tarefas estruturadas conhecidas (workflows), plano explícito é mais auditável que ReAct.",
                 "conceitos": "Plan-and-execute, BabyAGI, hierarchical planning."
@@ -978,19 +978,19 @@ MODULOS = [
             {
                 "emoji": "⛔", "titulo": "Controle de loop: max_iterations, max_tokens", "subtitulo": "Limites duros",
                 "o_que_e": "Agente tem budget explícito: máximo de iterações, máximo de tokens, timeout total.",
-                "por_que": "Sem isso, agente loopa em produção e queima orçamento. Limite duro é seguro.",
+                "por_que": "Sem isso, agente loopa em produçêo e queima orçamento. Limite duro é seguro.",
                 "conceitos": "Max iterations, token budget, wall-clock timeout, infinite loop detection."
             },
             {
-                "emoji": "🔍", "titulo": "Tracing por step: a chave para debug", "subtitulo": "Cada decisão fica registrada",
+                "emoji": "🔍", "titulo": "Tracing por step: a chave para debug", "subtitulo": "Cada decisêo fica registrada",
                 "o_que_e": "Cada step do agente vira entry estruturada (timestamp, tool, args, result, next). Salvo em traces/.",
-                "por_que": "Sem tracing, debugar agente em produção é impossível. P2 do curso exige.",
+                "por_que": "Sem tracing, debugar agente em produçêo é impossível. P2 do curso exige.",
                 "conceitos": "Step trace, OpenTelemetry, structured logging, step replay."
             },
             {
                 "emoji": "🛡️", "titulo": "Recovery: tool error, JSON inválido, loop", "subtitulo": "Padrões de robustez",
                 "o_que_e": "Estratégias para quando algo dá errado: retry com fix, abort com mensagem, fallback para LLM puro.",
-                "por_que": "Em produção, ferramentas falham, JSON vem malformado, modelos respondem fora do schema. Sem recovery, agente quebra.",
+                "por_que": "Em produçêo, ferramentas falham, JSON vem malformado, modelos respondem fora do schema. Sem recovery, agente quebra.",
                 "conceitos": "Retry policies, JSON repair, graceful degradation, partial success."
             },
             {
@@ -1002,7 +1002,7 @@ MODULOS = [
         ],
         "conceito_principal": {
             "emoji": "🔁", "titulo": "Anatomia de um agente robusto",
-            "texto": "Não é só 'modelo + tools'. É um sistema com instrumentação, limites e recovery — como qualquer sistema de produção.",
+            "texto": "Nêo é só 'modelo + tools'. É um sistema com instrumentaçêo, limites e recovery — como qualquer sistema de produçêo.",
             "lista": [
                 "<strong>Loop core</strong>: ReAct ou planner/executor.",
                 "<strong>Limites</strong>: max_iterations, max_tokens, timeout.",
@@ -1020,15 +1020,15 @@ MODULOS = [
             ]
         },
         "fazer_evitar": [
-            ("max_iterations sempre declarado (ex.: 10)", "Loop sem limite — disaster em produção"),
+            ("max_iterations sempre declarado (ex.: 10)", "Loop sem limite — disaster em produçêo"),
             ("Tracing estruturado por step", "Print debug ad hoc"),
-            ("Tools com erro tipado para recovery inteligente", "Exceção genérica que para o agente"),
+            ("Tools com erro tipado para recovery inteligente", "Exceçêo genérica que para o agente"),
             ("Budget de custo explícito por tarefa", "Confiar só no cap do provedor"),
         ],
         "quando_nao_usar": [
             "<strong>Tarefa one-shot estruturada</strong>: prompt + tool calling resolve sem loop.",
             "<strong>Latência crítica (UX live)</strong>: agente faz N roundtrips, latência multiplica.",
-            "<strong>Sem tracing</strong>: agente sem instrumentação é dívida técnica imediata.",
+            "<strong>Sem tracing</strong>: agente sem instrumentaçêo é dívida técnica imediata.",
         ],
         "exemplo_codigo": (
             "from fec_sdk import Message, MessageRole\n"
@@ -1058,9 +1058,9 @@ MODULOS = [
         ],
         "resumo": [
             "<strong>Agente é loop</strong>: ReAct (pensa-age) ou planner/executor.",
-            "<strong>max_iterations</strong> obrigatório — sem isso, loop em produção.",
+            "<strong>max_iterations</strong> obrigatório — sem isso, loop em produçêo.",
             "<strong>Tracing por step</strong> é pré-requisito de debugability.",
-            "<strong>Recovery</strong>: retry, abort, fallback — não exceção crua.",
+            "<strong>Recovery</strong>: retry, abort, fallback — nêo exceçêo crua.",
             "<strong>Budget</strong> de custo explícito por tarefa.",
         ],
         "proximo_id": "modulo-4-3",
@@ -1071,7 +1071,7 @@ MODULOS = [
         "id": "modulo-4-3", "trilha": 4, "numero": "4.3", "status": "beta",
         "titulo": "Multi-agente e MCP (beta)",
         "emoji": "👥",
-        "descricao": "Padrões multi-agente: orquestrador-trabalhador, debate, blackboard. MCP (Model Context Protocol). Quando NÃO multiplicar.",
+        "descricao": "Padrões multi-agente: orquestrador-trabalhador, debate, blackboard. MCP (Model Context Protocol). Quando NêO multiplicar.",
         "minutos": 70, "nivel": "Avançado", "tipo": "Avançado",
         "introducao": (
             "Multi-agente é tentador mas frequentemente <strong class='text-amber-400'>injustificado</strong>. "
@@ -1080,9 +1080,9 @@ MODULOS = [
         ),
         "topicos": [
             {
-                "emoji": "🎼", "titulo": "Orquestrador + trabalhadores especializados", "subtitulo": "O padrão mais comum",
+                "emoji": "🎼", "titulo": "Orquestrador + trabalhadores especializados", "subtitulo": "O padrêo mais comum",
                 "o_que_e": "Um agente coordenador delega sub-tarefas a agentes especializados (busca, código, análise). Cada um tem tools próprios.",
-                "por_que": "Especialização por contexto: cada trabalhador tem prompt e tools focados. Orquestrador foca em planejamento.",
+                "por_que": "Especializaçêo por contexto: cada trabalhador tem prompt e tools focados. Orquestrador foca em planejamento.",
                 "conceitos": "Orchestrator-worker, specialization, hand-off, delegation."
             },
             {
@@ -1093,35 +1093,35 @@ MODULOS = [
             },
             {
                 "emoji": "🗂️", "titulo": "Blackboard: estado compartilhado", "subtitulo": "Memória comum",
-                "o_que_e": "Agentes leem e escrevem em um 'quadro' compartilhado. Comunicação assíncrona via state, não messaging direto.",
+                "o_que_e": "Agentes leem e escrevem em um 'quadro' compartilhado. Comunicaçêo assíncrona via state, nêo messaging direto.",
                 "por_que": "Para workflows longos onde agentes trabalham em paralelo em sub-tarefas, blackboard é mais escalável que conversation.",
                 "conceitos": "Blackboard architecture, shared state, async coordination."
             },
             {
                 "emoji": "🔌", "titulo": "MCP: Model Context Protocol", "subtitulo": "Anthropic 2024",
                 "o_que_e": "Protocolo aberto para conectar LLMs a fontes de dados e tools externos. Inspirado em LSP do mundo de IDE.",
-                "por_que": "Padroniza integração: um servidor MCP serve tools/resources que qualquer cliente pode consumir.",
+                "por_que": "Padroniza integraçêo: um servidor MCP serve tools/resources que qualquer cliente pode consumir.",
                 "conceitos": "MCP, tools, resources, prompts, transport (stdio, SSE)."
             },
             {
                 "emoji": "🤝", "titulo": "Handoff: passar contexto entre agentes", "subtitulo": "Resumir + delegar",
-                "o_que_e": "Quando agente A passa para B, sumariza o estado relevante. Não passar histórico inteiro = economia + atenção.",
+                "o_que_e": "Quando agente A passa para B, sumariza o estado relevante. Nêo passar histórico inteiro = economia + atençêo.",
                 "por_que": "Histórico cresce; contexto cresce; lost-in-the-middle entra em jogo. Handoff explícito mitiga.",
                 "conceitos": "Context compression, state handoff, summary message."
             },
             {
                 "emoji": "🚫", "titulo": "Quando UM agente é melhor", "subtitulo": "A maioria dos casos",
-                "o_que_e": "Tarefas que cabem em um único contexto coerente, sem trabalho paralelizável real, são piores com multi-agente.",
+                "o_que_e": "Tarefas que cabem em um único contexto coerente, sem trabalho paralelizável real, sêo piores com multi-agente.",
                 "por_que": "Multi-agente adiciona: handoff loss, custo extra, complexidade de tracing. Default ao single agent é honesto.",
                 "conceitos": "Default to simple, complexity budget, when-not-to."
             },
         ],
         "conceito_principal": {
             "emoji": "🎯", "titulo": "Default ao single agent",
-            "texto": "Multi-agente é uma promoção condicional do single agent — só compensa quando há benefício REAL (especialização, debate, paralelismo).",
+            "texto": "Multi-agente é uma promoçêo condicional do single agent — só compensa quando há benefício REAL (especializaçêo, debate, paralelismo).",
             "lista": [
                 "Tarefa cabe em 1 agente bem-feito? <strong>Use 1.</strong>",
-                "Especialização exige tools/contexto distintos? <strong>Orquestrador + trabalhadores.</strong>",
+                "Especializaçêo exige tools/contexto distintos? <strong>Orquestrador + trabalhadores.</strong>",
                 "Crítica adversarial valida raciocínio? <strong>Debate.</strong>",
                 "Trabalho paralelo independente? <strong>Blackboard.</strong>",
                 "Sempre: handoff explícito + tracing global."
@@ -1129,12 +1129,12 @@ MODULOS = [
         },
         "dica_pratica": {
             "emoji": "💡", "titulo": "Comece com 1 agente, prove que precisa de mais",
-            "texto": "Antes de multi-agente, esgote single agent com bons tools e prompts. Multi-agente é resposta a problema medido, não default."
+            "texto": "Antes de multi-agente, esgote single agent com bons tools e prompts. Multi-agente é resposta a problema medido, nêo default."
         },
         "fazer_evitar": [
             ("Tracing global atravessa todos os agentes", "Tracing isolado por agente"),
             ("Handoff com sumário explícito", "Passar histórico inteiro entre agentes"),
-            ("Comparação de custo single vs multi no harness", "Adotar multi por inércia"),
+            ("Comparaçêo de custo single vs multi no harness", "Adotar multi por inércia"),
             ("MCP server para tools reusáveis", "Reimplementar tools em cada agente"),
         ],
         "quando_nao_usar": [
@@ -1143,7 +1143,7 @@ MODULOS = [
             "<strong>Sem tracing global</strong>: debug em multi-agente sem trace é desastre.",
         ],
         "exemplo_codigo": (
-            "# Padrão orquestrador + trabalhadores (esquemático)\n"
+            "# Padrêo orquestrador + trabalhadores (esquemático)\n"
             "def orquestrador(query: str) -> str:\n"
             "    plano = llm_planejar(query)  # decompõe em sub-tarefas\n"
             "    resultados = []\n"
@@ -1165,25 +1165,25 @@ MODULOS = [
         ],
         "resumo": [
             "<strong>Default ao single agent</strong> — multi exige justificativa medida.",
-            "<strong>Orquestrador-trabalhador</strong> é o padrão mais útil.",
+            "<strong>Orquestrador-trabalhador</strong> é o padrêo mais útil.",
             "<strong>Debate</strong> bate single em raciocínio adversarial (custo 2-3×).",
-            "<strong>MCP</strong> padroniza integração de tools/resources.",
-            "<strong>Handoff</strong> = sumário, não histórico inteiro.",
+            "<strong>MCP</strong> padroniza integraçêo de tools/resources.",
+            "<strong>Handoff</strong> = sumário, nêo histórico inteiro.",
         ],
         "proximo_id": "../trilha5/index.html",
-        "proximo_titulo": "T5 — Memória e Compressão",
+        "proximo_titulo": "T5 — Memória e Compressêo",
     },
 
-    # =================== T5 — MEMÓRIA E COMPRESSÃO ===================
+    # =================== T5 — MEMÓRIA E COMPRESSêO ===================
     {
         "id": "modulo-5-1", "trilha": 5, "numero": "5.1", "status": "GA",
-        "titulo": "Estratégias de memória: curto, longo prazo e summarização hierárquica",
+        "titulo": "Estratégias de memória: curto, longo prazo e summarizaçêo hierárquica",
         "emoji": "💾",
-        "descricao": "Como dar 'memória' a um agente: buffer de turn, summarização hierárquica, vetor de longo prazo, recall sob demanda.",
+        "descricao": "Como dar 'memória' a um agente: buffer de turn, summarizaçêo hierárquica, vetor de longo prazo, recall sob demanda.",
         "minutos": 60, "nivel": "Intermediário", "tipo": "Prático",
         "introducao": (
-            "Modelos não têm memória entre chamadas — você reconstrói a janela cada vez. "
-            "Aqui você aprende a <strong class='text-teal-400'>simular memória</strong>: buffer de últimos turns, sumarização incremental, "
+            "Modelos nêo têm memória entre chamadas — você reconstrói a janela cada vez. "
+            "Aqui você aprende a <strong class='text-teal-400'>simular memória</strong>: buffer de últimos turns, sumarizaçêo incremental, "
             "vetor para longo prazo, recall por similaridade. Um chat 'que lembra' é resultado dessas técnicas combinadas."
         ),
         "topicos": [
@@ -1194,13 +1194,13 @@ MODULOS = [
                 "conceitos": "Sliding window, message buffer, FIFO eviction."
             },
             {
-                "emoji": "📝", "titulo": "Summarização incremental", "subtitulo": "Comprimir o que sai do buffer",
+                "emoji": "📝", "titulo": "Summarizaçêo incremental", "subtitulo": "Comprimir o que sai do buffer",
                 "o_que_e": "Quando buffer estoura, sumariza turns antigos em parágrafo. Sumário fica no system prompt.",
                 "por_que": "Mantém continuidade sem inflar janela. Trade-off: perde detalhe do que foi sumarizado.",
                 "conceitos": "Recursive summarization, sliding-window summarization, hierarchical."
             },
             {
-                "emoji": "🌳", "titulo": "Sumarização hierárquica: árvore de memória", "subtitulo": "Múltiplos níveis",
+                "emoji": "🌳", "titulo": "Sumarizaçêo hierárquica: árvore de memória", "subtitulo": "Múltiplos níveis",
                 "o_que_e": "Sumariza turns em sumário-de-1; sumários-de-1 em sumário-de-2; etc. Estrutura tipo árvore.",
                 "por_que": "Para chats longos (centenas de turns), hierarquia preserva detalhe nos níveis superiores.",
                 "conceitos": "Tree summarization, multi-level memory, MemGPT."
@@ -1213,12 +1213,12 @@ MODULOS = [
             },
             {
                 "emoji": "🔍", "titulo": "Recall sob demanda: tool de memória", "subtitulo": "Agente busca a memória",
-                "o_que_e": "Padrão alternativo: agente tem tool 'buscar_memoria' e decide quando precisa de info antiga.",
-                "por_que": "Mais explícito que injection automático. Custo: mais roundtrips, mas precisão maior.",
+                "o_que_e": "Padrêo alternativo: agente tem tool 'buscar_memoria' e decide quando precisa de info antiga.",
+                "por_que": "Mais explícito que injection automático. Custo: mais roundtrips, mas precisêo maior.",
                 "conceitos": "Active recall, memory tool, on-demand retrieval."
             },
             {
-                "emoji": "🧠", "titulo": "Personalização: persona + perfil do usuário", "subtitulo": "Memória como facto",
+                "emoji": "🧠", "titulo": "Personalizaçêo: persona + perfil do usuário", "subtitulo": "Memória como facto",
                 "o_que_e": "Mantém ficha estruturada do usuário (nome, preferências, contexto profissional) atualizada incremental.",
                 "por_que": "Diferente de memória conversacional — é estado do usuário. Cabe no system prompt como JSON pequeno.",
                 "conceitos": "User profile, structured memory, preference modeling."
@@ -1226,28 +1226,28 @@ MODULOS = [
         ],
         "conceito_principal": {
             "emoji": "🏗️", "titulo": "Camadas de memória",
-            "texto": "Não é uma estratégia única — é um stack de camadas, cada uma com trade-off de custo, fidelidade e velocidade.",
+            "texto": "Nêo é uma estratégia única — é um stack de camadas, cada uma com trade-off de custo, fidelidade e velocidade.",
             "lista": [
                 "<strong>Curto prazo</strong>: buffer dos últimos N turns (simples, alto detalhe).",
-                "<strong>Médio prazo</strong>: sumarização hierárquica (compacto, perde detalhe).",
+                "<strong>Médio prazo</strong>: sumarizaçêo hierárquica (compacto, perde detalhe).",
                 "<strong>Longo prazo</strong>: vetor + recall (escala, exige busca).",
                 "<strong>Estado do usuário</strong>: ficha estruturada (estável, no system prompt).",
             ]
         },
         "dica_pratica": {
-            "emoji": "💡", "titulo": "Não invente memória — comece com buffer",
-            "texto": "Para a maioria dos casos, buffer de 10 últimos turns + system prompt resolve. Adicione sumarização quando buffer estourar; vetor quando precisar de meses-atrás real."
+            "emoji": "💡", "titulo": "Nêo invente memória — comece com buffer",
+            "texto": "Para a maioria dos casos, buffer de 10 últimos turns + system prompt resolve. Adicione sumarizaçêo quando buffer estourar; vetor quando precisar de meses-atrás real."
         },
         "fazer_evitar": [
             ("Buffer simples para chats curtos (&lt;10 turns)", "Implementar memória vetorial dia 1"),
-            ("Sumarização incremental quando buffer estoura", "Crescer janela indefinidamente"),
+            ("Sumarizaçêo incremental quando buffer estoura", "Crescer janela indefinidamente"),
             ("Ficha estruturada do usuário no system prompt", "Spreadar info do usuário em N turns"),
             ("Recall explícito via tool em casos críticos", "Injection automático sem controle"),
         ],
         "quando_nao_usar": [
             "<strong>Chat estateless de 1-2 turns</strong>: nem precisa de memória, contexto da query basta.",
-            "<strong>Quando privacy não permite armazenar</strong>: conformidade limita memória persistente.",
-            "<strong>Casos onde fato muda</strong>: memória vetorial não distingue atual de antigo bem.",
+            "<strong>Quando privacy nêo permite armazenar</strong>: conformidade limita memória persistente.",
+            "<strong>Casos onde fato muda</strong>: memória vetorial nêo distingue atual de antigo bem.",
         ],
         "exemplo_codigo": (
             "from collections import deque\n"
@@ -1275,7 +1275,7 @@ MODULOS = [
             "        # Pseudo: chama LLM para sumarizar buffer + sumário antigo\n"
             "        pass"
         ),
-        "exercicio": "Implemente chat com 3 camadas (buffer + sumarização + vetorial). Teste com 50 turns, medindo custo médio e recall de fatos antigos. Em <code>exercicios/modulo-5-1/</code>.",
+        "exercicio": "Implemente chat com 3 camadas (buffer + sumarizaçêo + vetorial). Teste com 50 turns, medindo custo médio e recall de fatos antigos. Em <code>exercicios/modulo-5-1/</code>.",
         "bibliografia": [
             ("Packer et al. (2023)", "MemGPT: Towards LLMs as Operating Systems", "https://arxiv.org/abs/2310.08560"),
             ("Park et al. (2023)", "Generative Agents (memória episódica)", "https://arxiv.org/abs/2304.03442"),
@@ -1283,14 +1283,14 @@ MODULOS = [
             ("LangChain memory", "Padrões de memória em frameworks", "https://python.langchain.com/docs/modules/memory/"),
         ],
         "resumo": [
-            "<strong>Memória é construção</strong> — modelos não têm memória nativa.",
+            "<strong>Memória é construçêo</strong> — modelos nêo têm memória nativa.",
             "<strong>Buffer simples</strong> resolve chats curtos.",
-            "<strong>Sumarização hierárquica</strong> escala para chats longos.",
+            "<strong>Sumarizaçêo hierárquica</strong> escala para chats longos.",
             "<strong>Vetor + recall</strong> permite memória de longo prazo.",
             "<strong>Estado do usuário</strong> = ficha estruturada no system prompt.",
         ],
         "proximo_id": "modulo-5-2",
-        "proximo_titulo": "Caching e compressão (beta)",
+        "proximo_titulo": "Caching e compressêo (beta)",
     },
 
     {
@@ -1301,14 +1301,14 @@ MODULOS = [
         "minutos": 65, "nivel": "Avançado", "tipo": "Avançado",
         "introducao": (
             "Prompt caching é a alavanca de custo mais subestimada: <strong class='text-teal-400'>10% do preço para tokens cacheados</strong>. "
-            "Em chats com prefix grande, isso é redução de 80-90% real. "
+            "Em chats com prefix grande, isso é reduçêo de 80-90% real. "
             "Context distillation vai além: substitui contexto longo por modelo treinado. Ambos têm trade-offs concretos."
         ),
         "topicos": [
             {
                 "emoji": "💰", "titulo": "Prompt caching (Anthropic, OpenAI)", "subtitulo": "10% do preço para hits",
                 "o_que_e": "Provedor cacheia o prefixo da janela. Próxima chamada com mesmo prefixo: tokens cacheados custam ~10% do normal.",
-                "por_que": "Em chat com system prompt + few-shot grandes, redução real de 80-90% no custo de input.",
+                "por_que": "Em chat com system prompt + few-shot grandes, reduçêo real de 80-90% no custo de input.",
                 "conceitos": "Prompt cache, cache_control, cache breakpoints, TTL (5min Anthropic), hit rate."
             },
             {
@@ -1320,7 +1320,7 @@ MODULOS = [
             {
                 "emoji": "📊", "titulo": "Medir hit rate: você está economizando?", "subtitulo": "Métrica explícita",
                 "o_que_e": "Cada chamada retorna métricas: tokens lidos do cache vs. tokens novos. Hit rate = cached / total.",
-                "por_que": "Sem medir hit rate, você não sabe se cache está funcionando. Pequena mudança no prefix derruba hit para 0.",
+                "por_que": "Sem medir hit rate, você nêo sabe se cache está funcionando. Pequena mudança no prefix derruba hit para 0.",
                 "conceitos": "Hit rate, cache miss, cache invalidation, observability."
             },
             {
@@ -1330,26 +1330,26 @@ MODULOS = [
                 "conceitos": "Knowledge distillation, fine-tuning, teacher-student, dataset curation."
             },
             {
-                "emoji": "📦", "titulo": "Compressão por sumarização", "subtitulo": "LLMLingua, sumário do contexto",
-                "o_que_e": "Comprimir contexto longo em representação mais densa antes de mandar (via sumarização ou modelo de compressão).",
-                "por_que": "Para tarefas onde detalhe completo não é crítico, compressão reduz tokens sem cair muito a qualidade.",
+                "emoji": "📦", "titulo": "Compressêo por sumarizaçêo", "subtitulo": "LLMLingua, sumário do contexto",
+                "o_que_e": "Comprimir contexto longo em representaçêo mais densa antes de mandar (via sumarizaçêo ou modelo de compressêo).",
+                "por_que": "Para tarefas onde detalhe completo nêo é crítico, compressêo reduz tokens sem cair muito a qualidade.",
                 "conceitos": "LLMLingua (Jiang 2023), compression ratio, lossy compression."
             },
             {
-                "emoji": "⚠️", "titulo": "Quando caching/distillation NÃO valem", "subtitulo": "Casos onde não compensa",
-                "o_que_e": "Cache não vale com prefix instável. Distillation não vale com tarefa que muda rápido. Compressão não vale com tarefa que exige fidelidade.",
+                "emoji": "⚠️", "titulo": "Quando caching/distillation NêO valem", "subtitulo": "Casos onde nêo compensa",
+                "o_que_e": "Cache nêo vale com prefix instável. Distillation nêo vale com tarefa que muda rápido. Compressêo nêo vale com tarefa que exige fidelidade.",
                 "por_que": "Cada técnica tem zona de aplicabilidade — assumir que sempre vale é o erro mais comum.",
                 "conceitos": "Applicability, regression risk, distillation drift."
             },
         ],
         "conceito_principal": {
-            "emoji": "💰", "titulo": "Hierarquia de otimização de custo",
+            "emoji": "💰", "titulo": "Hierarquia de otimizaçêo de custo",
             "texto": "Antes de invocar técnicas avançadas, esgote as simples. Caching é low-hanging fruit; distillation é trabalho pesado.",
             "lista": [
                 "<strong>1. Reduzir tokens</strong>: prompts mais curtos, RAG bom em vez de contexto longo.",
                 "<strong>2. Trocar de modelo</strong>: low-cost onde frontier é desnecessário.",
                 "<strong>3. Prompt caching</strong>: ganha 80% sem mudar capability.",
-                "<strong>4. Compressão</strong>: lossy mas eficaz em casos certos.",
+                "<strong>4. Compressêo</strong>: lossy mas eficaz em casos certos.",
                 "<strong>5. Distillation</strong>: trabalho de ML, ganho permanente."
             ]
         },
@@ -1363,13 +1363,13 @@ MODULOS = [
         },
         "fazer_evitar": [
             ("Marcar cache_control após system prompt + few-shot", "Sem caching habilitado em prefixos repetidos"),
-            ("Medir hit rate em produção", "Assumir que cache 'está funcionando'"),
+            ("Medir hit rate em produçêo", "Assumir que cache 'está funcionando'"),
             ("Estabilizar system prompt antes de cachear", "Mexer no prefix invalidando cache"),
             ("Distillation com eval rigoroso vs modelo grande", "Distillation que regrede silenciosamente"),
         ],
         "quando_nao_usar": [
             "<strong>Prefix muda a cada turn</strong>: cache nunca hita.",
-            "<strong>Volume baixo</strong>: economia absoluta é trivial; complexidade não vale.",
+            "<strong>Volume baixo</strong>: economia absoluta é trivial; complexidade nêo vale.",
             "<strong>Tarefa que muda rápido</strong>: distillation envelhece, modelo grande adapta.",
         ],
         "exemplo_codigo": (
@@ -1393,7 +1393,7 @@ MODULOS = [
             "    resp.usage.cache_read_input_tokens + resp.usage.cache_creation_input_tokens\n"
             ")"
         ),
-        "exercicio": "Em chat de 20 turns com system prompt de 5k tokens, meça custo SEM cache e COM cache. Hit rate alvo: ≥80%. Em <code>exercicios/modulo-5-2/</code> ou simulação por gravação.",
+        "exercicio": "Em chat de 20 turns com system prompt de 5k tokens, meça custo SEM cache e COM cache. Hit rate alvo: ≥80%. Em <code>exercicios/modulo-5-2/</code> ou simulaçêo por gravaçêo.",
         "bibliografia": [
             ("Anthropic (2024)", "Prompt caching with Claude", "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching"),
             ("OpenAI (2024)", "Prompt caching", "https://platform.openai.com/docs/guides/prompt-caching"),
@@ -1404,14 +1404,14 @@ MODULOS = [
             "<strong>Prompt caching</strong>: 10% do preço para hits — ganho real 80%.",
             "<strong>Hit rate</strong> precisa ser MEDIDO; pequena mudança derruba.",
             "<strong>Distillation</strong> substitui contexto longo por modelo treinado.",
-            "<strong>Compressão</strong> é lossy — eval obrigatório.",
-            "<strong>Hierarquia de otimização</strong>: simples primeiro, complexo depois.",
+            "<strong>Compressêo</strong> é lossy — eval obrigatório.",
+            "<strong>Hierarquia de otimizaçêo</strong>: simples primeiro, complexo depois.",
         ],
         "proximo_id": "../trilha6/index.html",
-        "proximo_titulo": "T6 — Avaliação e Produção",
+        "proximo_titulo": "T6 — Avaliaçêo e Produçêo",
     },
 
-    # =================== T6 — AVALIAÇÃO E PRODUÇÃO ===================
+    # =================== T6 — AVALIAÇêO E PRODUÇêO ===================
     {
         "id": "modulo-6-1", "trilha": 6, "numero": "6.1", "status": "GA",
         "titulo": "Evals: golden sets, LLM-as-judge e tracing",
@@ -1421,48 +1421,48 @@ MODULOS = [
         "introducao": (
             "Eval é o que separa engenharia de contexto de <strong class='text-rose-400'>chute organizado</strong>. "
             "Aqui você aprende a montar harness reproduzível, escolher métricas, lidar com vieses do LLM-as-judge, "
-            "e instrumentar tracing — pré-requisito de toda produção séria."
+            "e instrumentar tracing — pré-requisito de toda produçêo séria."
         ),
         "topicos": [
             {
-                "emoji": "🎯", "titulo": "Golden set: o que entra, o que não", "subtitulo": "Curadoria deliberada",
+                "emoji": "🎯", "titulo": "Golden set: o que entra, o que nêo", "subtitulo": "Curadoria deliberada",
                 "o_que_e": "Conjunto fixo de exemplos com gabarito. Cobertura: casos típicos + edge cases + adversariais. Tamanho: 30-200.",
-                "por_que": "Sem golden set, você não tem como medir se o sistema melhorou ou regrediu. Curadoria é trabalho real.",
+                "por_que": "Sem golden set, você nêo tem como medir se o sistema melhorou ou regrediu. Curadoria é trabalho real.",
                 "conceitos": "Golden set, edge cases, adversarial examples, distribution coverage, frozen set."
             },
             {
-                "emoji": "📐", "titulo": "Métricas por tipo de tarefa", "subtitulo": "Não existe métrica universal",
-                "o_que_e": "Classificação: accuracy, F1. Geração: BLEU, ROUGE. RAG: groundedness, citation accuracy. Agente: task completion.",
-                "por_que": "Métrica errada esconde regressão. Para cada tarefa, escolher 1 primária + 1-2 secundárias.",
+                "emoji": "📐", "titulo": "Métricas por tipo de tarefa", "subtitulo": "Nêo existe métrica universal",
+                "o_que_e": "Classificaçêo: accuracy, F1. Geraçêo: BLEU, ROUGE. RAG: groundedness, citation accuracy. Agente: task completion.",
+                "por_que": "Métrica errada esconde regressêo. Para cada tarefa, escolher 1 primária + 1-2 secundárias.",
                 "conceitos": "Primary metric, secondary metrics, distribution-level vs example-level."
             },
             {
-                "emoji": "⚖️", "titulo": "LLM-as-judge: poderoso e enviesado", "subtitulo": "Calibração obrigatória",
+                "emoji": "⚖️", "titulo": "LLM-as-judge: poderoso e enviesado", "subtitulo": "Calibraçêo obrigatória",
                 "o_que_e": "Usar um modelo para julgar saída de outro. Útil para qualidade subjetiva (groundedness, helpfulness).",
-                "por_que": "Permite eval em escala. Mas tem vieses (favorece outputs longos, bias de posição em comparação) — calibrar com humanos.",
+                "por_que": "Permite eval em escala. Mas tem vieses (favorece outputs longos, bias de posiçêo em comparaçêo) — calibrar com humanos.",
                 "conceitos": "LLM judge, calibration, Cohen's kappa, position bias, length bias."
             },
             {
                 "emoji": "🔍", "titulo": "Tracing estruturado: cada step visível", "subtitulo": "OpenTelemetry, Honeycomb, Phoenix",
                 "o_que_e": "Cada chamada vira span: timestamp, modelo, prompt, resposta, custo, latência. Hierarquia preserva sub-chamadas (RAG, agente).",
-                "por_que": "Sem tracing, debug em produção é impossível. Padrão da indústria amadurece (OTel para LLMs).",
+                "por_que": "Sem tracing, debug em produçêo é impossível. Padrêo da indústria amadurece (OTel para LLMs).",
                 "conceitos": "Trace, span, OpenTelemetry, semconv, Phoenix (Arize)."
             },
             {
                 "emoji": "🛡️", "titulo": "Prompt injection sandboxed", "subtitulo": "Defesa em camadas",
-                "o_que_e": "Padrões para detectar e neutralizar: spotlight (Anthropic), input/output guard, allow-list de tools, separação de escopo.",
-                "por_que": "Em produção, payloads vão tentar exfiltrar dados ou abusar tools. Defesa em camadas é única abordagem séria.",
+                "o_que_e": "Padrões para detectar e neutralizar: spotlight (Anthropic), input/output guard, allow-list de tools, separaçêo de escopo.",
+                "por_que": "Em produçêo, payloads vêo tentar exfiltrar dados ou abusar tools. Defesa em camadas é única abordagem séria.",
                 "conceitos": "Spotlight, input guard, output guard, tool allow-list, escape boundaries."
             },
             {
-                "emoji": "💸", "titulo": "Custo é uma métrica de produto", "subtitulo": "Tracker em produção",
+                "emoji": "💸", "titulo": "Custo é uma métrica de produto", "subtitulo": "Tracker em produçêo",
                 "o_que_e": "Tracking de tokens in/out, modelo, hit de cache por request. Dashboard com custo por feature/usuário.",
-                "por_que": "Sem tracking, custo escala silenciosamente. Surpresa de fatura mensal é falha de instrumentação.",
+                "por_que": "Sem tracking, custo escala silenciosamente. Surpresa de fatura mensal é falha de instrumentaçêo.",
                 "conceitos": "Cost per request, cost per user, cache hit dashboard, budget alerts."
             },
         ],
         "conceito_principal": {
-            "emoji": "📋", "titulo": "Harness FEC-EVAL: o padrão que você implementa",
+            "emoji": "📋", "titulo": "Harness FEC-EVAL: o padrêo que você implementa",
             "texto": "Espelho do que está em <code>evals/v1/</code> do curso. Reprodutibilidade vem de fixar TUDO: dataset, judge, modelo, sementes.",
             "lista": [
                 "<strong>Dataset</strong>: golden set versionado, hash sha256.",
@@ -1474,7 +1474,7 @@ MODULOS = [
         },
         "dica_pratica": {
             "emoji": "💡", "titulo": "Comece com 30 exemplos",
-            "texto": "Não precisa de 1000. 30 exemplos bem-curados (típicos + edge + adversariais) já estabelecem a disciplina. Depois, cresça para 200 conforme casos surgem em produção."
+            "texto": "Nêo precisa de 1000. 30 exemplos bem-curados (típicos + edge + adversariais) já estabelecem a disciplina. Depois, cresça para 200 conforme casos surgem em produçêo."
         },
         "fazer_evitar": [
             ("Golden set versionado em git, hash registrado", "Golden em planilha que muda sem aviso"),
@@ -1485,10 +1485,10 @@ MODULOS = [
         "quando_nao_usar": [
             "<strong>Protótipo descartável</strong>: eval custa tempo; nem tudo precisa.",
             "<strong>Métrica errada selecionada</strong>: eval inválido é pior que sem eval.",
-            "<strong>LLM-as-judge não-calibrado</strong>: números enganosos.",
+            "<strong>LLM-as-judge nêo-calibrado</strong>: números enganosos.",
         ],
         "exemplo_codigo": (
-            "# Eval mínimo no padrão FEC-EVAL\n"
+            "# Eval mínimo no padrêo FEC-EVAL\n"
             "import json\n"
             "import hashlib\n"
             "from fec_sdk.adapters import get_adapter\n\n"
@@ -1521,31 +1521,31 @@ MODULOS = [
         ],
         "resumo": [
             "<strong>Golden set versionado</strong> é a base de eval reproduzível.",
-            "<strong>Métrica certa para a tarefa</strong> — não existe universal.",
+            "<strong>Métrica certa para a tarefa</strong> — nêo existe universal.",
             "<strong>LLM-as-judge</strong>: poderoso, mas calibrar contra humanos.",
-            "<strong>Tracing estruturado</strong> + custo são pré-requisitos de produção.",
+            "<strong>Tracing estruturado</strong> + custo sêo pré-requisitos de produçêo.",
             "<strong>Defesa contra injection</strong> em camadas: input + output + sandbox.",
         ],
         "proximo_id": "modulo-6-2",
-        "proximo_titulo": "Operacionalização avançada (beta)",
+        "proximo_titulo": "Operacionalizaçêo avançada (beta)",
     },
 
     {
         "id": "modulo-6-2", "trilha": 6, "numero": "6.2", "status": "beta",
-        "titulo": "Operacionalização avançada: A/B, canários, rollback (beta)",
+        "titulo": "Operacionalizaçêo avançada: A/B, canários, rollback (beta)",
         "emoji": "🚀",
-        "descricao": "Levar para produção: A/B em prompt, canários por modelo, rollback, observabilidade contínua. O que se aprende rodando, não no laboratório.",
+        "descricao": "Levar para produçêo: A/B em prompt, canários por modelo, rollback, observabilidade contínua. O que se aprende rodando, nêo no laboratório.",
         "minutos": 65, "nivel": "Avançado", "tipo": "Avançado",
         "introducao": (
-            "Tudo que você aprendeu até aqui se prova em <strong class='text-rose-400'>produção</strong>. "
+            "Tudo que você aprendeu até aqui se prova em <strong class='text-rose-400'>produçêo</strong>. "
             "Aqui você vê padrões para deploy seguro: A/B, canário, rollback rápido, observabilidade. "
             "Este módulo é <em>beta</em> — práticas amadurecem com a indústria."
         ),
         "topicos": [
             {
-                "emoji": "🆎", "titulo": "A/B em prompt: variant + métrica primária", "subtitulo": "Decisão por dado, não opinião",
-                "o_que_e": "Roteia % do tráfego para variant. Mede métrica primária (groundedness, satisfação) com significância estatística.",
-                "por_que": "Mudanças em prompt são frequentes; A/B distingue 'achei que melhorou' de 'melhorou medido'.",
+                "emoji": "🆎", "titulo": "A/B em prompt: variant + métrica primária", "subtitulo": "Decisêo por dado, nêo opiniêo",
+                "o_que_e": "Roteia % do tráfego para variant. Mede métrica primária (groundedness, satisfaçêo) com significância estatística.",
+                "por_que": "Mudanças em prompt sêo frequentes; A/B distingue 'achei que melhorou' de 'melhorou medido'.",
                 "conceitos": "A/B test, variant routing, statistical significance, sample size."
             },
             {
@@ -1556,32 +1556,32 @@ MODULOS = [
             },
             {
                 "emoji": "↩️", "titulo": "Rollback rápido: pré-requisito de canário", "subtitulo": "1 click",
-                "o_que_e": "Botão 'voltar' que reverte para versão anterior em segundos. Versão anterior precisa estar 'quente' (warm cache).",
+                "o_que_e": "Botêo 'voltar' que reverte para versêo anterior em segundos. Versêo anterior precisa estar 'quente' (warm cache).",
                 "por_que": "Sem rollback, canário é teatro. Quando dá problema, você precisa MUITO de voltar rápido.",
                 "conceitos": "Hot rollback, warm standby, version pinning, traffic shift."
             },
             {
                 "emoji": "📈", "titulo": "Observabilidade contínua: o que monitorar", "subtitulo": "Métricas + alertas",
                 "o_que_e": "Dashboards: latência p50/p95, erro rate, custo, hit de cache, qualidade (LLM-judge contínuo). Alertas em desvios.",
-                "por_que": "Em produção, problemas se manifestam por números antes de virarem reclamação. Instrumentação detecta cedo.",
+                "por_que": "Em produçêo, problemas se manifestam por números antes de virarem reclamaçêo. Instrumentaçêo detecta cedo.",
                 "conceitos": "SLO, SLI, alerting, dashboard, distribution shift detection."
             },
             {
-                "emoji": "🛑", "titulo": "Kill switch: parar feature instantaneamente", "subtitulo": "Botão de emergência",
-                "o_que_e": "Flag de configuração que desabilita a feature LLM. Tráfego volta para fallback estático ou erro educativo.",
+                "emoji": "🛑", "titulo": "Kill switch: parar feature instantaneamente", "subtitulo": "Botêo de emergência",
+                "o_que_e": "Flag de configuraçêo que desabilita a feature LLM. Tráfego volta para fallback estático ou erro educativo.",
                 "por_que": "Modelo do provedor pode degradar do nada. Kill switch dá tempo de investigar sem disaster.",
                 "conceitos": "Feature flag, kill switch, fallback, graceful degradation."
             },
             {
-                "emoji": "🔁", "titulo": "Eval contínuo em produção", "subtitulo": "Não só pré-deploy",
-                "o_que_e": "% pequena do tráfego é avaliada em tempo real (LLM-judge automático). Detecta drift sem esperar reclamação.",
+                "emoji": "🔁", "titulo": "Eval contínuo em produçêo", "subtitulo": "Nêo só pré-deploy",
+                "o_que_e": "% pequena do tráfego é avaliada em tempo real (LLM-judge automático). Detecta drift sem esperar reclamaçêo.",
                 "por_que": "Modelos provider mudam; corpus muda; usuários mudam. Eval só pré-deploy envelhece.",
                 "conceitos": "Production eval, live judge, drift detection, sampling rate."
             },
         ],
         "conceito_principal": {
             "emoji": "🚦", "titulo": "Anatomia do deploy seguro de LLM",
-            "texto": "Não é sobre ter coragem — é sobre ter os switches certos antes de precisar deles.",
+            "texto": "Nêo é sobre ter coragem — é sobre ter os switches certos antes de precisar deles.",
             "lista": [
                 "<strong>1. A/B em pequena %</strong> com métrica primária e timeline.",
                 "<strong>2. Canário</strong>: 5% → 25% → 100% se métricas OK.",
@@ -1592,18 +1592,18 @@ MODULOS = [
         },
         "dica_pratica": {
             "emoji": "💡", "titulo": "Implemente kill switch antes de qualquer rollout",
-            "texto": "Não confie em rollback. Kill switch deve estar em produção e testado antes da primeira liberação. Sem isso, você está exposto a desastre."
+            "texto": "Nêo confie em rollback. Kill switch deve estar em produçêo e testado antes da primeira liberaçêo. Sem isso, você está exposto a desastre."
         },
         "fazer_evitar": [
             ("A/B com métrica primária e sample size calculado", "Eyeballing 'parece melhor'"),
             ("Canário 5% → 25% → 100% por dia", "Big bang rollout"),
-            ("Kill switch testado e documentado", "'Vamos torcer pra não dar problema'"),
-            ("Eval contínuo em produção sampling 1-5%", "Eval só em CI"),
+            ("Kill switch testado e documentado", "'Vamos torcer pra nêo dar problema'"),
+            ("Eval contínuo em produçêo sampling 1-5%", "Eval só em CI"),
         ],
         "quando_nao_usar": [
             "<strong>Volume baixo</strong>: A/B precisa de N significativo; com pouco tráfego, espera mais.",
-            "<strong>Mudança trivial e auditada</strong>: typo de prompt não precisa de canário.",
-            "<strong>Sem instrumentação básica</strong>: implemente tracing ANTES de pensar em rollout sofisticado.",
+            "<strong>Mudança trivial e auditada</strong>: typo de prompt nêo precisa de canário.",
+            "<strong>Sem instrumentaçêo básica</strong>: implemente tracing ANTES de pensar em rollout sofisticado.",
         ],
         "exemplo_codigo": (
             "# Esquema de feature flag + canário\n"
@@ -1624,7 +1624,7 @@ MODULOS = [
             "        emit_metric(\"groundedness\", score, tags={\"variant\": variant})\n\n"
             "    return resposta"
         ),
-        "exercicio": "Adicione A/B + canário + kill switch + eval contínuo ao P5 (pipeline em produção). Demonstre rollback em 1 min. Em <code>projetos/P5/</code>.",
+        "exercicio": "Adicione A/B + canário + kill switch + eval contínuo ao P5 (pipeline em produçêo). Demonstre rollback em 1 min. Em <code>projetos/P5/</code>.",
         "bibliografia": [
             ("Google SRE Book", "Production rollout best practices", "https://sre.google/sre-book/"),
             ("Honeycomb", "Observability for LLM systems", "https://www.honeycomb.io"),
@@ -1633,13 +1633,13 @@ MODULOS = [
         ],
         "resumo": [
             "<strong>A/B em prompt</strong> com métrica primária e significância.",
-            "<strong>Canário</strong> 5%→25%→100% — não big bang.",
+            "<strong>Canário</strong> 5%→25%→100% — nêo big bang.",
             "<strong>Kill switch</strong> antes de qualquer rollout.",
             "<strong>Rollback hot</strong> &lt;1 min — pré-requisito de canário.",
-            "<strong>Eval contínuo</strong> em produção captura drift.",
+            "<strong>Eval contínuo</strong> em produçêo captura drift.",
         ],
         "proximo_id": "../../projetos/P5/README.md",
-        "proximo_titulo": "Projeto Final P5 — Pipeline em produção",
+        "proximo_titulo": "Projeto Final P5 — Pipeline em produçêo",
     },
 
 ]

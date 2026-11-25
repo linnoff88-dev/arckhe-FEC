@@ -1,16 +1,16 @@
 # BUDGETS-EXCEPTIONS — Exceções de orçamento
 
-> _Quando algum asset/CI excede budget de `BUDGETS.md` ou `check-budgets.py`, registra-se aqui com prazo de redução. Sem exceção em branco. PLAN item 93._
+> _Quando algum asset/CI excede budget de `BUDGETS.md` ou `check-budgets.py`, registra-se aqui com prazo de reduçêo. Sem exceçêo em branco. PLAN item 93._
 
 ## Política
 
-- Exceção exige PR aprovado por 2 maintainers.
-- Cada exceção tem **prazo de redução** declarado.
+- Exceçêo exige PR aprovado por 2 maintainers.
+- Cada exceçêo tem **prazo de reduçêo** declarado.
 - Auditoria semestral remove exceções expiradas (status: resolvido OU promovido a budget oficial).
 
 ## Exceções ativas
 
-_(Vazio. Primeira exceção esperada quando T4.3/P3 (multi-agente) introduzir traços maiores.)_
+_(Vazio. Primeira exceçêo esperada quando T4.3/P3 (multi-agente) introduzir traços maiores.)_
 
 ## Template de entrada
 
@@ -20,8 +20,8 @@ _(Vazio. Primeira exceção esperada quando T4.3/P3 (multi-agente) introduzir tr
 - **Tipo:** zip / SVG / mermaid / repo / ci-fast / ci-scheduled / actions-minutes
 - **Item afetado:** <caminho ou métrica>
 - **Excede em:** <quanto>
-- **Justificativa:** <razão pedagógica/operacional>
-- **Prazo de redução:** YYYY-MM-DD
+- **Justificativa:** <razêo pedagógica/operacional>
+- **Prazo de reduçêo:** YYYY-MM-DD
 - **Plano:** <como pretendemos voltar para budget>
 - **Aprovado em:** YYYY-MM-DD por @maintainer1, @maintainer2
 - **Issue de tracking:** [#NNN]

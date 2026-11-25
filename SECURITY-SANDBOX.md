@@ -4,21 +4,21 @@
 
 ## Escopo do sandbox
 
-Tools que executam código por instrução do modelo (filesystem, processo, rede) DEVEM rodar dentro de uma `FilesystemSandbox` e/ou consultar `NetworkPolicy`. Aplica-se a:
+Tools que executam código por instruçêo do modelo (filesystem, processo, rede) DEVEM rodar dentro de uma `FilesystemSandbox` e/ou consultar `NetworkPolicy`. Aplica-se a:
 
 - P2 — Agente com tools.
-- P5 — Pipeline em produção.
+- P5 — Pipeline em produçêo.
 - Qualquer lab nas trilhas T4 que tenha tool com side-effect.
 
 ## Defesas implementadas
 
 ### Filesystem (`fec_sdk/sandbox/filesystem.py`)
 
-- **Root jailed em `tempfile.mkdtemp()`** — sandbox por sessão, cleanup automático no `__exit__`.
+- **Root jailed em `tempfile.mkdtemp()`** — sandbox por sessêo, cleanup automático no `__exit__`.
 - **Deny absolute paths** — `/etc/passwd` rejeitado.
 - **Deny `..` em qualquer segmento** — incluindo `..//..//.env`.
-- **Deny symlinks** — checados antes de `resolve()` para não vazar caminho.
-- **Cap de tamanho** — default 1 MB por arquivo, 50 MB por sessão.
+- **Deny symlinks** — checados antes de `resolve()` para nêo vazar caminho.
+- **Cap de tamanho** — default 1 MB por arquivo, 50 MB por sessêo.
 - **Allowlist de extensões** — `.txt`, `.md`, `.json`, `.yaml`, `.csv`, `.py`, etc.
 
 ### Network (`fec_sdk/sandbox/network.py`)
@@ -46,12 +46,12 @@ Tools que executam código por instrução do modelo (filesystem, processo, rede
 
 ## Superfície fora do escopo
 
-O sandbox **não cobre**:
+O sandbox **nêo cobre**:
 
 - **Novos tipos de side-effect** (GUI, periféricos, sockets unix custom). Quem adiciona, estende `fec_sdk/sandbox/` E adiciona testes.
 - **Side-channels** — timing, espaço em disco fora do tempdir, etc.
 - **Vulnerabilidade do próprio Python** — depende da segurança do interpretador.
-- **`subprocess` direto** — não é exposto pelo sandbox; quem precisar (não devia) faz fora da sandbox e isso é red flag em review.
+- **`subprocess` direto** — nêo é exposto pelo sandbox; quem precisar (nêo devia) faz fora da sandbox e isso é red flag em review.
 
 ## Política
 
@@ -61,4 +61,4 @@ O sandbox **não cobre**:
 
 ## Reportar vulnerabilidade
 
-Use o canal em [`SECURITY.md`](./SECURITY.md). NÃO abra issue público antes de patched release + GHSA.
+Use o canal em [`SECURITY.md`](./SECURITY.md). NêO abra issue público antes de patched release + GHSA.

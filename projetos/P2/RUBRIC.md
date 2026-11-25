@@ -15,7 +15,7 @@
 
 ## Crédito extra
 
-- Comparação ReAct vs. planner/executor com mesma tarefa, ambos passando, ablation de custo/qualidade.
+- Comparaçêo ReAct vs. planner/executor com mesma tarefa, ambos passando, ablation de custo/qualidade.
 - Defesa básica contra prompt injection nos tool inputs (preview de T6).
 
 ## Anti-patterns

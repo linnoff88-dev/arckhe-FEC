@@ -51,7 +51,7 @@ def render(quiz: dict) -> str:
 
 def main() -> int:
     if not QUIZ_DIR.exists():
-        print("quizzes/ não existe — skip.")
+        print("quizzes/ nêo existe — skip.")
         return 0
     found = 0
     for jf in sorted(QUIZ_DIR.glob("*.json")):

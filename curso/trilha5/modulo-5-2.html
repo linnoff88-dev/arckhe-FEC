@@ -32,7 +32,7 @@
         <a href="../trilha3/index.html" class="px-2.5 py-1 rounded border border-purple-500/30 text-purple-400 hover:bg-purple-500/20 transition whitespace-nowrap" title="T3 RAG">T3 · RAG</a>
         <a href="../trilha4/index.html" class="px-2.5 py-1 rounded border border-amber-500/30 text-amber-400 hover:bg-amber-500/20 transition whitespace-nowrap" title="T4 Tools/Agentes">T4 · Agentes</a>
         <a href="../trilha5/index.html" class="px-2.5 py-1 rounded border border-teal-500/30 text-teal-400 hover:bg-teal-500/20 transition whitespace-nowrap bg-teal-500/20" title="T5 Memória">T5 · Memória</a>
-        <a href="../trilha6/index.html" class="px-2.5 py-1 rounded border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition whitespace-nowrap" title="T6 Avaliação">T6 · Avaliação</a>
+        <a href="../trilha6/index.html" class="px-2.5 py-1 rounded border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition whitespace-nowrap" title="T6 Avaliaçêo">T6 · Avaliaçêo</a>
       </div>
       <div class="flex items-center gap-3 text-sm flex-shrink-0">
         <a href="index.html" class="md:hidden text-teal-400">← T5</a>
@@ -86,17 +86,17 @@
   <!-- CONTEÚDO -->
   <main class="max-w-6xl mx-auto px-6 py-12">
 
-    <!-- Introdução -->
+    <!-- Introduçêo -->
     <section class="mb-12 prose prose-invert max-w-none">
-      <p class="text-lg text-zinc-200 leading-relaxed">Prompt caching é a alavanca de custo mais subestimada: <strong class='text-teal-400'>10% do preço para tokens cacheados</strong>. Em chats com prefix grande, isso é redução de 80-90% real. Context distillation vai além: substitui contexto longo por modelo treinado. Ambos têm trade-offs concretos.</p>
+      <p class="text-lg text-zinc-200 leading-relaxed">Prompt caching é a alavanca de custo mais subestimada: <strong class='text-teal-400'>10% do preço para tokens cacheados</strong>. Em chats com prefix grande, isso é reduçêo de 80-90% real. Context distillation vai além: substitui contexto longo por modelo treinado. Ambos têm trade-offs concretos.</p>
     </section>
 
     <!-- Conceito Principal + Dados/Dica -->
     
       <div class="bg-gradient-to-br from-teal-900/30 to-zinc-900 rounded-xl border border-teal-500/30 p-6 mb-8">
-        <h3 class="text-lg font-bold text-teal-400 mb-3 flex items-center"><span class="mr-2">💰</span> Hierarquia de otimização de custo</h3>
+        <h3 class="text-lg font-bold text-teal-400 mb-3 flex items-center"><span class="mr-2">💰</span> Hierarquia de otimizaçêo de custo</h3>
         <p class="text-zinc-300 mb-4">Antes de invocar técnicas avançadas, esgote as simples. Caching é low-hanging fruit; distillation é trabalho pesado.</p>
-        <ul class="space-y-2 text-zinc-300 text-sm"><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>1. Reduzir tokens</strong>: prompts mais curtos, RAG bom em vez de contexto longo.</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>2. Trocar de modelo</strong>: low-cost onde frontier é desnecessário.</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>3. Prompt caching</strong>: ganha 80% sem mudar capability.</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>4. Compressão</strong>: lossy mas eficaz em casos certos.</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>5. Distillation</strong>: trabalho de ML, ganho permanente.</span></li></ul>
+        <ul class="space-y-2 text-zinc-300 text-sm"><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>1. Reduzir tokens</strong>: prompts mais curtos, RAG bom em vez de contexto longo.</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>2. Trocar de modelo</strong>: low-cost onde frontier é desnecessário.</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>3. Prompt caching</strong>: ganha 80% sem mudar capability.</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>4. Compressêo</strong>: lossy mas eficaz em casos certos.</span></li><li class='flex items-start space-x-2'><span class='text-teal-400 mt-1'>•</span><span><strong>5. Distillation</strong>: trabalho de ML, ganho permanente.</span></li></ul>
       </div>
 
     
@@ -119,7 +119,7 @@
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Tokens lidos do cache custam ~10% do preço normal de input. Em chats com prefixo grande estável (5-10k tokens de system + few-shot), o ganho real é de 80-90% no custo de input. Anthropic e OpenAI suportam; Ollama e modelos OSS locais geralmente não têm cache nativo.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Tokens lidos do cache custam ~10% do preço normal de input. Em chats com prefixo grande estável (5-10k tokens de system + few-shot), o ganho real é de 80-90% no custo de input. Anthropic e OpenAI suportam; Ollama e modelos OSS locais geralmente nêo têm cache nativo.</p>
           
         <div class="mt-4 bg-zinc-900/50 border border-zinc-800 rounded-lg overflow-x-auto">
           <table class="w-full">
@@ -133,7 +133,7 @@
             <summary class="cursor-pointer text-teal-400 font-semibold list-none">📑 Resumo navegável</summary>
             <div class="mt-3 space-y-2">
               <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Provedor cacheia o prefixo da janela. Próxima chamada com mesmo prefixo: tokens cacheados custam ~10% do normal.</span></div>
-              <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Em chat com system prompt + few-shot grandes, redução real de 80-90% no custo de input.</span></div>
+              <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Em chat com system prompt + few-shot grandes, reduçêo real de 80-90% no custo de input.</span></div>
               <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Prompt cache, cache_control, cache breakpoints, TTL (5min Anthropic), hit rate.</span></div>
             </div>
           </details>
@@ -188,7 +188,7 @@ user = [
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Hit rate é a métrica chave. Cache que NÃO está sendo lido é cache invalidado constantemente — provavelmente prefixo está mudando. Toda chamada retorna métricas: <code>cache_creation_input_tokens</code> e <code>cache_read_input_tokens</code>. Calcule e logue.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Hit rate é a métrica chave. Cache que NêO está sendo lido é cache invalidado constantemente — provavelmente prefixo está mudando. Toda chamada retorna métricas: <code>cache_creation_input_tokens</code> e <code>cache_read_input_tokens</code>. Calcule e logue.</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
           <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">monitorar hit rate</div>
@@ -206,7 +206,7 @@ if hit + miss &gt; 0:
             <summary class="cursor-pointer text-teal-400 font-semibold list-none">📑 Resumo navegável</summary>
             <div class="mt-3 space-y-2">
               <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Cada chamada retorna métricas: tokens lidos do cache vs. tokens novos. Hit rate = cached / total.</span></div>
-              <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Sem medir hit rate, você não sabe se cache está funcionando. Pequena mudança no prefix derruba hit para 0.</span></div>
+              <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Sem medir hit rate, você nêo sabe se cache está funcionando. Pequena mudança no prefix derruba hit para 0.</span></div>
               <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Hit rate, cache miss, cache invalidation, observability.</span></div>
             </div>
           </details>
@@ -245,16 +245,16 @@ if hit + miss &gt; 0:
         <div class="flex items-center space-x-4 mb-6">
           <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl flex-shrink-0">5</span>
           <div>
-            <h2 class="text-2xl font-bold">📦 Compressão por sumarização</h2>
+            <h2 class="text-2xl font-bold">📦 Compressêo por sumarizaçêo</h2>
             <p class="text-zinc-400 text-sm mt-1">LLMLingua, sumário do contexto</p>
           </div>
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Para casos onde detalhe completo não é crítico, comprimir contexto antes de mandar reduz tokens. <strong>LLMLingua</strong> (Jiang et al. 2023) usa modelo pequeno para identificar e remover tokens de baixa importância. Lossy: pode comprometer qualidade — eval obrigatório.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Para casos onde detalhe completo nêo é crítico, comprimir contexto antes de mandar reduz tokens. <strong>LLMLingua</strong> (Jiang et al. 2023) usa modelo pequeno para identificar e remover tokens de baixa importância. Lossy: pode comprometer qualidade — eval obrigatório.</p>
           
         <div class="mt-4 bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
-          <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">compressão por sumarização (alternativa simples)</div>
+          <div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-500 font-mono">compressêo por sumarizaçêo (alternativa simples)</div>
           <pre class="p-4 text-sm overflow-x-auto"><code class="text-zinc-200">def comprimir_contexto(docs: list[str], target_tokens: int) -&gt; str:
     tokens_atuais = sum(count_tokens(d) for d in docs)
     if tokens_atuais &lt;= target_tokens:
@@ -269,8 +269,8 @@ if hit + miss &gt; 0:
           <details class="mt-6 bg-zinc-900/40 border border-zinc-800 rounded-lg p-4 text-sm">
             <summary class="cursor-pointer text-teal-400 font-semibold list-none">📑 Resumo navegável</summary>
             <div class="mt-3 space-y-2">
-              <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Comprimir contexto longo em representação mais densa antes de mandar (via sumarização ou modelo de compressão).</span></div>
-              <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Para tarefas onde detalhe completo não é crítico, compressão reduz tokens sem cair muito a qualidade.</span></div>
+              <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Comprimir contexto longo em representaçêo mais densa antes de mandar (via sumarizaçêo ou modelo de compressêo).</span></div>
+              <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Para tarefas onde detalhe completo nêo é crítico, compressêo reduz tokens sem cair muito a qualidade.</span></div>
               <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">LLMLingua (Jiang 2023), compression ratio, lossy compression.</span></div>
             </div>
           </details>
@@ -281,26 +281,26 @@ if hit + miss &gt; 0:
         <div class="flex items-center space-x-4 mb-6">
           <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl flex-shrink-0">6</span>
           <div>
-            <h2 class="text-2xl font-bold">⚠️ Quando caching/distillation NÃO valem</h2>
-            <p class="text-zinc-400 text-sm mt-1">Casos onde não compensa</p>
+            <h2 class="text-2xl font-bold">⚠️ Quando caching/distillation NêO valem</h2>
+            <p class="text-zinc-400 text-sm mt-1">Casos onde nêo compensa</p>
           </div>
         </div>
 
         <div class="ml-0 md:ml-16">
-          <p class="text-zinc-200 leading-relaxed mb-4">Cada técnica tem zona de aplicabilidade. Cache não vale com prefix instável. Distillation não vale com tarefa que muda rápido. Compressão não vale onde fidelidade é crítica. Antes de invocar, esgote técnicas mais simples: prompts mais curtos, RAG bom, modelo low-cost.</p>
+          <p class="text-zinc-200 leading-relaxed mb-4">Cada técnica tem zona de aplicabilidade. Cache nêo vale com prefix instável. Distillation nêo vale com tarefa que muda rápido. Compressêo nêo vale onde fidelidade é crítica. Antes de invocar, esgote técnicas mais simples: prompts mais curtos, RAG bom, modelo low-cost.</p>
           
         <div class="mt-4 bg-zinc-900/50 border border-zinc-800 rounded-lg overflow-x-auto">
           <table class="w-full">
-            <caption class="px-4 py-2 text-xs text-zinc-500 text-left">decisão por técnica</caption>
-            <thead class="bg-zinc-900"><tr><th class='py-2 px-3 text-left text-xs uppercase tracking-wider text-teal-400'>Técnica</th><th class='py-2 px-3 text-left text-xs uppercase tracking-wider text-teal-400'>Quando vale</th><th class='py-2 px-3 text-left text-xs uppercase tracking-wider text-teal-400'>Quando NÃO vale</th></tr></thead>
-            <tbody><tr class='border-b border-zinc-800'><td class='py-2 px-3 text-sm text-zinc-300'>Prompt caching</td><td class='py-2 px-3 text-sm text-zinc-300'>prefix ≥1k tokens estável, volume alto</td><td class='py-2 px-3 text-sm text-zinc-300'>prefix muda a cada turn</td></tr><tr class='border-b border-zinc-800'><td class='py-2 px-3 text-sm text-zinc-300'>Compressão</td><td class='py-2 px-3 text-sm text-zinc-300'>tarefa tolera perda de detalhe</td><td class='py-2 px-3 text-sm text-zinc-300'>extração precisa</td></tr><tr class='border-b border-zinc-800'><td class='py-2 px-3 text-sm text-zinc-300'>Distillation</td><td class='py-2 px-3 text-sm text-zinc-300'>tarefa estável, &gt;100k chamadas/mês</td><td class='py-2 px-3 text-sm text-zinc-300'>tarefa muda mensalmente</td></tr><tr class='border-b border-zinc-800'><td class='py-2 px-3 text-sm text-zinc-300'>Trocar modelo</td><td class='py-2 px-3 text-sm text-zinc-300'>tarefa estruturada simples</td><td class='py-2 px-3 text-sm text-zinc-300'>raciocínio crítico</td></tr></tbody>
+            <caption class="px-4 py-2 text-xs text-zinc-500 text-left">decisêo por técnica</caption>
+            <thead class="bg-zinc-900"><tr><th class='py-2 px-3 text-left text-xs uppercase tracking-wider text-teal-400'>Técnica</th><th class='py-2 px-3 text-left text-xs uppercase tracking-wider text-teal-400'>Quando vale</th><th class='py-2 px-3 text-left text-xs uppercase tracking-wider text-teal-400'>Quando NêO vale</th></tr></thead>
+            <tbody><tr class='border-b border-zinc-800'><td class='py-2 px-3 text-sm text-zinc-300'>Prompt caching</td><td class='py-2 px-3 text-sm text-zinc-300'>prefix ≥1k tokens estável, volume alto</td><td class='py-2 px-3 text-sm text-zinc-300'>prefix muda a cada turn</td></tr><tr class='border-b border-zinc-800'><td class='py-2 px-3 text-sm text-zinc-300'>Compressêo</td><td class='py-2 px-3 text-sm text-zinc-300'>tarefa tolera perda de detalhe</td><td class='py-2 px-3 text-sm text-zinc-300'>extraçêo precisa</td></tr><tr class='border-b border-zinc-800'><td class='py-2 px-3 text-sm text-zinc-300'>Distillation</td><td class='py-2 px-3 text-sm text-zinc-300'>tarefa estável, &gt;100k chamadas/mês</td><td class='py-2 px-3 text-sm text-zinc-300'>tarefa muda mensalmente</td></tr><tr class='border-b border-zinc-800'><td class='py-2 px-3 text-sm text-zinc-300'>Trocar modelo</td><td class='py-2 px-3 text-sm text-zinc-300'>tarefa estruturada simples</td><td class='py-2 px-3 text-sm text-zinc-300'>raciocínio crítico</td></tr></tbody>
           </table>
         </div>
 
           <details class="mt-6 bg-zinc-900/40 border border-zinc-800 rounded-lg p-4 text-sm">
             <summary class="cursor-pointer text-teal-400 font-semibold list-none">📑 Resumo navegável</summary>
             <div class="mt-3 space-y-2">
-              <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Cache não vale com prefix instável. Distillation não vale com tarefa que muda rápido. Compressão não vale com tarefa que exige fidelidade.</span></div>
+              <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Cache nêo vale com prefix instável. Distillation nêo vale com tarefa que muda rápido. Compressêo nêo vale com tarefa que exige fidelidade.</span></div>
               <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Cada técnica tem zona de aplicabilidade — assumir que sempre vale é o erro mais comum.</span></div>
               <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Applicability, regression risk, distillation drift.</span></div>
             </div>
@@ -322,7 +322,7 @@ if hit + miss &gt; 0:
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
             <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Provedor cacheia o prefixo da janela. Próxima chamada com mesmo prefixo: tokens cacheados custam ~10% do normal.</span></div>
-            <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Em chat com system prompt + few-shot grandes, redução real de 80-90% no custo de input.</span></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Em chat com system prompt + few-shot grandes, reduçêo real de 80-90% no custo de input.</span></div>
             <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Prompt cache, cache_control, cache breakpoints, TTL (5min Anthropic), hit rate.</span></div>
           </div>
         </details>
@@ -346,7 +346,7 @@ if hit + miss &gt; 0:
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
             <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Cada chamada retorna métricas: tokens lidos do cache vs. tokens novos. Hit rate = cached / total.</span></div>
-            <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Sem medir hit rate, você não sabe se cache está funcionando. Pequena mudança no prefix derruba hit para 0.</span></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Sem medir hit rate, você nêo sabe se cache está funcionando. Pequena mudança no prefix derruba hit para 0.</span></div>
             <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Hit rate, cache miss, cache invalidation, observability.</span></div>
           </div>
         </details>
@@ -365,23 +365,23 @@ if hit + miss &gt; 0:
         <details class="topico-expansivel border-b border-zinc-800 py-3">
           <summary class="cursor-pointer flex items-center gap-3 text-base font-semibold list-none">
             <span class="topico-numero w-6 h-6 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-400 text-xs font-bold flex items-center justify-center">5</span>
-            <span>📦 Compressão por sumarização</span>
+            <span>📦 Compressêo por sumarizaçêo</span>
             <span class="text-zinc-500 text-xs ml-2">— LLMLingua, sumário do contexto</span>
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
-            <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Comprimir contexto longo em representação mais densa antes de mandar (via sumarização ou modelo de compressão).</span></div>
-            <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Para tarefas onde detalhe completo não é crítico, compressão reduz tokens sem cair muito a qualidade.</span></div>
+            <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Comprimir contexto longo em representaçêo mais densa antes de mandar (via sumarizaçêo ou modelo de compressêo).</span></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Para tarefas onde detalhe completo nêo é crítico, compressêo reduz tokens sem cair muito a qualidade.</span></div>
             <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">LLMLingua (Jiang 2023), compression ratio, lossy compression.</span></div>
           </div>
         </details>
         <details class="topico-expansivel border-b border-zinc-800 py-3">
           <summary class="cursor-pointer flex items-center gap-3 text-base font-semibold list-none">
             <span class="topico-numero w-6 h-6 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-400 text-xs font-bold flex items-center justify-center">6</span>
-            <span>⚠️ Quando caching/distillation NÃO valem</span>
-            <span class="text-zinc-500 text-xs ml-2">— Casos onde não compensa</span>
+            <span>⚠️ Quando caching/distillation NêO valem</span>
+            <span class="text-zinc-500 text-xs ml-2">— Casos onde nêo compensa</span>
           </summary>
           <div class="mt-3 ml-9 space-y-2 text-sm">
-            <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Cache não vale com prefix instável. Distillation não vale com tarefa que muda rápido. Compressão não vale com tarefa que exige fidelidade.</span></div>
+            <div><span class="text-teal-400 font-semibold">O que é:</span> <span class="text-zinc-300">Cache nêo vale com prefix instável. Distillation nêo vale com tarefa que muda rápido. Compressêo nêo vale com tarefa que exige fidelidade.</span></div>
             <div><span class="text-teal-400 font-semibold">Por que aprender:</span> <span class="text-zinc-300">Cada técnica tem zona de aplicabilidade — assumir que sempre vale é o erro mais comum.</span></div>
             <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span> <span class="text-zinc-300">Applicability, regression risk, distillation drift.</span></div>
           </div>
@@ -394,20 +394,20 @@ if hit + miss &gt; 0:
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
           <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-zinc-300"><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Marcar cache_control após system prompt + few-shot</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Medir hit rate em produção</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Estabilizar system prompt antes de cachear</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Distillation com eval rigoroso vs modelo grande</span></li></ul>
+          <ul class="space-y-3 text-zinc-300"><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Marcar cache_control após system prompt + few-shot</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Medir hit rate em produçêo</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Estabilizar system prompt antes de cachear</span></li><li class='flex items-start space-x-2'><span class='text-emerald-400 mt-1'>✓</span><span class='text-sm'>Distillation com eval rigoroso vs modelo grande</span></li></ul>
         </div>
         <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NÃO fazer</h4>
+          <h4 class="font-bold text-red-400 mb-4">✗ O que NêO fazer</h4>
           <ul class="space-y-3 text-zinc-300"><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Sem caching habilitado em prefixos repetidos</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Assumir que cache 'está funcionando'</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Mexer no prefix invalidando cache</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>✗</span><span class='text-sm'>Distillation que regrede silenciosamente</span></li></ul>
         </div>
       </div>
 
 
-    <!-- Quando NÃO usar -->
+    <!-- Quando NêO usar -->
     
       <div class="quando-nao-usar bg-red-900/10 rounded-xl border border-red-500/30 p-6 mb-8">
-        <h3 class="text-lg font-bold text-red-400 mb-3 flex items-center"><span class="mr-2">🚫</span> Quando NÃO usar</h3>
-        <ul class="space-y-2"><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Prefix muda a cada turn</strong>: cache nunca hita.</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Volume baixo</strong>: economia absoluta é trivial; complexidade não vale.</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Tarefa que muda rápido</strong>: distillation envelhece, modelo grande adapta.</span></li></ul>
+        <h3 class="text-lg font-bold text-red-400 mb-3 flex items-center"><span class="mr-2">🚫</span> Quando NêO usar</h3>
+        <ul class="space-y-2"><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Prefix muda a cada turn</strong>: cache nunca hita.</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Volume baixo</strong>: economia absoluta é trivial; complexidade nêo vale.</span></li><li class='flex items-start space-x-2'><span class='text-red-400 mt-1'>•</span><span class='text-sm text-zinc-300'><strong>Tarefa que muda rápido</strong>: distillation envelhece, modelo grande adapta.</span></li></ul>
       </div>
 
 
@@ -445,7 +445,7 @@ hit_rate = resp.usage.cache_read_input_tokens / (
     
       <div class="bg-amber-900/10 rounded-xl border border-amber-500/30 p-6 mb-8">
         <h3 class="text-lg font-bold text-amber-400 mb-3 flex items-center"><span class="mr-2">🏋️</span> Exercício hands-on</h3>
-        <p class="text-zinc-300 text-sm">Em chat de 20 turns com system prompt de 5k tokens, meça custo SEM cache e COM cache. Hit rate alvo: ≥80%. Em <code>exercicios/modulo-5-2/</code> ou simulação por gravação.</p>
+        <p class="text-zinc-300 text-sm">Em chat de 20 turns com system prompt de 5k tokens, meça custo SEM cache e COM cache. Hit rate alvo: ≥80%. Em <code>exercicios/modulo-5-2/</code> ou simulaçêo por gravaçêo.</p>
       </div>
 
 
@@ -457,15 +457,15 @@ hit_rate = resp.usage.cache_read_input_tokens / (
       </div>
 
 
-    <!-- Resumo Final + Navegação -->
+    <!-- Resumo Final + Navegaçêo -->
     
       <section class="mb-12">
         <div class="bg-gradient-to-br from-teal-900/55 via-zinc-900 to-zinc-900 rounded-xl border border-teal-500/30 p-8">
           <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span> Resumo do Módulo</h2>
-          <ul class="space-y-3 mb-8"><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Prompt caching</strong>: 10% do preço para hits — ganho real 80%.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Hit rate</strong> precisa ser MEDIDO; pequena mudança derruba.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Distillation</strong> substitui contexto longo por modelo treinado.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Compressão</strong> é lossy — eval obrigatório.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Hierarquia de otimização</strong>: simples primeiro, complexo depois.</span></li></ul>
+          <ul class="space-y-3 mb-8"><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Prompt caching</strong>: 10% do preço para hits — ganho real 80%.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Hit rate</strong> precisa ser MEDIDO; pequena mudança derruba.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Distillation</strong> substitui contexto longo por modelo treinado.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Compressêo</strong> é lossy — eval obrigatório.</span></li><li class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><span class="text-zinc-300"><strong>Hierarquia de otimizaçêo</strong>: simples primeiro, complexo depois.</span></li></ul>
           <div class="bg-zinc-900/50 rounded-lg p-4 mb-6">
             <h3 class="font-semibold text-teal-400 mb-2">Próximo Módulo:</h3>
-            <p class="text-zinc-300 text-sm">T6 — Avaliação e Produção</p>
+            <p class="text-zinc-300 text-sm">T6 — Avaliaçêo e Produçêo</p>
           </div>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="index.html" class="btn flex-1 text-center px-6 py-3 bg-zinc-800 text-zinc-300 rounded-lg font-semibold hover:bg-zinc-700 transition-colors justify-start">← Voltar para Trilha</a>

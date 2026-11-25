@@ -1,10 +1,10 @@
-"""Verificação de compatibilidade — versão revogada (hard-fail) e version skew (warn ou hard-fail).
+"""Verificaçêo de compatibilidade — versêo revogada (hard-fail) e version skew (warn ou hard-fail).
 
 Estratégia (PLAN itens 79a.5 + 85):
 1. Embedded baseline: lista de versões revogadas conhecida em build-time.
 2. Manifesto remoto assinado em /v1/revoked.json (TTL 24h, fallback ao cache).
-3. Hard-fail (`RevokedVersionError`) se versão atual está em qualquer das listas.
-4. Hard-fail (`IncompatibleVersionError`) em major/minor mismatch ou combinação ausente da COMPAT.
+3. Hard-fail (`RevokedVersionError`) se versêo atual está em qualquer das listas.
+4. Hard-fail (`IncompatibleVersionError`) em major/minor mismatch ou combinaçêo ausente da COMPAT.
 5. Warning amarelo apenas para patch drift compatível.
 
 Override consciente: `FEC_ALLOW_INCOMPAT=1` permite seguir após log em ~/.fec/incompat.log.
@@ -67,7 +67,7 @@ def _load_remote_manifest_cached() -> list[RevokedEntry]:
         try:
             _refresh_cache()
         except Exception as exc:
-            _log.warning("Falha ao buscar manifesto remoto de revogação: %s; usando cache existente.", exc)
+            _log.warning("Falha ao buscar manifesto remoto de revogaçêo: %s; usando cache existente.", exc)
 
     if not CACHE_PATH.exists():
         return []
@@ -118,10 +118,10 @@ def _refresh_cache() -> None:
 
 
 def _verify_signature(_data: dict[str, Any]) -> bool:
-    """Verificação de assinatura (Sigstore/cosign keyless ou minisign).
+    """Verificaçêo de assinatura (Sigstore/cosign keyless ou minisign).
 
-    Stub: implementação real virá com `scripts/sign-manifest.py`. Por ora, se
-    o campo "signature" está ausente, aceita o manifesto local; em produção,
+    Stub: implementaçêo real virá com `scripts/sign-manifest.py`. Por ora, se
+    o campo "signature" está ausente, aceita o manifesto local; em produçêo,
     ausência de assinatura no manifesto remoto faz `_load_remote_manifest_cached`
     tratar como inválido.
     """
@@ -141,7 +141,7 @@ def check_compat(
 
     Args:
         module_id: ex. "modulo-3-2"; lê o expected_sdk_version do front-matter
-            do módulo se não passado.
+            do módulo se nêo passado.
         expected_sdk_version: SemVer mínima (ex. ">=1.0,<2.0").
     """
     revoked = _load_embedded_baseline() + _load_remote_manifest_cached()
@@ -162,7 +162,7 @@ def check_compat(
             )
 
     if expected_sdk_version:
-        # Implementação simples — para estrita SemVer, usar `packaging.specifiers`.
+        # Implementaçêo simples — para estrita SemVer, usar `packaging.specifiers`.
         # Aqui faz match major/minor.
         if not _matches(expected_sdk_version, __version__):
             msg = (

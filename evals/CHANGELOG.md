@@ -23,9 +23,9 @@
 
 ### Política
 
-- Mudança em qualquer arquivo coberto por `HASHES.lock` exige bump da versão (v1 → v2) OU é proibida.
-- Runs antigos referenciam versão exata (`evals/v1/`) e continuam reproduzíveis indefinidamente.
-- Datasets podem CRESCER (adicionar exemplos) sem virar v2 SE o crescimento não quebra runs antigos. Caso contrário, novo sufixo (ex.: `FEC-GS-RAG-v1.1`).
+- Mudança em qualquer arquivo coberto por `HASHES.lock` exige bump da versêo (v1 → v2) OU é proibida.
+- Runs antigos referenciam versêo exata (`evals/v1/`) e continuam reproduzíveis indefinidamente.
+- Datasets podem CRESCER (adicionar exemplos) sem virar v2 SE o crescimento nêo quebra runs antigos. Caso contrário, novo sufixo (ex.: `FEC-GS-RAG-v1.1`).
 
 ## (planejado) v2
 

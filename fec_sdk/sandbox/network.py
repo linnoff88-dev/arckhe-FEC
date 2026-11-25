@@ -1,7 +1,7 @@
 """Network policy para sandbox: egress negado por default; opt-in por host/porta.
 
 Para uso real em runtime, monkey-patch `socket` e `httpx`/`requests` clients
-para checar contra `NetworkPolicy`. Este módulo expõe a política — a aplicação
+para checar contra `NetworkPolicy`. Este módulo expõe a política — a aplicaçêo
 acontece em `tools/` específicos do lab.
 """
 

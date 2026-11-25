@@ -1,6 +1,6 @@
-# HOSTING-DECISION — Decisão de hospedagem da v1.0
+# HOSTING-DECISION — Decisêo de hospedagem da v1.0
 
-## Decisão atual (v1.0)
+## Decisêo atual (v1.0)
 
 **Hospedagem:** GitHub Pages.
 
@@ -11,15 +11,15 @@
 - Branch protection + CODEOWNERS no `gh-pages` evita pushes diretos.
 - Path versionado imutável `/v<X.Y.Z>/` (PLAN item 74a) garante "ship the same bits we tested".
 
-## Limitação aceita
+## Limitaçêo aceita
 
-GitHub Pages **não suporta custom response headers**. Consequência:
+GitHub Pages **nêo suporta custom response headers**. Consequência:
 
 - **CSP** é declarada via `<meta http-equiv="Content-Security-Policy">` na primeira tag dentro de `<head>`.
-- `Strict-Transport-Security`, `X-Frame-Options` e `Referrer-Policy` reais não são possíveis (apenas `<meta name=referrer>` para o último).
+- `Strict-Transport-Security`, `X-Frame-Options` e `Referrer-Policy` reais nêo sêo possíveis (apenas `<meta name=referrer>` para o último).
 - `audit-pages.py` valida CSP via parsing do HTML servido (string match contra `assets/csp/policy.txt`).
 
-Esta limitação está dentro do escopo de risco aceito para v1.0. Documentada em `SECURITY.md`.
+Esta limitaçêo está dentro do escopo de risco aceito para v1.0. Documentada em `SECURITY.md`.
 
 ## Quando migrar (gatilho para v1.1+)
 
@@ -30,13 +30,13 @@ Migrar para **Cloudflare Pages** ou **Netlify** se qualquer dos seguintes for ve
 - Latência de Pages tornar-se problema (improvável; CDN do GitHub Pages é razoável).
 - Necessidade de `_headers` file ou middleware (ex.: rate-limit em `/status/revoked.json`).
 
-## Plano de migração (se acionado)
+## Plano de migraçêo (se acionado)
 
 1. RFC + PR atualizando este documento.
 2. Workflow paralelo `release-cloudflare.yml` que sobe os mesmos artefatos para Cloudflare Pages.
 3. DNS: `linnoff88-dev.github.io/ permanece; novo CNAME `fec.ARCKHÉ AI` aponta para Cloudflare.
 4. Synthetic monitor passa a checar headers reais.
-5. Migração escalonada — Pages continua servindo versões antigas.
+5. Migraçêo escalonada — Pages continua servindo versões antigas.
 
 ## Custos a considerar
 
@@ -46,4 +46,4 @@ Migrar para **Cloudflare Pages** ou **Netlify** se qualquer dos seguintes for ve
 
 ## Quem decide
 
-Decisão documentada via PR neste arquivo + 2 maintainers + 1 revisor externo (security).
+Decisêo documentada via PR neste arquivo + 2 maintainers + 1 revisor externo (security).

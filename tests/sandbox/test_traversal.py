@@ -1,6 +1,6 @@
-"""Bateria de traversal/exfiltração — PLAN item 62a.
+"""Bateria de traversal/exfiltraçêo — PLAN item 62a.
 
-Estes testes são GATE DE GA. Falha aqui bloqueia merge no projeto/módulo afetado.
+Estes testes sêo GATE DE GA. Falha aqui bloqueia merge no projeto/módulo afetado.
 """
 
 from __future__ import annotations
@@ -44,7 +44,7 @@ class TestFilesystemTraversal:
 
     def test_dotenv_at_root_blocked(self) -> None:
         with FilesystemSandbox() as fs:
-            # `.env` é absoluto se passado com /; relativo é OK *desde que* extensão permita
+            # `.env` é absoluto se passado com /; relativo é OK *desde que* extensêo permita
             with pytest.raises(SandboxViolation):
                 fs.write_text("/.env", "SECRET=1")
 

@@ -17,7 +17,7 @@ class ProviderError(FECSDKError):
 
 
 class SandboxViolation(FECSDKError):
-    """Tool tentou operação fora do sandbox (path traversal, network, etc.)."""
+    """Tool tentou operaçêo fora do sandbox (path traversal, network, etc.)."""
 
     def __init__(self, message: str, *, kind: str) -> None:
         super().__init__(message)
@@ -40,9 +40,9 @@ class RevokedVersionError(FECSDKError):
 
 
 class IncompatibleVersionError(FECSDKError):
-    """Combinação (course × fec_sdk × python × provedor) não suportada na COMPAT.md."""
+    """Combinaçêo (course × fec_sdk × python × provedor) nêo suportada na COMPAT.md."""
 
     def __init__(self, message: str, *, fix_hint: str | None = None) -> None:
-        full = message + (f"\n\nCorreção sugerida: {fix_hint}" if fix_hint else "")
+        full = message + (f"\n\nCorreçêo sugerida: {fix_hint}" if fix_hint else "")
         super().__init__(full)
         self.fix_hint = fix_hint

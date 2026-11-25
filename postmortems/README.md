@@ -11,9 +11,9 @@ Salve como `postmortems/<YYYY-MM-DD>-<slug>.md`:
 
 **Data:** YYYY-MM-DD
 **Severidade:** SEV-X
-**Duração total:** Xh
+**Duraçêo total:** Xh
 **Autor:** @<maintainer>
-**Status:** ⏳ em redação · 🔍 em revisão · ✅ publicado
+**Status:** ⏳ em redaçêo · 🔍 em revisêo · ✅ publicado
 
 ## Resumo (TL;DR)
 
@@ -23,7 +23,7 @@ Salve como `postmortems/<YYYY-MM-DD>-<slug>.md`:
 
 - HH:MM — Detectado por <fonte> (synthetic monitor / aluno / Dependabot / ...)
 - HH:MM — Triagem inicial; severidade classificada
-- HH:MM — Mitigação primeira aplicada (ex.: banner, key revogada)
+- HH:MM — Mitigaçêo primeira aplicada (ex.: banner, key revogada)
 - HH:MM — Sucessor publicado (ex.: v1.0.1)
 - HH:MM — Resolvido / status público atualizado
 
@@ -40,7 +40,7 @@ Salve como `postmortems/<YYYY-MM-DD>-<slug>.md`:
 ## Impacto
 
 - Quem foi afetado: <N> usuários / <segmento>.
-- Como: <ex.: instalou versão vulnerável, lab parou de funcionar, etc.>.
+- Como: <ex.: instalou versêo vulnerável, lab parou de funcionar, etc.>.
 - Custo: <$ se aplicável (budget / dano reputacional / horas de trabalho)>.
 
 ## O que funcionou
@@ -48,21 +48,21 @@ Salve como `postmortems/<YYYY-MM-DD>-<slug>.md`:
 - ...
 - ...
 
-## O que NÃO funcionou
+## O que NêO funcionou
 
 - ...
 - ...
 
-## Mitigação aplicada
+## Mitigaçêo aplicada
 
-- [link PR] — descrição.
+- [link PR] — descriçêo.
 - ...
 
-## Prevenção (action items)
+## Prevençêo (action items)
 
-| # | Ação | Owner | Issue/PR | Prazo |
+| # | Açêo | Owner | Issue/PR | Prazo |
 |---|------|-------|----------|-------|
-| 1 | <ação> | @maintainer | [#123] | YYYY-MM-DD |
+| 1 | <açêo> | @maintainer | [#123] | YYYY-MM-DD |
 | 2 | ... | | | |
 
 ## Lições aprendidas

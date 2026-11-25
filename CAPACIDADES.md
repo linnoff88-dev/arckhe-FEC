@@ -1,8 +1,8 @@
 # CAPACIDADES — Por provedor
 
-> _⚠️ **Gerado de `evals/v1/capabilities.json`.** NÃO edite manualmente — mudanças no MD são sobrescritas. Edite o JSON via PR (CODEOWNERS protege)._
+> _⚠️ **Gerado de `evals/v1/capabilities.json`.** NêO edite manualmente — mudanças no MD sêo sobrescritas. Edite o JSON via PR (CODEOWNERS protege)._
 
-**Status:** `native` (suporte direto), `adapter` (via `fec_sdk`), `mock` (simulação por gravação), `not_supported`.
+**Status:** `native` (suporte direto), `adapter` (via `fec_sdk`), `mock` (simulaçêo por gravaçêo), `not_supported`.
 
 ## Tool / function calling (`tool-calling`)
 
@@ -28,7 +28,7 @@ _Ensinado em:_ `modulo-5-2`
 | anthropic | native |  |
 | openai | adapter | Equivalente parcial via cached prompts. |
 | google | adapter |  |
-| ollama | mock | Sem caching nativo; lab usa simulação por gravação. |
+| ollama | mock | Sem caching nativo; lab usa simulaçêo por gravaçêo. |
 
 ## Long context (>200k tokens) (`long-context`)
 
@@ -45,7 +45,7 @@ _Ensinado em:_ `modulo-1-2`, `modulo-3-2`
 
 ## Model Context Protocol (`mcp`)
 
-Protocolo para integração de tools/recursos externos.
+Protocolo para integraçêo de tools/recursos externos.
 
 _Ensinado em:_ `modulo-4-3`
 

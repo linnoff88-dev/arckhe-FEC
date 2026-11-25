@@ -8,7 +8,7 @@ SRC_DIR="assets/diagrams/src"
 OUT_DIR="assets/diagrams"
 
 if [ ! -d "$SRC_DIR" ]; then
-  echo "$SRC_DIR não existe; nada a renderizar."
+  echo "$SRC_DIR nêo existe; nada a renderizar."
   exit 0
 fi
 

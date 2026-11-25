@@ -1,6 +1,6 @@
 // ARCKHÉ.js — interações globais. Servido via 'self' (CSP-safe).
-// (1) Toggle exclusivo de tópicos: abrir um fecha os irmãos do mesmo card.
-// (2) Modais com iframe (botão "Ver em Modal" + fechar com X / Esc / clique no backdrop).
+// (1) Toggle exclusivo de tópicos: abrir um fecha os irmêos do mesmo card.
+// (2) Modais com iframe (botêo "Ver em Modal" + fechar com X / Esc / clique no backdrop).
 
 (function () {
   'use strict';

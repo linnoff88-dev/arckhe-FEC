@@ -1,19 +1,19 @@
 # RUNBOOK — Operações da FEC
 
 > _Para incidentes graves de release, ver também [`RELEASE-INCIDENT.md`](./RELEASE-INCIDENT.md)._
-> _Mapa métrica → severidade → owner → ação: [`ALERTS.md`](./ALERTS.md) (gerado de `evals/v1/alerts.json`)._
+> _Mapa métrica → severidade → owner → açêo: [`ALERTS.md`](./ALERTS.md) (gerado de `evals/v1/alerts.json`)._
 
 ## Severidades e SLA
 
-| Severidade | Definição | SLA |
+| Severidade | Definiçêo | SLA |
 |------------|-----------|-----|
-| **SEV-1** | Secret vazado, malware no zip, prompt injection com exfil real demonstrada, XSS na página publicada, sandbox quebrado em produção. | **Janela 24/7 nos 14 dias pós-release** (rc + GA + 7d): ≤2h com primário+secundário em rotação 12h. Fora da janela: mitigação automática ≤2h (revogação, banner, takedown) + resposta humana ≤8h em horário comercial BR / ≤4h fim-de-semana melhor-esforço. |
+| **SEV-1** | Secret vazado, malware no zip, prompt injection com exfil real demonstrada, XSS na página publicada, sandbox quebrado em produçêo. | **Janela 24/7 nos 14 dias pós-release** (rc + GA + 7d): ≤2h com primário+secundário em rotaçêo 12h. Fora da janela: mitigaçêo automática ≤2h (revogaçêo, banner, takedown) + resposta humana ≤8h em horário comercial BR / ≤4h fim-de-semana melhor-esforço. |
 | **SEV-2** | Módulo GA com erro técnico que invalida exercício; benchmark errado; quebra de licença; provider deprecation que invalida lab; auto-smoke 2 dias seguidos red. | ≤24h em horário comercial BR. |
 | **SEV-3** | Errata de conteúdo, link quebrado, falha de a11y individual. | ≤7 dias úteis. |
 
 ## On-call
 
-- Rotação semanal documentada em [`ROTATION.md`](./ROTATION.md).
+- Rotaçêo semanal documentada em [`ROTATION.md`](./ROTATION.md).
 - Janela pós-release tem **primário + secundário** explícitos.
 - Maintainer pode declinar com ≥48h de antecedência.
 - Handoff escrito entre rotações em [`HANDOFF.md`](./HANDOFF.md).
@@ -21,12 +21,12 @@
 
 ## Permissões pré-autorizadas (break-glass)
 
-Owner secundário tem autorização prévia para:
+Owner secundário tem autorizaçêo prévia para:
 
-1. Editar GitHub Release notes (incluir aviso de deprecação).
+1. Editar GitHub Release notes (incluir aviso de deprecaçêo).
 2. Trocar `index.html` para banner via `assets/banners/deprecation.html`.
 3. Yank no PyPI (`pypi-yank fec-sdk==X.Y.Z`).
-4. Rotação de secrets (`FEC_SMOKE_LOWPRIV_*`).
+4. Rotaçêo de secrets (`FEC_SMOKE_LOWPRIV_*`).
 
 Ver detalhes e auditoria em [`BREAK-GLASS.md`](./BREAK-GLASS.md).
 
@@ -63,7 +63,7 @@ Todo incidente SEV-1 ou SEV-2 exige postmortem público em `postmortems/<data>-<
 
 **Data:** YYYY-MM-DD
 **Severidade:** SEV-X
-**Duração:** Xh
+**Duraçêo:** Xh
 **Owner:** @maintainer
 
 ## Resumo (TL;DR)
@@ -71,7 +71,7 @@ Todo incidente SEV-1 ou SEV-2 exige postmortem público em `postmortems/<data>-<
 
 ## Timeline (UTC)
 - HH:MM Detectado por <fonte>
-- HH:MM Mitigação aplicada
+- HH:MM Mitigaçêo aplicada
 - HH:MM Resolvido
 
 ## Causa raiz
@@ -80,11 +80,11 @@ Análise de 5 porquês.
 ## Impacto
 Quem foi afetado, como.
 
-## Mitigação
+## Mitigaçêo
 O que foi feito agora.
 
-## Prevenção
-Mudanças para não acontecer de novo (com PRs/issues vinculados).
+## Prevençêo
+Mudanças para nêo acontecer de novo (com PRs/issues vinculados).
 
 ## Lições
 O que aprendemos sobre o sistema.

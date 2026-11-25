@@ -79,7 +79,7 @@ def main() -> int:
         print("--- BUDGET ERRORS ---", file=sys.stderr)
         for e in errors:
             print(f"  • {e}", file=sys.stderr)
-        print("\nVer PLAN item 91. Adicione exceção em BUDGETS-EXCEPTIONS.md se necessário.", file=sys.stderr)
+        print("\nVer PLAN item 91. Adicione exceçêo em BUDGETS-EXCEPTIONS.md se necessário.", file=sys.stderr)
         return 1
     print("OK — budgets respected.")
     return 0

@@ -1,6 +1,6 @@
 # MODELOS — Pinned por release
 
-> _⚠️ **Gerado de `evals/v1/models.json`.** NÃO edite manualmente — mudanças no MD são sobrescritas. Edite o JSON via PR (CODEOWNERS protege)._
+> _⚠️ **Gerado de `evals/v1/models.json`.** NêO edite manualmente — mudanças no MD sêo sobrescritas. Edite o JSON via PR (CODEOWNERS protege)._
 
 **Release:** v1.0.0 · **Pinado em:** 2026-05-02
 
