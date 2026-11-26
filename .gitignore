@@ -33,7 +33,7 @@ Thumbs.db
 
 # Build outputs
 docs/dashboard.html.tmp
-assets/css/inema.css.map
+assets/css/ARCKHÉ.css.map
 
 # Local secrets / credentials — NEVER commit
 .env

@@ -4,7 +4,7 @@
 **Data:** 2026-05-02
 **Tempo total:** 28m 57s
 **Modo:** plan (5 rounds adversariais)
-**Tópico:** Curso master avançado de Engenharia de Contexto (Formaçêo de Engenharia de Contexto - FEC), 12-16 módulos, formato INEMA.CLUB, publicaçêo maio/2026 em github.com/inematds/FEC
+**Tópico:** Curso master avançado de Engenharia de Contexto (Formaçêo de Engenharia de Contexto - FEC), 12-16 módulos, formato ARCKHÉ AI, publicaçêo maio/2026 em github.com/linnoff88-dev/FEC
 
 ---
 
@@ -42,7 +42,7 @@
 - Review externo é gate, mas sem staffing/protocolo.
 
 ### Medium
-- Contrato INEMA ambíguo (tópicos expansíveis em módulos vs índices).
+- Contrato ARCKHÉ ambíguo (tópicos expansíveis em módulos vs índices).
 - Caminho Ollama "free" ignora gaps de hardware/capacidade.
 - Tailwind CDN + Mermaid runtime + iframes geram risco de durabilidade/CSP/offline.
 - Mermaid dark/light hand-waved.
